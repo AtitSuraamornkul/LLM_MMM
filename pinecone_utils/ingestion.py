@@ -3,6 +3,7 @@ import time
 import re
 from dotenv import load_dotenv
 import doc_process
+import json
 
 from pinecone import Pinecone, ServerlessSpec
 
@@ -43,8 +44,17 @@ embeddings = HuggingFaceEmbeddings(
 vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 
 
-chunks = doc_process.split_to_chunks(text)
-documents =  doc_process.add_document(chunks)
+#chunks = doc_process.split_to_chunks(text)
+#documents =  doc_process.add_document(chunks)
+
+# --- NEW: Read and process JSON ---
+with open("marketing_analysis_rag_documents.json", "r", encoding="utf-8") as f:
+    json_data = json.load(f)
+
+documents = [
+    Document(page_content=entry["page_content"], metadata=entry["metadata"])
+    for entry in json_data
+]
 
 
  # generate unique id's

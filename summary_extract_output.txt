@@ -1,0 +1,479 @@
+Channel Contribution Analysis:
+
+Business Context: Your channel contributions help you
+understand what drove your revenue. Dv_360_X1 and Google drove the most overall
+revenue.
+
+Revenue Attribution:
+- Baseline revenue accounts for 90.9% of total revenue
+- Marketing channels drive 9.1% of total revenue
+- Total revenue split: 90.9% organic/baseline vs 9.1% paid marketing
+
+Marketing Channel Performance:
+- DV_360_X1 contributes 6.0% of total revenue ($7,227,618)
+- GOOGLE contributes 2.0% of total revenue ($2,444,298)
+- META contributes 1.0% of total revenue ($1,245,430)
+- TIKTOK contributes 0.1% of total revenue ($61,527)
+
+Key Insights:
+- DV_360_X1 is the top performing marketing channel at 6.0%
+- Baseline/organic traffic dominates revenue generation at 90.9%
+- Marketing channels collectively contribute 9.1% to total revenue
+
+Methodology: Note: This graphic encompasses all of
+your revenue drivers, but breaks down your marketing revenue by the baseline
+and all channels.
+Marketing Channel Spend and ROI Analysis:
+
+Performance Overview:
+- Marketing channels account for 100.0% of attributed revenue
+- Total marketing spend allocation: 100.0%
+- Average ROI across all channels: 4.8x
+
+Channel Performance by ROI:
+- META: 5.1x ROI, 11.3% revenue share, 10.4% spend share
+- TIKTOK: 5.0x ROI, 0.6% revenue share, 0.5% spend share
+- GOOGLE: 4.6x ROI, 22.3% revenue share, 22.5% spend share
+- DV_360_X1: 4.6x ROI, 65.8% revenue share, 66.6% spend share
+
+Channel Efficiency Analysis:
+- Most efficient spend allocation: META (revenue/spend ratio: 1.09)
+- Least efficient spend allocation: DV_360_X1 (revenue/spend ratio: 0.99)
+
+ROI Performance:
+- Highest ROI: META at 5.1x return
+- Lowest ROI: DV_360_X1 at 4.6x return
+- ROI range: 4.6x to 5.1x across all channels
+
+Budget Allocation Insights:
+- META: Over-performing (generates 11.3% revenue with 10.4% spend)
+- TIKTOK: Over-performing (generates 0.6% revenue with 0.5% spend)
+- GOOGLE: Under-performing (generates 22.3% revenue with 22.5% spend)
+- DV_360_X1: Under-performing (generates 65.8% revenue with 66.6% spend)
+
+Methodology: Note: Return on investment is calculated by
+dividing the revenue attributed to a channel by marketing costs.
+=== MONTHLY CHANNEL PERFORMANCE WITH ANOMALIES ===
+Monthly Channel Performance Analysis with Anomaly Detection:
+
+DV_360_X1 - Monthly Performance:
+- Average Monthly Revenue: $161,021
+- Peak Month: 2024-08 ($286,080)
+- Lowest Month: 2022-12 ($0)
+- Active Months: 10 out of 30
+- Decline Periods: 2025-01 (-55%), 2025-02 (-80%)
+
+
+GOOGLE - Monthly Performance:
+- Average Monthly Revenue: $35,335
+- Peak Month: 2023-10 ($71,109)
+- Lowest Month: 2022-12 ($0)
+- Active Months: 16 out of 30
+- High Growth Periods: 2024-05 (+1598%), 2024-10 (+220%)
+- Decline Periods: 2024-01 (-74%), 2024-02 (-82%), 2024-09 (-77%)
+
+
+META - Monthly Performance:
+- Average Monthly Revenue: $20,639
+- Peak Month: 2024-05 ($35,488)
+- Lowest Month: 2022-12 ($0)
+- Active Months: 14 out of 30
+- High Growth Periods: 2024-05 (+79%)
+- Decline Periods: 2025-01 (-58%), 2025-02 (-63%)
+
+
+TIKTOK - Monthly Performance:
+- Average Monthly Revenue: $3,254
+- Peak Month: 2024-12 ($7,722)
+- Lowest Month: 2022-12 ($0)
+- Active Months: 4 out of 30
+- High Growth Periods: 2024-12 (+208%)
+- Decline Periods: 2025-01 (-70%), 2025-02 (-80%)
+
+=== QUARTERLY CHANNEL TRENDS ===
+Quarterly Channel Performance Analysis with Trend Detection:
+
+DV_360_X1 - Quarterly Analysis:
+- Trend Direction: Stable
+- Best Quarter: 2024-Q3 ($276,999)
+- Worst Quarter: 2022-Q4 ($0)
+- Total Quarters Active: 2
+- Major Decline Quarters: 2025-Q1
+- Recent Performance (Last 2Q): $0 average
+
+
+GOOGLE - Quarterly Analysis:
+- Trend Direction: Stable
+- Best Quarter: 2023-Q4 ($66,506)
+- Worst Quarter: 2022-Q4 ($0)
+- Total Quarters Active: 4
+- Major Growth Quarters: 2024-Q4
+- Major Decline Quarters: 2024-Q1, 2024-Q3, 2025-Q1
+- Recent Performance (Last 2Q): $0 average
+
+
+META - Quarterly Analysis:
+- Trend Direction: Consistently Declining
+- Best Quarter: 2024-Q2 ($34,550)
+- Worst Quarter: 2022-Q4 ($0)
+- Total Quarters Active: 5
+- Major Decline Quarters: 2025-Q1
+- Recent Performance (Last 2Q): $5,039 average
+
+
+TIKTOK - Quarterly Analysis:
+- Trend Direction: Stable
+- Best Quarter: 2024-Q4 ($7,722)
+- Worst Quarter: 2022-Q4 ($0)
+- Total Quarters Active: 1
+- Major Decline Quarters: 2025-Q1
+- Recent Performance (Last 2Q): $0 average
+
+=== SPIKE AND DIP ANALYSIS ===
+Revenue Anomaly Analysis - Spikes and Dips Across All Channels:
+
+Channel Volatility Analysis (Revenue Consistency):
+- Most Stable Channel: META (58% volatility)
+- Most Volatile Channel: TIKTOK (96% volatility)
+
+=== CHANNEL COMPARISON ===
+Channel Performance Comparison and Rankings:
+
+Total Revenue Rankings:
+1. DV_360_X1: $1,610,209 cumulative revenue
+2. GOOGLE: $565,360 cumulative revenue
+3. META: $288,948 cumulative revenue
+4. TIKTOK: $13,017 cumulative revenue
+
+Consistency Rankings (% of months active):
+1. GOOGLE: 53% of months with revenue
+2. META: 47% of months with revenue
+3. DV_360_X1: 33% of months with revenue
+4. TIKTOK: 13% of months with revenue
+
+Peak Performance Rankings (Highest single month):
+1. DV_360_X1: $286,080 peak monthly revenue
+2. GOOGLE: $71,109 peak monthly revenue
+3. META: $35,488 peak monthly revenue
+4. TIKTOK: $7,722 peak monthly revenue
+
+Channel Lifecycle Analysis:
+- DV_360_X1: Dormant (Active: 2024-01 to 2025-02)
+- GOOGLE: Dormant (Active: 2023-10 to 2025-02)
+- META: Active/Mature (Active: 2024-04 to 2025-05)
+- TIKTOK: Dormant (Active: 2024-11 to 2025-02)
+
+=== MOMENTUM ANALYSIS ===
+Channel Growth Momentum and Trend Analysis:
+
+DV_360_X1 - 6-Month Momentum Analysis:
+- Growth Momentum: Strong Negative (-100%)
+- Trend Consistency: 0% of months showed growth
+- Recent Average (Last 3 months): $0
+- Previous Average (3 months prior): $108,797
+
+
+GOOGLE - 6-Month Momentum Analysis:
+- Growth Momentum: Strong Negative (-100%)
+- Trend Consistency: 0% of months showed growth
+- Recent Average (Last 3 months): $0
+- Previous Average (3 months prior): $18,947
+
+
+META - 6-Month Momentum Analysis:
+- Growth Momentum: Strong Negative (-67%)
+- Trend Consistency: 20% of months showed growth
+- Recent Average (Last 3 months): $4,841
+- Previous Average (3 months prior): $14,516
+
+
+TIKTOK - 6-Month Momentum Analysis:
+- Growth Momentum: Strong Negative (-100%)
+- Trend Consistency: 0% of months showed growth
+- Recent Average (Last 3 months): $0
+- Previous Average (3 months prior): $3,504
+Title: Return on investment
+
+Insights: Your return on investment (ROI) helps
+you understand how your marketing activities impacted your business objectives.
+Meta drove the highest ROI at 5.1. For every $1
+you spent on Meta, you saw $5.11 in revenue.
+Dv_360_X1 had the highest effectiveness, which is your
+incremental outcome per media unit. Meta had the highest marginal
+ROI at 2.08. Meta drove the lowest CPIK
+at $0.20. For every KPI unit, you spent $0.20.
+ROI vs Effectiveness Analysis:
+
+Performance Overview:
+- Average ROI across channels: 4.8x
+- Average effectiveness: 0.0169 incremental outcome per impression
+- Total media spend analyzed: $2,340,830
+
+ROI Rankings:
+1. META: 5.1x ROI
+2. TIKTOK: 5.0x ROI
+3. GOOGLE: 4.6x ROI
+4. DV_360_X1: 4.6x ROI
+
+Effectiveness Rankings:
+1. DV_360_X1: 0.0491 outcome per impression
+2. GOOGLE: 0.0065 outcome per impression
+3. META: 0.0062 outcome per impression
+4. TIKTOK: 0.0057 outcome per impression
+
+Spend Allocation:
+1. DV_360_X1: $1,558,208 (66.6% of total spend)
+2. GOOGLE: $526,693 (22.5% of total spend)
+3. META: $243,623 (10.4% of total spend)
+4. TIKTOK: $12,306 (0.5% of total spend)
+
+Channel Performance Categories:
+
+High Potential:
+- DV_360_X1 (4.6x ROI, 0.0491 effectiveness)
+
+Optimization Needed:
+- GOOGLE (4.6x ROI, 0.0065 effectiveness)
+
+Cost Efficient:
+- META (5.1x ROI, 0.0062 effectiveness)
+- TIKTOK (5.0x ROI, 0.0057 effectiveness)
+
+Strategic Insights:
+- META delivers highest ROI (5.1x) - prioritize for budget allocation
+- DV_360_X1 shows highest effectiveness (0.0491) - strong media performance per impression
+- DV_360_X1 receives largest budget ($1,558,208) - monitor efficiency closely
+- DV_360_X1: High effectiveness but expensive - optimize costs to improve ROI
+- GOOGLE: Both ROI and effectiveness below average - requires optimization or budget reallocation
+- META: Cost efficient but low reach - consider scaling if effectiveness can be maintained
+- TIKTOK: Cost efficient but low reach - consider scaling if effectiveness can be maintained
+
+Methodology: Note: Effectiveness measures the
+incremental outcome generated per impression. A low ROI does not necessarily
+imply low media effectiveness; it may result from high media cost, as positioned
+in the upper-left corner of the chart. Conversely, a high ROI can coexist with
+low media effectiveness and low media costs, as indicated in the bottom-right
+corner of the chart. The diagonal section of the chart suggests that the ROI is
+primarily influenced by media effectiveness. The size of the bubbles represents
+the scale of the media spend.
+ROI vs Marginal ROI Performance Analysis:
+
+Performance Metrics:
+- Average ROI across channels: 4.8x
+- Average Marginal ROI: 2.0x (additional return per additional dollar)
+- Total media spend analyzed: $2,340,830
+
+ROI Rankings:
+1. META: 5.1x ROI
+2. TIKTOK: 5.0x ROI
+3. GOOGLE: 4.6x ROI
+4. DV_360_X1: 4.6x ROI
+
+Marginal ROI Rankings (Incremental Efficiency):
+1. META: 2.1x marginal ROI
+2. TIKTOK: 2.0x marginal ROI
+3. GOOGLE: 1.9x marginal ROI
+4. DV_360_X1: 1.8x marginal ROI
+
+Spend Distribution:
+1. DV_360_X1: $1,558,208 (66.6% of total spend)
+2. GOOGLE: $526,693 (22.5% of total spend)
+3. META: $243,623 (10.4% of total spend)
+4. TIKTOK: $12,306 (0.5% of total spend)
+
+Saturation Indicators:
+- DV_360_X1: High saturation signal (ROI/Marginal ROI ratio: 2.6x)
+- GOOGLE: Moderate saturation signal (ROI/Marginal ROI ratio: 2.4x)
+- META: Moderate saturation signal (ROI/Marginal ROI ratio: 2.5x)
+- TIKTOK: Moderate saturation signal (ROI/Marginal ROI ratio: 2.5x)
+
+Efficiency Gap Analysis:
+- DV_360_X1: 2.9x gap between current and marginal returns
+- GOOGLE: 2.7x gap between current and marginal returns
+- META: 3.0x gap between current and marginal returns
+- TIKTOK: 3.0x gap between current and marginal returns
+
+Performance Consistency:
+- ROI variation across channels: 0.21 standard deviation
+- Marginal ROI variation: 0.12 standard deviation
+- ROI and marginal ROI show similar variation patterns
+
+Channel Performance Patterns:
+- META leads in both ROI and marginal ROI - consistent high performer
+- DV_360_X1: High spend concentration (66.6%) with below-average marginal efficiency
+- META: Low spend allocation (10.4%) but above-average marginal efficiency
+- TIKTOK: Low spend allocation (0.5%) but above-average marginal efficiency
+
+Diminishing Returns Assessment:
+- DV_360_X1: Moderate diminishing returns (current ROI 2.6x higher than marginal)
+- GOOGLE: Moderate diminishing returns (current ROI 2.4x higher than marginal)
+- META: Moderate diminishing returns (current ROI 2.5x higher than marginal)
+- TIKTOK: Moderate diminishing returns (current ROI 2.5x higher than marginal)
+
+Methodology: Note: Marginal ROI measures the additional
+return generated for every additional dollar spent. It's an indicator of
+efficiency of additional spend. Channels with a high ROI but a low marginal ROI
+are likely in the saturation phase, where the initial investments have paid off,
+but additional investment does not bring in as much return. Conversely, channels
+that have a high ROI and a high marginal ROI perform well and continue to yield
+high returns with additional spending. The size of the bubbles represents the
+scale of the media spend.
+ROI and CPIK Performance Analysis with Confidence Intervals:
+
+ROI Performance with 90% Credible Intervals:
+1. META:
+   - Point Estimate: 5.11x ROI
+   - Confidence Range: 3.54x to 6.98x
+   - Uncertainty Level: ±67% around point estimate
+2. TIKTOK:
+   - Point Estimate: 5.00x ROI
+   - Confidence Range: 4.92x to 5.08x
+   - Uncertainty Level: ±3% around point estimate
+3. GOOGLE:
+   - Point Estimate: 4.64x ROI
+   - Confidence Range: 2.18x to 8.31x
+   - Uncertainty Level: ±132% around point estimate
+4. DV_360_X1:
+   - Point Estimate: 4.64x ROI
+   - Confidence Range: 1.40x to 8.48x
+   - Uncertainty Level: ±153% around point estimate
+
+ROI Confidence Analysis:
+- Most Reliable ROI Estimate: TIKTOK (±3% uncertainty)
+- Least Reliable ROI Estimate: DV_360_X1 (±153% uncertainty)
+
+ROI Statistical Significance:
+- DV_360_X1 and GOOGLE: Overlapping confidence intervals (no statistically significant difference)
+- DV_360_X1 and META: Overlapping confidence intervals (no statistically significant difference)
+- DV_360_X1 and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- GOOGLE and META: Overlapping confidence intervals (no statistically significant difference)
+- GOOGLE and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- META and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+
+CPIK Performance with 90% Credible Intervals:
+1. META (Best to Worst CPIK):
+   - Point Estimate: $0.200 per KPI unit
+   - Confidence Range: $0.143 to $0.282
+   - Uncertainty Level: ±70% around point estimate
+2. TIKTOK (Best to Worst CPIK):
+   - Point Estimate: $0.200 per KPI unit
+   - Confidence Range: $0.197 to $0.203
+   - Uncertainty Level: ±3% around point estimate
+3. DV_360_X1 (Best to Worst CPIK):
+   - Point Estimate: $0.224 per KPI unit
+   - Confidence Range: $0.118 to $0.716
+   - Uncertainty Level: ±268% around point estimate
+4. GOOGLE (Best to Worst CPIK):
+   - Point Estimate: $0.234 per KPI unit
+   - Confidence Range: $0.120 to $0.460
+   - Uncertainty Level: ±145% around point estimate
+
+CPIK Confidence Analysis:
+- Most Reliable CPIK Estimate: TIKTOK (±3% uncertainty)
+- Least Reliable CPIK Estimate: DV_360_X1 (±268% uncertainty)
+
+CPIK Statistical Significance:
+- DV_360_X1 and GOOGLE: Overlapping CPIK intervals (no statistically significant difference)
+- DV_360_X1 and META: Overlapping CPIK intervals (no statistically significant difference)
+- DV_360_X1 and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- GOOGLE and META: Overlapping CPIK intervals (no statistically significant difference)
+- GOOGLE and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- META and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+
+Combined ROI and CPIK Insights:
+
+High Confidence Performers (Low uncertainty in both ROI and CPIK):
+- TIKTOK: 5.00x ROI (±3%), $0.200 CPIK (±3%)
+
+Uncertainty Patterns:
+- Average ROI uncertainty: ±89%
+- Average CPIK uncertainty: ±121%
+- CPIK estimates show higher uncertainty than ROI estimates
+
+Model Reliability Assessment:
+- High ROI Confidence: TIKTOK (narrow intervals)
+- Low ROI Confidence: DV_360_X1, GOOGLE (wide intervals)
+- High CPIK Confidence: TIKTOK (narrow intervals)
+- Low CPIK Confidence: DV_360_X1, GOOGLE (wide intervals)
+
+Methodology Note: Note: CPIK (cost per incremental KPI) point
+estimate is determined by the posterior median, whereas ROI point estimate is
+determined by the posterior mean.Marketing Response Curves Performance Analysis:
+
+Current Channel Performance:
+1. META:
+   - Current Spend: $243,623 (10.4% of total)
+   - Current Revenue: $1,245,430 (11.3% of total)
+   - Current ROI: 5.11x
+2. TIKTOK:
+   - Current Spend: $12,306 (0.5% of total)
+   - Current Revenue: $61,527 (0.6% of total)
+   - Current ROI: 5.00x
+3. GOOGLE:
+   - Current Spend: $526,693 (22.5% of total)
+   - Current Revenue: $2,444,298 (22.3% of total)
+   - Current ROI: 4.64x
+4. DV_360_X1:
+   - Current Spend: $1,558,208 (66.6% of total)
+   - Current Revenue: $7,227,618 (65.8% of total)
+   - Current ROI: 4.64x
+
+Portfolio Summary:
+- Total Spend: $2,340,830
+- Total Revenue: $10,978,873
+- Overall ROI: 4.69x
+- Active Channels: 4
+
+Spend Increase Scenario Analysis:
+
+25% Spend Increase Scenarios:
+- META: +$60,906 → +$113,594 (Marginal ROI: 1.87x)
+- TIKTOK: +$3,077 → +$5,627 (Marginal ROI: 1.83x)
+- GOOGLE: +$131,673 → +$228,438 (Marginal ROI: 1.73x)
+- DV_360_X1: +$389,552 → +$614,472 (Marginal ROI: 1.58x)
+Portfolio 25% Increase: +$585,208 → +$962,132 (Portfolio Marginal ROI: 1.64x)
+
+50% Spend Increase Scenarios:
+- META: +$121,811 → +$206,189 (Marginal ROI: 1.69x)
+- TIKTOK: +$6,153 → +$10,243 (Marginal ROI: 1.66x)
+- GOOGLE: +$263,346 → +$414,808 (Marginal ROI: 1.58x)
+- DV_360_X1: +$779,104 → +$1,105,102 (Marginal ROI: 1.42x)
+Portfolio 50% Increase: +$1,170,415 → +$1,736,342 (Portfolio Marginal ROI: 1.48x)
+
+100% Spend Increase Scenarios:
+- META: +$243,623 → +$350,315 (Marginal ROI: 1.44x)
+- TIKTOK: +$12,306 → +$17,486 (Marginal ROI: 1.42x)
+- GOOGLE: +$526,693 → +$704,568 (Marginal ROI: 1.34x)
+- DV_360_X1: +$1,558,208 → +$1,847,447 (Marginal ROI: 1.19x)
+Portfolio 100% Increase: +$2,340,830 → +$2,919,815 (Portfolio Marginal ROI: 1.25x)
+
+Marginal Returns Analysis:
+
+Efficiency Threshold Analysis:
+- META: Efficiency maintained until 1.2x current spend
+- TIKTOK: Efficiency maintained until 1.2x current spend
+- GOOGLE: Efficiency maintained until 1.2x current spend
+- DV_360_X1: Efficiency maintained until 1.2x current spend
+
+Scale and Growth Opportunity Analysis:
+- Most Efficient Channel: META (5.11x ROI)
+- Largest Spend Channel: DV_360_X1 ($1,558,208)
+- Highest Revenue Channel: DV_360_X1 ($7,227,618)
+
+Spend Scale Differences:
+- DV_360_X1 spends 126.6x more than TIKTOK
+- DV_360_X1 spends 6.4x more than META
+- DV_360_X1 spends 3.0x more than GOOGLE
+
+Portfolio Concentration:
+- Spend Concentration: Top channel (DV_360_X1) represents 66.6% of total spend
+- Revenue Concentration: Top channel (DV_360_X1) represents 65.8% of total revenue
+- Channels with >10% spend share: 3 of 4
+
+Growth Potential Summary:
+- META: Up to 32% revenue growth potential (max 2.2x current spend)
+- TIKTOK: Up to 32% revenue growth potential (max 2.2x current spend)
+- GOOGLE: Up to 32% revenue growth potential (max 2.2x current spend)
+- DV_360_X1: Up to 29% revenue growth potential (max 2.2x current spend)
+
+Methodology Note: Response curves show cumulative incremental revenue from total media spend over the selected time period, constructed based on historical flighting patterns.

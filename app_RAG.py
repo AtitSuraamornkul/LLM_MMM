@@ -13,10 +13,40 @@ from langchain_pinecone import PineconeVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.documents import Document
 
+import pandas as pd
+import altair as alt
+import json
+
+
+
 load_dotenv()
 
 # Initialize Groq client
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+def extract_vega_dataset_from_html(html_path, chart_id):
+    """
+    Extracts the first dataset from the Vega-Lite spec for a given chart_id in an HTML file.
+    Returns a pandas DataFrame.
+    """
+    with open(html_path, 'r', encoding='utf-8') as f:
+        html = f.read()
+    # Find the Vega-Lite spec for the given chart_id
+    pattern = re.compile(
+        r'chart-embed id="' + re.escape(chart_id) + r'".*?JSON\.parse\("({.*?})"\);',
+        re.DOTALL
+    )
+    match = pattern.search(html)
+    if not match:
+        st.warning(f"Could not find Vega-Lite spec for chart id '{chart_id}'")
+        return None
+    vega_json_str = match.group(1).encode('utf-8').decode('unicode_escape')
+    vega_spec = json.loads(vega_json_str)
+    # Get the dataset (first item in the 'datasets' dict)
+    data = list(vega_spec['datasets'].values())[0]
+    return pd.DataFrame(data)
+
+
 
 # Initialize RAG components
 @st.cache_resource
@@ -105,11 +135,13 @@ if user_prompt:
 
     RELEVANT CONTEXT FROM KNOWLEDGE BASE:
     {rag_context}
-
+    
     BUSINESS INSIGHTS REPORT:
     {insights_report}
 
     When answering user questions:
+    - When using the RAG context, treat \n (newline characters) as regular spacing—do not reproduce them literally in the output.
+    - Clearly separate numbers and text (e.g., write "721,000 to 831,000" instead of "721,000to831,000")
     - Prioritize information from the knowledge base context above, as it's most relevant to the user's query
     - Use the MMM optimization results and insights report as supplementary context
     - If information conflicts between sources, prioritize the knowledge base context
@@ -129,7 +161,7 @@ if user_prompt:
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="meta-llama/llama-4-maverick-17b-128e-instruct",
             messages=messages
         )
 
@@ -162,3 +194,47 @@ with st.sidebar:
         st.success("Settings updated!")
     
     st.info("Adjust for better responses")
+
+
+chart_options = [
+    ("Response Curves", "response-curves-chart"),
+    # Add more as needed
+]
+
+
+tab_labels = [label for label, _ in chart_options]
+tabs = st.tabs(tab_labels)
+
+for (label, chart_id), tab in zip(chart_options, tabs):
+    with tab:
+        df = extract_vega_dataset_from_html('output/summary_output.html', chart_id)
+        if df is not None and not df.empty:
+            # Customize chart for each chart_id if needed
+            # Here's a generic example for line charts with spend/mean
+            if 'spend' in df.columns and 'mean' in df.columns and 'channel' in df.columns:
+                chart = alt.Chart(df).mark_line().encode(
+                    x=alt.X('spend', title='Spend'),
+                    y=alt.Y('mean', title='Incremental outcome'),
+                    color='channel:N',
+                    tooltip=['channel', 'spend', 'mean']
+                ).properties(
+                    width=600,
+                    height=400,
+                    title=label
+                )
+                # Add current spend points if present
+                if 'current_spend' in df.columns:
+                    points = alt.Chart(df[df['current_spend'].notnull()]).mark_point(filled=True, size=80).encode(
+                        x='spend',
+                        y='mean',
+                        color='channel:N',
+                        shape='current_spend:N',
+                        tooltip=['channel', 'spend', 'mean']
+                    )
+                    chart = chart + points
+                st.altair_chart(chart, use_container_width=True)
+            else:
+                # Fallback: simple dataframe display if chart structure unknown
+                st.dataframe(df)
+        else:
+            st.info("No data found for the selected chart.")
