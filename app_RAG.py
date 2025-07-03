@@ -1,4 +1,3 @@
-
 import os
 import streamlit as st
 from groq import Groq
@@ -6,6 +5,8 @@ import time
 import re
 from dotenv import load_dotenv
 import llm
+import check_token
+import tiktoken
 
 from pinecone import Pinecone
 
@@ -23,6 +24,10 @@ load_dotenv()
 
 # Initialize Groq client
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+CHATBOT_AVATAR = "assets/chatbot_avatar_128x128_fixed.png"
+USER_AVATAR = "assets/A3D07482-09C2-48E7-884F-EF6BABBEBFA6.PNG"
+
 
 def extract_vega_dataset_from_html(html_path, chart_id):
     """
@@ -71,22 +76,29 @@ def initialize_rag():
     
     return retriever
 
+MAX_TOKENS = 5000
+RESERVED_FOR_ANSWER = 1000  # Reserve for LLM's answer and prompt
+
 def get_rag_context(query, retriever):
-    """Retrieve relevant context using RAG"""
+    """Retrieve relevant context using RAG, trimmed to fit token limit."""
     try:
         results = retriever.invoke(query)
-        
         if not results:
             return "No relevant context found in the knowledge base."
-    
+        
         context_parts = []
+        token_count = 0
         for i, doc in enumerate(results, 1):
-            context_parts.append(f"Document {i}:\n{doc.page_content}")
+            part = f"Document {i}:\n{doc.page_content}"
             if doc.metadata:
-                context_parts.append(f"Source: {doc.metadata}\n")
+                part += f"\nSource: {doc.metadata}\n"
+            part_tokens = check_token.num_tokens_from_string(part)
+            if token_count + part_tokens > (MAX_TOKENS - RESERVED_FOR_ANSWER):
+                break
+            context_parts.append(part)
+            token_count += part_tokens
         
         return "\n".join(context_parts)
-    
     except Exception as e:
         st.error(f"Error retrieving context: {str(e)}")
         return "Error retrieving relevant context."
@@ -107,22 +119,62 @@ st.set_page_config(
 
 st.text(insights_report)
 
+# Initialize session state for token tracking
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
+if "total_tokens_used" not in st.session_state:
+    st.session_state.total_tokens_used = 0
+
+if "request_count" not in st.session_state:
+    st.session_state.request_count = 0
+
 st.title("MMM Optimization Insights ChatBot")
 
-# Display chat history
+
+if "welcome_shown" not in st.session_state:
+    st.session_state.welcome_shown = True
+    
+    welcome_message = """
+    🚀 **Welcome! Your MMM Analysis is Ready**
+    
+    I'm your AI assistant specialized in Marketing Mix Modeling insights. I've already analyzed your data and I'm ready to help you make better marketing decisions.
+    
+    **🎯 Popular Questions:**"
+
+    • "Which channels should I invest more in?"
+    • "What happens if I cut my TV budget by 20%?"
+    • "Show me my underperforming channels"
+    • "What's my ROI by channel?"
+    • "Give me action items for next quarter"
+    
+    **📈 I can also help with:** 
+
+    ✅ Budget reallocation strategies  
+    ✅ Channel performance analysis  
+    ✅ Scenario planning & forecasting  
+    ✅ Implementation roadmaps  
+    
+    Just ask me anything about your marketing performance! 👇
+    """
+    
+    st.session_state.chat_history.append({"role": "assistant", "content": welcome_message})
+
+#DISPLAY HISTORY
 for message in st.session_state.chat_history:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+    if message["role"] == "assistant":
+        with st.chat_message(message["role"], avatar=CHATBOT_AVATAR):
+            st.markdown(message["content"])
+    else:
+        with st.chat_message(message["role"], avatar= USER_AVATAR):
+            st.markdown(message["content"])
 
 # Input field for user's message
 user_prompt = st.chat_input("Ask me about your MMM optimization results...")
 
 if user_prompt:
     # Add user message to chat
-    st.chat_message("user").markdown(user_prompt)
+    st.chat_message("user", avatar=USER_AVATAR).markdown(user_prompt)
     st.session_state.chat_history.append({"role": "user", "content": user_prompt})
 
     # Get RAG context
@@ -159,27 +211,42 @@ if user_prompt:
         *st.session_state.chat_history
     ]
 
-    try:
-        response = client.chat.completions.create(
-            model="meta-llama/llama-4-maverick-17b-128e-instruct",
-            messages=messages
-        )
+    total_tokens = check_token.count_message_tokens(messages)
+    if total_tokens > MAX_TOKENS:
+        st.error(f"Prompt too long ({total_tokens} tokens, limit is {MAX_TOKENS}). Try reducing context or chat history.")
+    else:
+        try:
+            response = client.chat.completions.create(
+                model="meta-llama/llama-4-maverick-17b-128e-instruct",
+                messages=messages
+            )
 
-        assistant_response = response.choices[0].message.content
-        st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+            assistant_response = response.choices[0].message.content
+            st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
 
-        # Display the LLM's response
-        with st.chat_message("assistant"):
-            st.markdown(assistant_response)
+            # Update token usage tracking
+            if hasattr(response, 'usage') and response.usage:
+                tokens_used = response.usage.total_tokens
+                st.session_state.total_tokens_used += tokens_used
+            else:
+                # Fallback: estimate tokens if usage not available
+                estimated_tokens = check_token.count_message_tokens(messages) + check_token.num_tokens_from_string(assistant_response)
+                st.session_state.total_tokens_used += estimated_tokens
             
-        # Optional: Show retrieved context in an expander for transparency
-        with st.expander("📚 Retrieved Context (Click to view sources)"):
-            st.text(rag_context)
-            
-    except Exception as e:
-        st.error(f"Error getting response: {str(e)}")
+            st.session_state.request_count += 1
 
-# Optional: Add a sidebar with RAG settings
+            # Display the LLM's response
+            with st.chat_message("assistant", avatar=CHATBOT_AVATAR):
+                st.markdown(assistant_response)
+                
+            # Optional: Show retrieved context in an expander for transparency
+            with st.expander("📚 Retrieved Context (Click to view sources)"):
+                st.text(rag_context)
+            
+        except Exception as e:
+            st.error(f"Error getting response: {str(e)}")
+
+# Sidebar with RAG settings and token usage
 with st.sidebar:
     st.header("RAG Settings")
     
@@ -194,6 +261,41 @@ with st.sidebar:
         st.success("Settings updated!")
     
     st.info("Adjust for better responses")
+    
+    # Token Usage Section
+    st.header("Token Usage")
+    
+    # Display current session stats
+    st.metric("Total Requests", st.session_state.request_count)
+    st.metric("Total Tokens Used", f"{st.session_state.total_tokens_used:,}")
+    
+    if st.session_state.request_count > 0:
+        avg_tokens = st.session_state.total_tokens_used / st.session_state.request_count
+        st.metric("Avg Tokens per Request", f"{avg_tokens:.0f}")
+    
+    # Token limit progress bar
+    if st.session_state.chat_history:
+        current_conversation_tokens = check_token.count_message_tokens([
+            {"role": "system", "content": "System prompt placeholder"},
+            *st.session_state.chat_history
+        ])
+        progress = min(current_conversation_tokens / MAX_TOKENS, 1.0)
+        st.progress(progress)
+        st.caption(f"Current conversation: {current_conversation_tokens:,} / {MAX_TOKENS:,} tokens")
+        
+        if progress > 0.8:
+            st.warning("⚠️ Approaching token limit. Consider clearing chat history.")
+    
+    # Reset button
+    if st.button("Reset Token Counter"):
+        st.session_state.total_tokens_used = 0
+        st.session_state.request_count = 0
+        st.success("Token counter reset!")
+    
+    # Clear chat history button
+    if st.button("Clear Chat History"):
+        st.session_state.chat_history = []
+        st.success("Chat history cleared!")
 
 
 chart_options = [
