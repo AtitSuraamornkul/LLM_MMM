@@ -1,0 +1,43 @@
+[theme]
+# Base theme
+base = "light"
+
+# Core Colors
+primaryColor = "#000000"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F8F8F8"
+textColor = "#1A1A1A"
+linkColor = "#000000"
+codeBackgroundColor = "#F5F5F5"
+
+# Typography
+font = "serif"
+codeFont = "monospace"
+codeFontSize = "0.875rem"
+headingFont = "serif"
+baseFontSize = 17
+
+# Layout & Borders
+baseRadius = "none"
+buttonRadius = "none"
+borderColor = "#CCCCCC"
+dataframeBorderColor = "#BBBBBB"
+showWidgetBorder = true
+showSidebarBorder = true
+
+[theme.sidebar]
+primaryColor = "#000000"
+backgroundColor = "#F0F0F0"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#333333"
+linkColor = "#000000"
+codeBackgroundColor = "#EEEEEE"
+font = "serif"
+codeFont = "monospace"
+codeFontSize = "0.8rem"
+headingFont = "serif"
+baseRadius = "none"
+buttonRadius = "none"
+borderColor = "#CCCCCC"
+dataframeBorderColor = "#BBBBBB"
+showWidgetBorder = true

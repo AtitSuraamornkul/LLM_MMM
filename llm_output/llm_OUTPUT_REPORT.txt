@@ -1,0 +1,31 @@
+Here is the MMM optimization insights report:
+
+**Summary**
+Our Marketing Mix Modeling (MMM) optimization analysis has identified opportunities to improve our marketing budget allocation, resulting in a slight increase in incremental revenue of $7,000. The optimized budget remains the same as the non-optimized budget at $2.3 million. We've summarized the key outcomes and insights below to inform future marketing decisions.
+
+**What Changed**
+Compared to our non-optimized budget, the optimized budget allocation has changed as follows:
+
+* dv_360_x1: Decreased from 67% to 64% of the total budget
+* Google: Increased from 23% to 24% of the total budget
+* Meta: Increased from 10% to 12% of the total budget
+* TikTok: Remains at 1% of the total budget
+
+**Key Takeaways**
+
+* dv_360_x1, our largest marketing channel, saw a budget decrease of $58,000, but still generates the majority of our incremental revenue ($1.5 million).
+* Google and Meta received budget increases of $25,000 and $31,000, respectively, resulting in incremental revenue increases.
+* TikTok's budget increased by $2,000, but its incremental revenue remains relatively small.
+* The optimized budget allocation resulted in a total incremental revenue of $11 million, a slight increase from the non-optimized revenue.
+
+**Recommendations**
+
+* Continue to prioritize dv_360_x1, as it drives the majority of our incremental revenue, but consider adjusting the budget to optimize performance.
+* Increase investment in Google and Meta, as they showed promising returns on incremental revenue.
+* Monitor TikTok's performance and consider allocating more budget if its incremental revenue continues to grow.
+
+**Things to Consider**
+
+* The MMM optimization analysis was conducted with channel-level spend constraints of -30% to +30% of the non-optimized spend, which may have limited the potential for more significant budget shifts.
+* The analysis assumes a fixed budget scenario, and results may vary if the overall budget changes.
+* Further analysis is needed to understand the impact of diminishing returns on each channel, as no clear points were identified in this study.
