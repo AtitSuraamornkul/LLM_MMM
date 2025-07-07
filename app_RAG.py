@@ -201,7 +201,7 @@ if user_prompt:
     {insights_report}
 
     When answering user questions:
-    - When using the RAG context, treat \n (newline characters) as regular spacing—do not reproduce them literally in the output.
+    - **IMPORTANT** When using the RAG context, treat \n (newline characters)  and other symbols e.g.==, | as regular spacing—do not reproduce them literally in the output.
     - Clearly separate numbers and text (e.g., write "721,000 to 831,000" instead of "721,000to831,000")
     - Prioritize information from the knowledge base context above, as it's most relevant to the user's query
     - Use the MMM optimization results and insights report as supplementary context
@@ -517,3 +517,62 @@ for (label, chart_id), tab in zip(chart_options, tabs):
 
 if st.button("Summary Report"):
     st.text(insights_report)
+
+if st.button("View Optimization Dashboard"):
+    try:
+        with open('output/optimization_output.html', 'r', encoding='utf-8') as f:
+            html_content = f.read()
+        
+        # Store in session state to trigger modal
+        st.session_state.show_modal = True
+        st.session_state.html_content = html_content
+        
+    except FileNotFoundError:
+        st.error("Optimization report file not found at 'output/optimization_output.html'")
+    except Exception as e:
+        st.error(f"Error loading optimization report: {str(e)}")
+
+# Modal dialog
+if st.session_state.get("show_modal", False):
+    @st.dialog("Optimization Report", width="large")
+    def show_html_modal():
+        # Override to make it larger
+        st.markdown("""
+        <style>
+        .stDialog > div[data-testid="modal"] {
+            width: 95vw !important;
+            max-width: 95vw !important;
+            height: 90vh !important;
+        }
+        .stDialog > div[data-testid="modal"] > div {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        st.components.v1.html(
+            st.session_state.html_content, 
+            height=900,  # Increased height
+            scrolling=True
+        )
+        
+        # Action buttons
+        col1, col2, col3 = st.columns([1, 1, 1])
+        
+        with col1:
+            st.download_button(
+                label="📄 Download Report",
+                data=st.session_state.html_content,
+                file_name="optimization_report.html",
+                mime="text/html",
+                use_container_width=True
+            )
+        
+        with col3:
+            if st.button("❌ Close", use_container_width=True):
+                st.session_state.show_modal = False
+                st.rerun()
+    
+    show_html_modal()
