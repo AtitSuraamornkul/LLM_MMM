@@ -61,6 +61,8 @@ def extract_vega_dataset_from_html(html_path, chart_id):
         st.error(f"Error extracting data for chart '{chart_id}': {str(e)}")
         return None
 
+
+
 # Initialize RAG components
 @st.cache_resource
 def initialize_rag():
@@ -84,8 +86,8 @@ def initialize_rag():
     
     return retriever
 
-MAX_TOKENS = 6000
-RESERVED_FOR_ANSWER = 1000  # Reserve for LLM's answer and prompt
+MAX_TOKENS = 30000
+RESERVED_FOR_ANSWER = 3000  # Reserve for LLM's answer and prompt
 
 def get_rag_context(query, retriever):
     """Retrieve relevant context using RAG, trimmed to fit token limit."""
@@ -152,7 +154,7 @@ if "welcome_shown" not in st.session_state:
     **🎯 Popular Questions:**
 
     • "Which channels should I invest more in?"
-    • "What happens if I cut my budget by 20%?"
+    • "What happens if I increase my budget by 20%?"
     • "Show me my underperforming channels"
     • "What's my ROI by channel?"
     • "Give me action items for next quarter"
@@ -164,7 +166,7 @@ if "welcome_shown" not in st.session_state:
     ✅ Scenario planning & forecasting  
     ✅ Implementation roadmaps  
     
-    Just ask me anything about your marketing performance! 👇
+    Just ask me anything about your marketing performance or click below for quick insights and dashboard view! 👇
     """
     
     st.session_state.chat_history.append({"role": "assistant", "content": welcome_message})
@@ -200,8 +202,11 @@ if user_prompt:
     BUSINESS INSIGHTS REPORT:
     {insights_report}
 
+    TREAT ALL '$' as 'THB' (Thai Baht) unless specified
+
     When answering user questions:
-    - **IMPORTANT** When using the RAG context, treat \n (newline characters)  and other symbols e.g.==, | as regular spacing—do not reproduce them literally in the output.
+    - **IMPORTANT** When using the RAG context, treat \n (newline characters) and as regular spacing—do not reproduce them literally in the output.
+    - Write number in numerical format, avoid suffixes e.g. 2.0M, write as 2,000,000
     - Clearly separate numbers and text (e.g., write "721,000 to 831,000" instead of "721,000to831,000")
     - Prioritize information from the knowledge base context above, as it's most relevant to the user's query
     - Use the MMM optimization results and insights report as supplementary context
@@ -226,7 +231,7 @@ if user_prompt:
     else:
         try:
             response = client.chat.completions.create(
-                model="meta-llama/llama-4-maverick-17b-128e-instruct",
+                model="meta-llama/llama-4-scout-17b-16e-instruct",
                 messages=messages
             )
 
@@ -269,256 +274,260 @@ with st.sidebar:
         retriever = initialize_rag()
         retriever.search_kwargs = {"k": k_docs, "score_threshold": score_threshold}
         st.success("Settings updated!")
-    
-    st.info("Adjust for better responses")
-    
-    # Token Usage Section
-    st.header("Token Usage")
-    
-    # Display current session stats
-    st.metric("Total Requests", st.session_state.request_count)
-    st.metric("Total Tokens Used", f"{st.session_state.total_tokens_used:,}")
-    
-    if st.session_state.request_count > 0:
-        avg_tokens = st.session_state.total_tokens_used / st.session_state.request_count
-        st.metric("Avg Tokens per Request", f"{avg_tokens:.0f}")
-    
-    # Token limit progress bar
-    if st.session_state.chat_history:
-        current_conversation_tokens = check_token.count_message_tokens([
-            {"role": "system", "content": "System prompt placeholder"},
-            *st.session_state.chat_history
-        ])
-        progress = min(current_conversation_tokens / MAX_TOKENS, 1.0)
-        st.progress(progress)
-        st.caption(f"Current conversation: {current_conversation_tokens:,} / {MAX_TOKENS:,} tokens")
+
+    with st.expander("📊 Token Usage", expanded=False):
+        # Token Usage Section
+        st.header("Token Usage")
         
-        if progress > 0.8:
-            st.warning("⚠️ Approaching token limit. Consider clearing chat history.")
-    
-    # Reset button
-    if st.button("Reset Token Counter"):
-        st.session_state.total_tokens_used = 0
-        st.session_state.request_count = 0
-        st.success("Token counter reset!")
-    
-    # Clear chat history button
-    if st.button("Clear Chat History"):
-        st.session_state.chat_history = []
-        st.success("Chat history cleared!")
+        # Display current session stats
+        st.metric("Total Requests", st.session_state.request_count)
+        st.metric("Total Tokens Used", f"{st.session_state.total_tokens_used:,}")
+        
+        if st.session_state.request_count > 0:
+            avg_tokens = st.session_state.total_tokens_used / st.session_state.request_count
+            st.metric("Avg Tokens per Request", f"{avg_tokens:.0f}")
+        
+        # Token limit progress bar
+        if st.session_state.chat_history:
+            current_conversation_tokens = check_token.count_message_tokens([
+                {"role": "system", "content": "System prompt placeholder"},
+                *st.session_state.chat_history
+            ])
+            progress = min(current_conversation_tokens / MAX_TOKENS, 1.0)
+            st.progress(progress)
+            st.caption(f"Current conversation: {current_conversation_tokens:,} / {MAX_TOKENS:,} tokens")
+            
+            if progress > 0.8:
+                st.warning("⚠️ Approaching token limit. Consider clearing chat history.")
+        
+        # Reset button
+        if st.button("Reset Token Counter"):
+            st.session_state.total_tokens_used = 0
+            st.session_state.request_count = 0
+            st.success("Token counter reset!")
+        
+        # Clear chat history button
+        if st.button("Clear Chat History"):
+            st.session_state.chat_history = []
+            st.success("Chat history cleared!")
+
+
+
+
 
 # Charts section
 st.header("📊 Marketing Mix Analysis Charts")
 
-chart_options = [
-    ("Response Curves", "response-curves-chart"),
-    ("Spend and Revenue Contribution", "spend-outcome-chart"),
-    # Add more as needed
-]
+with st.expander("Display Charts", expanded=False):
+    chart_options = [
+        ("Response Curves", "response-curves-chart"),
+        ("Spend and Revenue Contribution", "spend-outcome-chart"),
+        # Add more as needed
+    ]
 
-tab_labels = [label for label, _ in chart_options]
-tabs = st.tabs(tab_labels)
+    tab_labels = [label for label, _ in chart_options]
+    tabs = st.tabs(tab_labels)
 
-for (label, chart_id), tab in zip(chart_options, tabs):
-    with tab:
-        df = extract_vega_dataset_from_html('output/summary_output.html', chart_id)
-        
-        if df is not None and not df.empty:     
-            # Customize chart for each chart_id
-            if chart_id == "response-curves-chart":
-                # Check for required columns
-                required_cols = ['spend', 'mean', 'channel']
-                if all(col in df.columns for col in required_cols):
-                    chart = alt.Chart(df).mark_line(point=True, strokeWidth=1, interpolate='linear').encode(
-                        x=alt.X('spend:Q', title='Spend'),
-                        y=alt.Y('mean:Q', title='Incremental Outcome'),
-                        color=alt.Color('channel:N', title='Channel'),
-                        tooltip=['channel:N', 'spend:Q', 'mean:Q']
-                    ).properties(
-                        width=600,
-                        height=400,
-                        title=f"{label} - Response Curves by Channel"
-                    )
-                    
-                    # Add current spend points if available
-                    if 'current_spend' in df.columns:
-                        current_spend_df = df[df['current_spend'].notnull()]
-                        if not current_spend_df.empty:
-                            points = alt.Chart(current_spend_df).mark_point(
-                                filled=True, 
-                                size=200, 
-                                shape='diamond'
-                            ).encode(
-                                x='spend:Q',
-                                y='mean:Q',
-                                color='channel:N',
-                                tooltip=['channel:N', 'spend:Q', 'mean:Q', 'current_spend:N']
-                            )
-                            chart = chart + points
-                    
-                    st.altair_chart(chart, use_container_width=True)
-                else:
-                    st.warning(f"Missing required columns for response curves. Need: {required_cols}")
-                    st.write("Available data:")
-                    st.dataframe(df)
+    for (label, chart_id), tab in zip(chart_options, tabs):
+        with tab:
+            df = extract_vega_dataset_from_html('output/summary_output.html', chart_id)
             
-            elif chart_id == "spend-outcome-chart":
-                # Check for required columns
-                required_cols = ['channel', 'label', 'pct']
-                if all(col in df.columns for col in required_cols):
-                    
-                    # Calculate global Y-axis scale to ensure consistent scaling
-                    max_pct = df['pct'].max()
-                    y_scale = alt.Scale(domain=[0, max_pct * 1.1])  # Add 10% padding
-                    
-                    # Get unique channels
-                    channels = df['channel'].unique()
-                    
-                    # Create individual charts for each channel
-                    charts = []
-                    for i, channel in enumerate(channels):
-                        channel_df = df[df['channel'] == channel]
-                        
-                        # Bar chart for this channel
-                        bars = alt.Chart(channel_df).mark_bar(
-                            cornerRadiusTopLeft=2,
-                            cornerRadiusTopRight=2
-                        ).encode(
-                            x=alt.X('label:N', 
-                                   title=None, 
-                                   axis=alt.Axis(labelAngle=0, labels=False, ticks=False),
-                                   scale=alt.Scale(paddingOuter=0.5)),
-                            y=alt.Y('pct:Q', 
-                                   title='%' if i == 0 else None,  # Only show Y-axis title on first chart
-                                   axis=alt.Axis(format='%', tickCount=5) if i == 0 else alt.Axis(format='%', tickCount=5, labels=False),
-                                   scale=y_scale),  # Use consistent scale
-                            color=alt.Color('label:N',
-                                scale=alt.Scale(
-                                    domain=['% Revenue', '% Spend'],
-                                    range=['#669DF6', '#AECBFA']  # Match your original colors
-                                ),
-                                legend=None  # Remove individual legends
-                            ),
-                            tooltip=['channel:N', 'label:N', alt.Tooltip('pct:Q', format='.1%')]
+            if df is not None and not df.empty:     
+                # Customize chart for each chart_id
+                if chart_id == "response-curves-chart":
+                    # Check for required columns
+                    required_cols = ['spend', 'mean', 'channel']
+                    if all(col in df.columns for col in required_cols):
+                        chart = alt.Chart(df).mark_line(point=True, strokeWidth=1, interpolate='linear').encode(
+                            x=alt.X('spend:Q', title='Spend'),
+                            y=alt.Y('mean:Q', title='Incremental Outcome'),
+                            color=alt.Color('channel:N', title='Channel'),
+                            tooltip=['channel:N', 'spend:Q', 'mean:Q']
                         ).properties(
-                            width=120,
-                            height=300,
-                            title=alt.TitleParams(
-                                text=channel,
-                                fontSize=12,
-                                anchor='start',
-                                color='#3C4043'
-                            )
+                            width=600,
+                            height=400,
+                            title=f"{label} - Response Curves by Channel"
                         )
                         
-                        # Add ROI indicators if available
-                        if 'roi' in df.columns:
-                            # Get ROI value for this channel
-                            roi_value = channel_df['roi'].iloc[0] if len(channel_df) > 0 else None
-                            
-                            if roi_value is not None:
-                                # ROI tick mark
-                                roi_tick = alt.Chart(pd.DataFrame([{
-                                    'x_pos': 0.5,  # Center position
-                                    'y_pos': max_pct * 0.85,  # Position near top
-                                    'roi': roi_value
-                                }])).mark_tick(
-                                    color='#188038',
-                                    thickness=4,
-                                    size=30,
-                                    orient='horizontal'
+                        # Add current spend points if available
+                        if 'current_spend' in df.columns:
+                            current_spend_df = df[df['current_spend'].notnull()]
+                            if not current_spend_df.empty:
+                                points = alt.Chart(current_spend_df).mark_point(
+                                    filled=True, 
+                                    size=200, 
+                                    shape='diamond'
                                 ).encode(
-                                    x=alt.X('x_pos:Q', scale=alt.Scale(domain=[0, 1]), axis=None),
-                                    y=alt.Y('y_pos:Q', scale=y_scale, axis=None)
+                                    x='spend:Q',
+                                    y='mean:Q',
+                                    color='channel:N',
+                                    tooltip=['channel:N', 'spend:Q', 'mean:Q', 'current_spend:N']
                                 )
-                                
-                                # ROI text label
-                                roi_text = alt.Chart(pd.DataFrame([{
-                                    'x_pos': 0.5,
-                                    'y_pos': max_pct * 0.9,  # Slightly above tick
-                                    'roi': roi_value
-                                }])).mark_text(
-                                    color='#202124',
-                                    fontSize=12,
-                                    fontWeight='normal'
-                                ).encode(
-                                    x=alt.X('x_pos:Q', scale=alt.Scale(domain=[0, 1]), axis=None),
-                                    y=alt.Y('y_pos:Q', scale=y_scale, axis=None),
-                                    text=alt.Text('roi:Q', format='.1f')
-                                )
-                                
-                                bars = bars + roi_tick + roi_text
-                            
-                            # Add ROI to tooltip
-                            bars = bars.encode(
-                                tooltip=['channel:N', 'label:N', alt.Tooltip('pct:Q', format='.1%'), alt.Tooltip('roi:Q', format='.2f', title='ROI')]
-                            )
+                                chart = chart + points
                         
-                        charts.append(bars)
-                    
-                    # Concatenate all charts horizontally with shared Y-axis
-                    if len(charts) > 1:
-                        combined_chart = alt.hconcat(*charts).resolve_scale(
-                            y='shared'  # FIXED: Use shared Y-axis for proper comparison
-                        )
+                        st.altair_chart(chart, use_container_width=True)
                     else:
-                        combined_chart = charts[0]
-                    
-                    # Add overall title and legend
-                    final_chart = combined_chart.properties(
-                        title=alt.TitleParams(
-                            text="Spend and revenue contribution by marketing channel",
-                            fontSize=18,
-                            anchor='start',
-                            color='#3C4043',
-                            fontWeight='normal'
-                        )
-                    )
-                    
-                    st.altair_chart(final_chart, use_container_width=True)
-                    
-                    # Add legend manually below the chart
-                    st.markdown("""
-                    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <div style="width: 16px; height: 16px; background-color: #669DF6; border-radius: 2px;"></div>
-                            <span style="font-size: 12px; color: #5F6368;">% Revenue</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <div style="width: 16px; height: 16px; background-color: #AECBFA; border-radius: 2px;"></div>
-                            <span style="font-size: 12px; color: #5F6368;">% Spend</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <div style="width: 16px; height: 4px; background-color: #188038; border-radius: 2px;"></div>
-                            <span style="font-size: 12px; color: #5F6368;">Return on Investment</span>
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                    
-                    # Add note
-                    st.caption("Note: Return on investment is calculated by dividing the revenue attributed to a channel by marketing costs.")
-                    
-                else:
-                    st.warning(f"Missing required columns for spend/outcome chart. Need: {required_cols}")
-                    st.write("Available data:")
-                    st.dataframe(df)
-            
-            else:
-                # Fallback: show the dataframe
-                st.write("Chart type not specifically handled. Showing raw data:")
-                st.dataframe(df)
+                        st.warning(f"Missing required columns for response curves. Need: {required_cols}")
+                        st.write("Available data:")
+                        st.dataframe(df)
                 
-        else:
-            st.info(f"No data found for '{label}' chart.")
-            st.write("This could be due to:")
-            st.write("- Chart ID not found in HTML file")
-            st.write("- HTML file not found")
-            st.write("- Data extraction error")
+                elif chart_id == "spend-outcome-chart":
+                    # Check for required columns
+                    required_cols = ['channel', 'label', 'pct']
+                    if all(col in df.columns for col in required_cols):
+                        
+                        # Calculate global Y-axis scale to ensure consistent scaling
+                        max_pct = df['pct'].max()
+                        y_scale = alt.Scale(domain=[0, max_pct * 1.1])  # Add 10% padding
+                        
+                        # Get unique channels
+                        channels = df['channel'].unique()
+                        
+                        # Create individual charts for each channel
+                        charts = []
+                        for i, channel in enumerate(channels):
+                            channel_df = df[df['channel'] == channel]
+                            
+                            # Bar chart for this channel
+                            bars = alt.Chart(channel_df).mark_bar(
+                                cornerRadiusTopLeft=2,
+                                cornerRadiusTopRight=2
+                            ).encode(
+                                x=alt.X('label:N', 
+                                    title=None, 
+                                    axis=alt.Axis(labelAngle=0, labels=False, ticks=False),
+                                    scale=alt.Scale(paddingOuter=0.5)),
+                                y=alt.Y('pct:Q', 
+                                    title='%' if i == 0 else None,  # Only show Y-axis title on first chart
+                                    axis=alt.Axis(format='%', tickCount=5) if i == 0 else alt.Axis(format='%', tickCount=5, labels=False),
+                                    scale=y_scale),  # Use consistent scale
+                                color=alt.Color('label:N',
+                                    scale=alt.Scale(
+                                        domain=['% Revenue', '% Spend'],
+                                        range=['#669DF6', '#AECBFA']  # Match your original colors
+                                    ),
+                                    legend=None  # Remove individual legends
+                                ),
+                                tooltip=['channel:N', 'label:N', alt.Tooltip('pct:Q', format='.1%')]
+                            ).properties(
+                                width=120,
+                                height=300,
+                                title=alt.TitleParams(
+                                    text=channel,
+                                    fontSize=12,
+                                    anchor='start',
+                                    color='#3C4043'
+                                )
+                            )
+                            
+                            # Add ROI indicators if available
+                            if 'roi' in df.columns:
+                                # Get ROI value for this channel
+                                roi_value = channel_df['roi'].iloc[0] if len(channel_df) > 0 else None
+                                
+                                if roi_value is not None:
+                                    # ROI tick mark
+                                    roi_tick = alt.Chart(pd.DataFrame([{
+                                        'x_pos': 0.5,  # Center position
+                                        'y_pos': max_pct * 0.85,  # Position near top
+                                        'roi': roi_value
+                                    }])).mark_tick(
+                                        color='#188038',
+                                        thickness=4,
+                                        size=30,
+                                        orient='horizontal'
+                                    ).encode(
+                                        x=alt.X('x_pos:Q', scale=alt.Scale(domain=[0, 1]), axis=None),
+                                        y=alt.Y('y_pos:Q', scale=y_scale, axis=None)
+                                    )
+                                    
+                                    # ROI text label
+                                    roi_text = alt.Chart(pd.DataFrame([{
+                                        'x_pos': 0.5,
+                                        'y_pos': max_pct * 0.9,  # Slightly above tick
+                                        'roi': roi_value
+                                    }])).mark_text(
+                                        color='#202124',
+                                        fontSize=12,
+                                        fontWeight='normal'
+                                    ).encode(
+                                        x=alt.X('x_pos:Q', scale=alt.Scale(domain=[0, 1]), axis=None),
+                                        y=alt.Y('y_pos:Q', scale=y_scale, axis=None),
+                                        text=alt.Text('roi:Q', format='.1f')
+                                    )
+                                    
+                                    bars = bars + roi_tick + roi_text
+                                
+                                # Add ROI to tooltip
+                                bars = bars.encode(
+                                    tooltip=['channel:N', 'label:N', alt.Tooltip('pct:Q', format='.1%'), alt.Tooltip('roi:Q', format='.2f', title='ROI')]
+                                )
+                            
+                            charts.append(bars)
+                        
+                        # Concatenate all charts horizontally with shared Y-axis
+                        if len(charts) > 1:
+                            combined_chart = alt.hconcat(*charts).resolve_scale(
+                                y='shared'  # FIXED: Use shared Y-axis for proper comparison
+                            )
+                        else:
+                            combined_chart = charts[0]
+                        
+                        # Add overall title and legend
+                        final_chart = combined_chart.properties(
+                            title=alt.TitleParams(
+                                text="Spend and revenue contribution by marketing channel",
+                                fontSize=18,
+                                anchor='start',
+                                color='#3C4043',
+                                fontWeight='normal'
+                            )
+                        )
+                        
+                        st.altair_chart(final_chart, use_container_width=True)
+                        
+                        # Add legend manually below the chart
+                        st.markdown("""
+                        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <div style="width: 16px; height: 16px; background-color: #669DF6; border-radius: 2px;"></div>
+                                <span style="font-size: 12px; color: #5F6368;">% Revenue</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <div style="width: 16px; height: 16px; background-color: #AECBFA; border-radius: 2px;"></div>
+                                <span style="font-size: 12px; color: #5F6368;">% Spend</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <div style="width: 16px; height: 4px; background-color: #188038; border-radius: 2px;"></div>
+                                <span style="font-size: 12px; color: #5F6368;">Return on Investment</span>
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        
+                        # Add note
+                        st.caption("Note: Return on investment is calculated by dividing the revenue attributed to a channel by marketing costs.")
+                        
+                    else:
+                        st.warning(f"Missing required columns for spend/outcome chart. Need: {required_cols}")
+                        st.write("Available data:")
+                        st.dataframe(df)
+                
+                else:
+                    # Fallback: show the dataframe
+                    st.write("Chart type not specifically handled. Showing raw data:")
+                    st.dataframe(df)
+                    
+            else:
+                st.info(f"No data found for '{label}' chart.")
+                st.write("This could be due to:")
+                st.write("- Chart ID not found in HTML file")
+                st.write("- HTML file not found")
+                st.write("- Data extraction error")
 
-if st.button("Summary Report"):
+if st.button("Click For Summary Report"):
     st.text(insights_report)
 
-if st.button("View Optimization Dashboard"):
+if st.button("Click For Optimization Dashboard"):
     try:
         with open('output/optimization_output.html', 'r', encoding='utf-8') as f:
             html_content = f.read()
