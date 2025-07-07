@@ -47,7 +47,7 @@ vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 #chunks = doc_process.split_to_chunks(text)
 #documents =  doc_process.add_document(chunks)
 
-# --- NEW: Read and process JSON ---
+# Read and process JSON ---
 with open("marketing_analysis_rag_documents.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
 
