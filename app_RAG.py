@@ -69,12 +69,12 @@ def initialize_rag():
     """Initialize RAG components with caching for better performance"""
     # Initialize Pinecone
     pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
-    index_name = "planidac"
+    index_name = "planidac-v2"
     index = pc.Index(index_name)
     
     # Initialize embeddings and vector store
     embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        model_name="BAAI/bge-base-en-v1.5"
     )
     vector_store = PineconeVectorStore(index=index, embedding=embeddings)
     
@@ -202,11 +202,11 @@ if user_prompt:
     BUSINESS INSIGHTS REPORT:
     {insights_report}
 
-    TREAT ALL '$' as 'THB' (Thai Baht) unless specified
+    treat all '$' as 'THB' (Thai Baht) unless specified
 
     When answering user questions:
-    - **IMPORTANT** When using the RAG context, treat \n (newline characters) and as regular spacing—do not reproduce them literally in the output.
-    - Write number in numerical format, avoid suffixes e.g. 2.0M, write as 2,000,000
+    - Recheck for missing information, check for anomalies e.g. 32% is wrongly written as 3232%
+    - Write number in numerical format e.g. 2.0M, write as 2,000,000
     - Clearly separate numbers and text (e.g., write "721,000 to 831,000" instead of "721,000to831,000")
     - Prioritize information from the knowledge base context above, as it's most relevant to the user's query
     - Use the MMM optimization results and insights report as supplementary context
@@ -316,7 +316,7 @@ with st.sidebar:
 
 
 # Charts section
-st.header("📊 Marketing Mix Analysis Charts")
+st.header("Marketing Mix Analysis Charts")
 
 with st.expander("Display Charts", expanded=False):
     chart_options = [
@@ -567,21 +567,5 @@ if st.session_state.get("show_modal", False):
             scrolling=True
         )
         
-        # Action buttons
-        col1, col2, col3 = st.columns([1, 1, 1])
-        
-        with col1:
-            st.download_button(
-                label="📄 Download Report",
-                data=st.session_state.html_content,
-                file_name="optimization_report.html",
-                mime="text/html",
-                use_container_width=True
-            )
-        
-        with col3:
-            if st.button("❌ Close", use_container_width=True):
-                st.session_state.show_modal = False
-                st.rerun()
     
     show_html_modal()

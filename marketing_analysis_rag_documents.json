@@ -4,7 +4,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "channel_contribution",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "channels": [
         "DV_360_X1",
         "GOOGLE",
@@ -21,7 +20,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "spend_roi",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "average_roi": 4.8,
       "highest_roi_channel": "META",
       "lowest_roi_channel": "DV_360_X1",
@@ -34,7 +32,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "monthly_performance",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "most_stable_channel": "META",
       "most_volatile_channel": "TIKTOK",
       "analysis_period": "30_months",
@@ -46,7 +43,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "quarterly_trends",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "trend_analysis": true,
       "performance_type": "quarterly_breakdown"
     }
@@ -56,7 +52,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "channel_comparison_rankings",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "includes_momentum": true,
       "includes_volatility": true,
       "ranking_type": "comprehensive"
@@ -67,7 +62,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "roi_insights",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "highest_roi_channel": "META",
       "highest_effectiveness_channel": "DV_360_X1",
       "lowest_cpik_channel": "META"
@@ -78,7 +72,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "roi_effectiveness",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "total_spend": 2340830,
       "analysis_focus": "efficiency_optimization",
       "performance_categories": [
@@ -93,7 +86,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "marginal_roi",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "average_marginal_roi": 2.0,
       "saturation_analysis": true,
       "diminishing_returns_assessment": true
@@ -104,7 +96,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "roi_cpik_confidence",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "confidence_level": "90_percent",
       "most_reliable_channel": "TIKTOK",
       "least_reliable_channel": "DV_360_X1",
@@ -117,7 +108,6 @@
     "metadata": {
       "source": "marketing_analysis",
       "analysis_type": "response_curves",
-      "timestamp": "2025-07-03T14:01:00.278501",
       "total_spend": 2340830,
       "total_revenue": 10978873,
       "overall_roi": 4.69,

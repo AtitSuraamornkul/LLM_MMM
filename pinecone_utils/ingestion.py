@@ -19,7 +19,7 @@ with open("llm_input/llm_input.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 # initialize pinecone database
-index_name = "planidac"  # change if desired
+index_name = "planidac-v2"  # change if desired
 
 # check whether index exists, and create if not
 existing_indexes = [index_info["name"] for index_info in pc.list_indexes()]
@@ -27,7 +27,7 @@ existing_indexes = [index_info["name"] for index_info in pc.list_indexes()]
 if index_name not in existing_indexes:
     pc.create_index(
         name=index_name,
-        dimension=384,
+        dimension=768,
         metric="cosine",
         spec=ServerlessSpec(cloud="aws", region="us-east-1"),
     )
@@ -38,22 +38,22 @@ index = pc.Index(index_name)
 
 # initialize embeddings model + vector store
 embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"  # Popular lightweight model
+    model_name="BAAI/bge-base-en-v1.5" 
 )
 
 vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 
 
-#chunks = doc_process.split_to_chunks(text)
-#documents =  doc_process.add_document(chunks)
+# chunks = doc_process.split_to_chunks(text)
+# documents =  doc_process.add_document(chunks)
 
-# Read and process JSON ---
+#Read and process JSON ---
 with open("marketing_analysis_rag_documents.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
 
 documents = [
-    Document(page_content=entry["page_content"], metadata=entry["metadata"])
-    for entry in json_data
+     Document(page_content=entry["page_content"], metadata=entry["metadata"])
+     for entry in json_data
 ]
 
 
