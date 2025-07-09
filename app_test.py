@@ -26,6 +26,7 @@ from datetime import datetime
 import utils.file_processing as file_processing
 from utils.file_processing import analyze_csv_files_dynamically
 
+import utils.check_llama as check_llama
 load_dotenv()
 
 # Initialize Groq client
@@ -437,6 +438,26 @@ with st.sidebar:
         retriever = initialize_rag()
         retriever.search_kwargs = {"k": k_docs, "score_threshold": score_threshold}
         st.success("Settings updated!")
+
+    with st.expander("Check Ollama Status", expanded=False):
+        st.header("Ollama Status")
+    
+        # Check Ollama status
+        is_running, models = check_llama.check_ollama_status()
+        
+        if is_running:
+            st.success("✅ Ollama is running")
+            st.write(f"Available models: {len(models)}")
+            
+            # Show available models
+            if models:
+                selected_model = st.selectbox("Select model for CSV analysis:", models)
+                # You can use this to dynamically change the model
+                
+        else:
+            st.error("❌ Ollama not running")
+            st.write("Start Ollama: `ollama serve`")
+
 
     with st.expander("📊 Token Usage", expanded=False):
         # Token Usage Section
