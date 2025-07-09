@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-from groq import Groq
+from together import Together
 import time
 import re
 from dotenv import load_dotenv
@@ -23,13 +23,13 @@ import docx
 import io
 from datetime import datetime
 
-import utils.file_processing as file_processing
-from utils.file_processing import analyze_csv_files_dynamically
+import file_processing
 
 load_dotenv()
 
 # Initialize Groq client
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Together(api_key=os.environ.get("TOGETHER_API_KEY")) # auth defaults to os.environ.get("TOGETHER_API_KEY")
+
 
 CHATBOT_AVATAR = "assets/chatbot_avatar_128x128_fixed.png"
 USER_AVATAR = "assets/A3D07482-09C2-48E7-884F-EF6BABBEBFA6.PNG"
@@ -94,8 +94,8 @@ def initialize_rag():
     
     return retriever
 
-MAX_TOKENS = 10000
-RESERVED_FOR_ANSWER = 2000  # Reserve for LLM's answer and prompt
+MAX_TOKENS = 20000
+RESERVED_FOR_ANSWER = 1000  # Reserve for LLM's answer and prompt
 
 def get_rag_context(query, retriever):
     """Retrieve relevant context using RAG, trimmed to fit token limit."""
@@ -121,59 +121,42 @@ def get_rag_context(query, retriever):
         st.error(f"Error retrieving context: {str(e)}")
         return "Error retrieving relevant context."
     
+
 def get_enhanced_context(query, retriever):
-    """Get context from RAG, static files, and CSV analysis"""
+    """Get context from both RAG and uploaded files with smart management"""
+    
     # Get RAG context first (priority)
     rag_context = get_rag_context(query, retriever)
     
-    # Get static uploaded context (non-CSV files only)
-    static_context = getattr(st.session_state, 'uploaded_context', '')
+    # Add uploaded context if available
+    uploaded_context = getattr(st.session_state, 'uploaded_context', '')
     
-    # Filter out CSV placeholder messages from static context
-    if static_context:
-        # Remove CSV placeholder lines
-        static_lines = []
-        for line in static_context.split('\n'):
-            if not ("CSV file" in line and "ready for analysis" in line):
-                static_lines.append(line)
-        static_context = '\n'.join(static_lines).strip()
-    
-    # Get dynamic CSV analysis for current query
-    csv_analysis = analyze_csv_files_dynamically(query)
-    
-    # Combine all contexts
-    combined_parts = [f"KNOWLEDGE BASE CONTEXT:\n{rag_context}"]
-    
-    if static_context:
-        combined_parts.append(f"UPLOADED FILES CONTEXT:\n{static_context}")
-    
-    if csv_analysis:
-        combined_parts.append(f"DYNAMIC CSV ANALYSIS:\n{csv_analysis}")
-    
-    return "\n\n".join(combined_parts)
+    if uploaded_context:
+        # Check total token usage
+        rag_tokens = check_token.num_tokens_from_string(rag_context)
+        uploaded_tokens = check_token.num_tokens_from_string(uploaded_context)
+        total_context_tokens = rag_tokens + uploaded_tokens
+        
+        # If too large, prioritize and truncate
+        if total_context_tokens > 20000:  # Max context tokens
+            # Truncate uploaded content to fit
+            max_uploaded_tokens = 20000 - rag_tokens - 1000  # Leave buffer
+            if max_uploaded_tokens > 2000:  # Minimum useful size
+                uploaded_context = file_processing.smart_truncate_content(uploaded_context, max_uploaded_tokens)
+            else:
+                uploaded_context = "[Uploaded content too large - using RAG context only]"
+        
+        combined_context = f"""
+KNOWLEDGE BASE CONTEXT:
+{rag_context}
 
-
-# def get_enhanced_context(query, retriever):
-#     """Get context from both RAG and uploaded files - no token limits on uploaded content"""
+UPLOADED FILES CONTEXT:
+{uploaded_context}
+"""
+    else:
+        combined_context = rag_context
     
-#     # Get RAG context first (priority)
-#     rag_context = get_rag_context(query, retriever)
-    
-#     # Add uploaded context if available (no token limits)
-#     uploaded_context = getattr(st.session_state, 'uploaded_context', '')
-    
-#     if uploaded_context:
-#         combined_context = f"""
-# KNOWLEDGE BASE CONTEXT:
-# {rag_context}
-
-# UPLOADED FILES CONTEXT:
-# {uploaded_context}
-# """
-#     else:
-#         combined_context = rag_context
-    
-#     return combined_context
+    return combined_context
 
 # Initialize RAG
 retriever = initialize_rag()
@@ -209,7 +192,7 @@ if "welcome_shown" not in st.session_state:
     st.session_state.welcome_shown = True
     
     welcome_message = """
-    **Welcome! Your MMM Analysis is Ready**
+    🚀 **Welcome! Your MMM Analysis is Ready**
     
     I'm your AI assistant specialized in Marketing Mix Modeling insights. I've already analyzed your data and I'm ready to help you make better marketing decisions.
     
@@ -246,8 +229,6 @@ for message in st.session_state.chat_history:
 user_prompt = st.chat_input("Ask me about your MMM optimization results...")
 
 if user_prompt:
-    st.session_state.current_user_prompt = user_prompt
-
     # Add user message to chat
     st.chat_message("user", avatar=USER_AVATAR).markdown(user_prompt)
     st.session_state.chat_history.append({"role": "user", "content": user_prompt})
@@ -256,65 +237,35 @@ if user_prompt:
     with st.spinner("Retrieving relevant information..."):
         enhanced_context = get_enhanced_context(user_prompt, retriever)
 
-
     # Enhanced system prompt with RAG context
     system_prompt = f"""
-You are an expert business analytics assistant specializing in Marketing Mix Modeling (MMM) optimization. Your primary role is to deliver clear, actionable business insights tailored for non-technical stakeholders and management teams.
+    You are a business analytics assistant specializing in Marketing Mix Modeling (MMM) optimization. Your job is to answer questions and provide clear, actionable business insights for non-technical and management users.
 
-DATA SOURCES & CONTEXT:
-RELEVANT CONTEXT FROM KNOWLEDGE BASE:
-{enhanced_context}
+    RELEVANT CONTEXT FROM KNOWLEDGE BASE:
+    {enhanced_context}
+    
+    BUSINESS INSIGHTS REPORT:
+    {insights_report}
 
-BUSINESS INSIGHTS REPORT:
-{insights_report}
+    (IMPORTANT) treat and replace '$' (Dollar) as 'THB' (Thai Baht) unless specified
+    Format the output in a manner that is easy to follow and read with factual data 
 
-CORE RESPONSE GUIDELINES:
+    When answering user questions:
+    - Prioritize information from the knowledge base context
+    - Only use uploaded files if relevant to user prompt, else, use RAG context and insights report
+    - When referencing uploaded files, mention the file name
+    - Check for anomalies e.g. 32% is wrongly written as 3232%
+    - Write number in numerical format e.g. 2.0M, write as 2,000,000
+    - Clearly separate numbers and text (e.g., write "721,000 to 831,000" instead of "721,000to831,000")
+    - Use the MMM optimization results and insights report as supplementary context
+    - If information conflicts between sources, prioritize the knowledge base context
+    - If a question asks for details, calculations, or recommendations, base your answer on the provided contexts
+    - If information is not available in any context, politely state that you do not have that data
+    - Avoid technical jargon and use concise, business-friendly language
+    - Always cite which source your information comes from when possible
 
-DATA PRIORITIZATION & SOURCE HANDLING:
-- ALWAYS prioritize information from the knowledge base context as your primary source
-- Use uploaded files ONLY when directly relevant to the user's specific prompt
-- When referencing uploaded files, explicitly mention the file name (e.g., "According to [filename.xlsx]...")
-- Use MMM optimization results and insights report as supplementary supporting context
-- When information conflicts between sources, prioritize knowledge base context and note the discrepancy
-- If information is unavailable in any provided context, clearly state: "This data is not available in the current analysis"
-- Always cite your information source when possible (e.g., "Based on the knowledge base analysis..." or "According to the insights report...")
-
-CURRENCY & NUMERICAL FORMATTING:
-- CRITICAL: Replace ALL '$' (Dollar) references with 'THB' (Thai Baht) unless explicitly specified otherwise
-- Format large numbers clearly: Write "2,000,000" instead of "2.0M"
-- Ensure proper spacing between numbers and text: "721,000 to 831,000" NOT "721,000to831,000"
-- Check for and correct obvious anomalies (e.g., if you see "3232%" when context suggests "32%")
-
-BUSINESS ANALYSIS APPROACH:
-- When questions lack specific objectives (e.g., "Show me underperforming channels"), default to business outcome metrics: ROI and Revenue impact
-- For budget increase/decrease questions, ALWAYS consider:
-  * Response curve analysis
-  * Saturation point implications
-  * Answer in terms of revenue change AND ROI impact
-- Focus on business implications rather than technical methodology
-
-COMMUNICATION STANDARDS:
-- Use concise, business-friendly language - avoid technical jargon
-- Structure responses for easy scanning and comprehension
-- Provide factual data with clear context
-- When asked for details, calculations, or recommendations, base answers strictly on provided contexts
-- Maintain focus on actionable insights that drive business decisions
-
-OUTPUT FORMATTING:
-- Format responses for maximum readability
-- Use bullet points, headers, and clear sections when appropriate
-- Separate key metrics and recommendations visually
-- Include specific numerical data to support insights
-
-RESPONSE PRIORITY ORDER:
-1. Direct answer to user question
-2. Supporting data from knowledge base
-3. Business implications and recommendations
-4. Relevant context from insights report
-5. Any limitations or data gaps
-
-Always remain helpful, accurate, and focused on translating MMM results into clear business value and actionable next steps.
-"""
+    Always remain clear, helpful, and focused on the business implications of the MMM results.
+    """
 
     # Send message to LLM
     messages = [
@@ -322,14 +273,17 @@ Always remain helpful, accurate, and focused on translating MMM results into cle
         *st.session_state.chat_history
     ]
 
+    
+
     total_tokens = check_token.count_message_tokens(messages)
     if total_tokens > MAX_TOKENS:
         st.error(f"Prompt too long ({total_tokens} tokens, limit is {MAX_TOKENS}). Try reducing context or chat history.")
     else:
         try:
             response = client.chat.completions.create(
-                model="meta-llama/llama-4-scout-17b-16e-instruct",
-                messages=messages
+                model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+                messages=messages,
+                max_tokens=2000
             )
 
             assistant_response = response.choices[0].message.content
@@ -361,13 +315,13 @@ Always remain helpful, accurate, and focused on translating MMM results into cle
 # Sidebar with RAG settings, file upload, and token usage
 with st.sidebar:
     st.header("File Upload")
-    st.caption("Supports: PDF, Word, Text files")  # Updated caption
+    st.caption("Supports: PDF, Word, Excel, CSV, Text files")
     
     uploaded_files = st.file_uploader(
         "Upload files for additional context",
-        type=['txt', 'pdf', 'docx', 'doc', 'csv'],  # Removed CSV/Excel types
-        accept_multiple_files= True,  
-        help="Extract content from documents"  
+        type=['txt', 'pdf', 'docx', 'doc', 'xlsx', 'xls', 'csv'],
+        accept_multiple_files=True,
+        help="Extract and summarize content from your files"
     )
     
     if uploaded_files:
@@ -379,24 +333,13 @@ with st.sidebar:
         
         st.write(f"**Total size:** {total_size:.1f} KB")
         
-
-        
         if st.button("Process All Files", type="primary"):
-            with st.spinner("🔄 Processing files..."):
+            with st.spinner("🔄 Processing files with smart extraction..."):
                 try:
-                    # Process files and separate CSV files for dynamic analysis
                     session_context = file_processing.process_uploaded_files(uploaded_files)
                     st.session_state.uploaded_context = session_context
-                    
-                    # Count different file types
-                    csv_files = [f for f in uploaded_files if f.type == "text/csv"]
-                    static_files = [f for f in uploaded_files if f.type != "text/csv"]
-                    
                     st.write(f"✅ Successfully processed {len(uploaded_files)} files!")
-                    if static_files:
-                        st.write(f"📄 {len(static_files)} static file(s) added to context")
-                    if csv_files:
-                        st.write(f"📊 {len(csv_files)} CSV file(s) ready for dynamic analysis")
+                    
                 except Exception as e:
                     st.error(f"❌ Error processing files: {str(e)}")
     
@@ -414,14 +357,14 @@ with st.sidebar:
             st.metric("Est. Tokens", f"{estimated_tokens:,}")
         
         # Show context preview
-        with st.expander("Preview uploaded content"):
+        with st.expander("👀 Preview uploaded content"):
             preview_length = min(1000, len(st.session_state.uploaded_context))
             preview = st.session_state.uploaded_context[:preview_length]
             if len(st.session_state.uploaded_context) > preview_length:
                 preview += "\n\n[... more content available ...]"
             st.text(preview)
         
-        if st.button("Clear All Files"):
+        if st.button("🗑️ Clear All Files"):
             st.session_state.uploaded_context = ""
             st.success("Files cleared!")
             st.rerun()
@@ -475,7 +418,8 @@ with st.sidebar:
             st.success("Chat history cleared!")
 
 
-# [Rest of your charts section and modal code remains exactly the same...]
+
+
 
 # Charts section
 st.header("Marketing Mix Analysis Charts")
@@ -686,7 +630,7 @@ with st.expander("Display Charts", expanded=False):
                 st.write("- HTML file not found")
                 st.write("- Data extraction error")
 
-if st.button("Click For Budget Optimization Summary Report"):
+if st.button("Click For Optimization Summary Report"):
     st.text(insights_report)
 
 if st.button("Click For Optimization Dashboard"):
@@ -728,8 +672,6 @@ if st.session_state.get("show_modal", False):
             height=900,  # Increased height
             scrolling=True
         )
-
-        st.session_state.show_modal = False
         
     
     show_html_modal()

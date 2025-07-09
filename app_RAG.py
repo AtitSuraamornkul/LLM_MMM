@@ -5,8 +5,11 @@ import time
 import re
 from dotenv import load_dotenv
 import llm
-import check_token
+import utils.check_token as check_token
 import tiktoken
+
+# Load model directly
+from transformers import AutoModelForCausalLM
 
 from pinecone import Pinecone
 

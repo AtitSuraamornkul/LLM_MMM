@@ -17,13 +17,13 @@ pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
 
 # set the pinecone index
 
-index_name = "planidac"
+index_name = "planidac-v2"
 index = pc.Index(index_name)
 
 # initialize embeddings model + vector store
 
 embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"  # Popular lightweight model
+    model_name="BAAI/bge-base-en-v1.5"  # Popular lightweight model
 )
 vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 
@@ -48,7 +48,7 @@ retriever = vector_store.as_retriever(
     search_type="similarity_score_threshold",
     search_kwargs={"k": 5, "score_threshold": 0.5},
 )
-results = retriever.invoke("what is the response curve for meta")
+results = retriever.invoke("what is the diminishing return")
 
 print("RESULTS:")
 
