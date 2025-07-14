@@ -8,7 +8,8 @@ import os
 
 import streamlit as st
 from langchain_experimental.agents import create_csv_agent
-from langchain_ollama import ChatOllama
+#from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 
 
 def process_csv_with_agent(uploaded_file, user_prompt):
@@ -19,10 +20,10 @@ def process_csv_with_agent(uploaded_file, user_prompt):
             tmp_file_path = tmp_file.name
         
         try:
-            llm = ChatOllama(
-                model="llama3.2:3b",  # You can change this to your preferred model
+            llm = ChatGroq(
+                model="llama-3.3-70b-versatile",  # You can change this to your preferred model
                 temperature=0,
-                base_url="http://localhost:11434",  # Default Ollama URL
+                #base_url="http://localhost:11434",  # Default Ollama URL
                 # timeout=300,  # 5 minutes timeout for complex analysis
             )
 

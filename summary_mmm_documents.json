@@ -1,0 +1,894 @@
+[
+  {
+    "page_content": "Channel Contribution Analysis:\n\nBusiness Context: Your channel contributions help you\nunderstand what drove your revenue. Activation and Facebook drove the most overall\nrevenue.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "channel_contribution",
+      "section_name": "Channel Contribution Analysis",
+      "content_type": "general_analysis",
+      "content_length": 177,
+      "word_count": 23,
+      "created_at": "2025-07-14T14:31:02.557601",
+      "analysis_focus": "contribution_analysis"
+    }
+  },
+  {
+    "page_content": "Revenue Attribution:\n- Baseline revenue accounts for 88.0% of total revenue\n- Marketing channels drive 12.0% of total revenue\n- Total revenue split: 88.0% organic/baseline vs 12.0% paid marketing",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "revenue_attribution",
+      "section_name": "Revenue Attribution",
+      "content_type": "revenue_analysis",
+      "content_length": 195,
+      "word_count": 29,
+      "created_at": "2025-07-14T14:31:02.557808",
+      "analysis_focus": "contribution_analysis"
+    }
+  },
+  {
+    "page_content": "Marketing Channel Performance:\n- ACTIVATION contributes 4.1% of total revenue ($49,697,312)\n- FACEBOOK contributes 2.1% of total revenue ($25,648,736)\n- KOL contributes 1.6% of total revenue ($19,866,100)\n- YOUTUBE contributes 1.4% of total revenue ($17,402,620)\n- RADIO contributes 1.2% of total revenue ($14,916,628)\n- TV_SPOT contributes 1.2% of total revenue ($14,483,313)\n- TV_SPONSOR contributes 0.1% of total revenue ($1,706,650)\n- KOL_BOOST contributes 0.1% of total revenue ($1,326,770)\n- TIKTOK contributes 0.1% of total revenue ($676,812)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "marketing_channel_performance",
+      "section_name": "Marketing Channel Performance",
+      "content_type": "channel_performance",
+      "content_length": 549,
+      "word_count": 75,
+      "created_at": "2025-07-14T14:31:02.557817"
+    }
+  },
+  {
+    "page_content": "Key Insights:\n- ACTIVATION is the top performing marketing channel at 4.1%\n- Baseline/organic traffic dominates revenue generation at 88.0%\n- Marketing channels collectively contribute 12.0% to total revenue",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "key_insights",
+      "section_name": "Key Insights",
+      "content_type": "insights_methodology",
+      "content_length": 207,
+      "word_count": 29,
+      "created_at": "2025-07-14T14:31:02.557822"
+    }
+  },
+  {
+    "page_content": "Methodology: Note: This graphic encompasses all of\nyour revenue drivers, but breaks down your marketing revenue by the baseline\nand all channels.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "methodology",
+      "section_name": "Methodology",
+      "content_type": "insights_methodology",
+      "content_length": 145,
+      "word_count": 22,
+      "created_at": "2025-07-14T14:31:02.557827"
+    }
+  },
+  {
+    "page_content": "Marketing Channel Spend and ROI Analysis:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "spend_roi_analysis",
+      "section_name": "Marketing Channel Spend and ROI Analysis",
+      "content_type": "budget_analysis",
+      "content_length": 41,
+      "word_count": 6,
+      "created_at": "2025-07-14T14:31:02.557829"
+    }
+  },
+  {
+    "page_content": "Performance Overview:\n- Marketing channels account for 100.0% of attributed revenue\n- Total marketing spend allocation: 100.0%\n- Average ROI across all channels: 4.0x",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "performance_overview",
+      "section_name": "Performance Overview",
+      "content_type": "roi_analysis",
+      "content_length": 166,
+      "word_count": 24,
+      "created_at": "2025-07-14T14:31:02.557832"
+    }
+  },
+  {
+    "page_content": "Channel Performance by ROI:\n- KOL_BOOST: 5.0x ROI, 0.9% revenue share, 0.6% spend share\n- TIKTOK: 5.0x ROI, 0.5% revenue share, 0.3% spend share\n- TV_SPONSOR: 5.0x ROI, 1.2% revenue share, 0.8% spend share\n- RADIO: 4.5x ROI, 10.2% revenue share, 7.3% spend share\n- YOUTUBE: 4.0x ROI, 11.9% revenue share, 9.7% spend share\n- KOL: 3.9x ROI, 13.6% revenue share, 11.4% spend share\n- ACTIVATION: 3.8x ROI, 34.1% revenue share, 28.7% spend share\n- FACEBOOK: 3.6x ROI, 17.6% revenue share, 15.8% spend share\n- TV_SPOT: 1.3x ROI, 9.9% revenue share, 25.5% spend share",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "channel_performance_roi",
+      "section_name": "Channel Performance by ROI",
+      "content_type": "roi_analysis",
+      "content_length": 560,
+      "word_count": 94,
+      "created_at": "2025-07-14T14:31:02.557837"
+    }
+  },
+  {
+    "page_content": "Channel Efficiency Analysis:\n- Most efficient spend allocation: KOL_BOOST (revenue/spend ratio: 1.55)\n- Least efficient spend allocation: TV_SPOT (revenue/spend ratio: 0.39)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "channel_efficiency",
+      "section_name": "Channel Efficiency Analysis",
+      "content_type": "budget_analysis",
+      "content_length": 173,
+      "word_count": 21,
+      "created_at": "2025-07-14T14:31:02.557840"
+    }
+  },
+  {
+    "page_content": "ROI Performance:\n- Highest ROI: KOL_BOOST at 5.0x return\n- Lowest ROI: TV_SPOT at 1.3x return\n- ROI range: 1.3x to 5.0x across all channels",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_performance",
+      "section_name": "ROI Performance",
+      "content_type": "roi_analysis",
+      "content_length": 139,
+      "word_count": 25,
+      "created_at": "2025-07-14T14:31:02.557843"
+    }
+  },
+  {
+    "page_content": "Budget Allocation Insights:\n- KOL_BOOST: Over-performing (generates 0.9% revenue with 0.6% spend)\n- TIKTOK: Over-performing (generates 0.5% revenue with 0.3% spend)\n- TV_SPONSOR: Over-performing (generates 1.2% revenue with 0.8% spend)\n- RADIO: Over-performing (generates 10.2% revenue with 7.3% spend)\n- YOUTUBE: Over-performing (generates 11.9% revenue with 9.7% spend)\n- KOL: Over-performing (generates 13.6% revenue with 11.4% spend)\n- ACTIVATION: Over-performing (generates 34.1% revenue with 28.7% spend)\n- FACEBOOK: Over-performing (generates 17.6% revenue with 15.8% spend)\n- TV_SPOT: Under-performing (generates 9.9% revenue with 25.5% spend)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "budget_allocation_insights",
+      "section_name": "Budget Allocation Insights",
+      "content_type": "budget_analysis",
+      "content_length": 651,
+      "word_count": 84,
+      "created_at": "2025-07-14T14:31:02.557849"
+    }
+  },
+  {
+    "page_content": "Methodology: Note: Return on investment is calculated by\ndividing the revenue attributed to a channel by marketing costs.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "methodology",
+      "section_name": "Methodology",
+      "content_type": "insights_methodology",
+      "content_length": 121,
+      "word_count": 18,
+      "created_at": "2025-07-14T14:31:02.557853"
+    }
+  },
+  {
+    "page_content": "=== MONTHLY CHANNEL PERFORMANCE WITH ANOMALIES ===\nMonthly Channel Performance Analysis with Anomaly Detection:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_performance",
+      "section_name": "=== MONTHLY CHANNEL PERFORMANCE WITH ANOMALIES ===",
+      "content_type": "channel_performance",
+      "content_length": 111,
+      "word_count": 14,
+      "created_at": "2025-07-14T14:31:02.557855"
+    }
+  },
+  {
+    "page_content": "ACTIVATION - Monthly Performance:\n- Average Monthly Revenue: $1,308,661\n- Peak Month: 2023-12 ($1,376,579)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 9 out of 24",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: ACTIVATION",
+      "content_type": "temporal_analysis",
+      "content_length": 164,
+      "word_count": 26,
+      "created_at": "2025-07-14T14:31:02.557859",
+      "channel_name": "activation",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "FACEBOOK - Monthly Performance:\n- Average Monthly Revenue: $291,767\n- Peak Month: 2022-11 ($598,305)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 20 out of 24\n- High Growth Periods: 2023-06 (+668%), 2023-11 (+1767%), 2024-04 (+24442%)\n- Decline Periods: 2023-05 (-91%), 2023-07 (-89%), 2023-10 (-89%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: FACEBOOK",
+      "content_type": "temporal_analysis",
+      "content_length": 301,
+      "word_count": 45,
+      "created_at": "2025-07-14T14:31:02.557924",
+      "channel_name": "facebook",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "KOL - Monthly Performance:\n- Average Monthly Revenue: $438,111\n- Peak Month: 2024-04 ($673,887)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 10 out of 24\n- Decline Periods: 2023-05 (-63%), 2024-01 (-69%), 2024-06 (-71%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: KOL",
+      "content_type": "temporal_analysis",
+      "content_length": 220,
+      "word_count": 35,
+      "created_at": "2025-07-14T14:31:02.557930",
+      "channel_name": "kol",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "KOL_BOOST - Monthly Performance:\n- Average Monthly Revenue: $31,406\n- Peak Month: 2024-04 ($69,155)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 9 out of 24\n- High Growth Periods: 2023-12 (+936%)\n- Decline Periods: 2023-05 (-81%), 2024-01 (-82%), 2024-05 (-72%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: KOL_BOOST",
+      "content_type": "temporal_analysis",
+      "content_length": 262,
+      "word_count": 41,
+      "created_at": "2025-07-14T14:31:02.557935",
+      "channel_name": "kol_boost",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "RADIO - Monthly Performance:\n- Average Monthly Revenue: $462,222\n- Peak Month: 2023-03 ($890,620)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 7 out of 24\n- Decline Periods: 2022-11 (-64%), 2022-12 (-78%), 2023-05 (-83%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: RADIO",
+      "content_type": "temporal_analysis",
+      "content_length": 221,
+      "word_count": 35,
+      "created_at": "2025-07-14T14:31:02.557940",
+      "channel_name": "radio",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "TIKTOK - Monthly Performance:\n- Average Monthly Revenue: $23,522\n- Peak Month: 2023-02 ($63,130)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 6 out of 24\n- Revenue Spikes Detected: 1\n  • 2023-02: $63,130 (+168% above average)\n- Decline Periods: 2023-03 (-57%), 2023-04 (-64%), 2024-05 (-78%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: TIKTOK",
+      "content_type": "temporal_analysis",
+      "content_length": 292,
+      "word_count": 46,
+      "created_at": "2025-07-14T14:31:02.557948",
+      "channel_name": "tiktok",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "TV_SPONSOR - Monthly Performance:\n- Average Monthly Revenue: $115,942\n- Peak Month: 2024-04 ($248,299)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 3 out of 24\n- Decline Periods: 2024-05 (-66%), 2024-06 (-81%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: TV_SPONSOR",
+      "content_type": "temporal_analysis",
+      "content_length": 210,
+      "word_count": 33,
+      "created_at": "2025-07-14T14:31:02.557953",
+      "channel_name": "tv_sponsor",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "TV_SPOT - Monthly Performance:\n- Average Monthly Revenue: $842,441\n- Peak Month: 2023-02 ($1,349,152)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 4 out of 24\n- Decline Periods: 2023-05 (-86%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: TV_SPOT",
+      "content_type": "temporal_analysis",
+      "content_length": 193,
+      "word_count": 31,
+      "created_at": "2025-07-14T14:31:02.557957",
+      "channel_name": "tv_spot",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "YOUTUBE - Monthly Performance:\n- Average Monthly Revenue: $489,576\n- Peak Month: 2023-03 ($849,421)\n- Lowest Month: 2022-07 ($0)\n- Active Months: 8 out of 24\n- Decline Periods: 2024-06 (-76%)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "monthly_channel_detail",
+      "section_name": "monthly_channel_detail: YOUTUBE",
+      "content_type": "temporal_analysis",
+      "content_length": 191,
+      "word_count": 31,
+      "created_at": "2025-07-14T14:31:02.557960",
+      "channel_name": "youtube",
+      "analysis_type": "monthly"
+    }
+  },
+  {
+    "page_content": "=== QUARTERLY CHANNEL TRENDS ===\nQuarterly Channel Performance Analysis with Trend Detection:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_trends",
+      "section_name": "=== QUARTERLY CHANNEL TRENDS ===",
+      "content_type": "channel_performance",
+      "content_length": 93,
+      "word_count": 12,
+      "created_at": "2025-07-14T14:31:02.557963"
+    }
+  },
+  {
+    "page_content": "ACTIVATION - Quarterly Analysis:\n- Trend Direction: Overall Growth\n- Best Quarter: 2023-Q4 ($1,376,579)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 3\n- Recent Performance (Last 2Q): $1,376,579 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: ACTIVATION",
+      "content_type": "temporal_analysis",
+      "content_length": 211,
+      "word_count": 31,
+      "created_at": "2025-07-14T14:31:02.557967",
+      "channel_name": "activation",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "FACEBOOK - Quarterly Analysis:\n- Trend Direction: Overall Growth\n- Best Quarter: 2022-Q4 ($597,634)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 7\n- Major Growth Quarters: 2024-Q2\n- Major Decline Quarters: 2023-Q2, 2024-Q1\n- Recent Performance (Last 2Q): $124,782 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: FACEBOOK",
+      "content_type": "temporal_analysis",
+      "content_length": 281,
+      "word_count": 42,
+      "created_at": "2025-07-14T14:31:02.557972",
+      "channel_name": "facebook",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "KOL - Quarterly Analysis:\n- Trend Direction: Overall Growth\n- Best Quarter: 2023-Q1 ($666,441)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 3\n- Major Decline Quarters: 2023-Q2, 2024-Q1\n- Recent Performance (Last 2Q): $64,354 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: KOL",
+      "content_type": "temporal_analysis",
+      "content_length": 242,
+      "word_count": 37,
+      "created_at": "2025-07-14T14:31:02.557976",
+      "channel_name": "kol",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "KOL_BOOST - Quarterly Analysis:\n- Trend Direction: Overall Growth\n- Best Quarter: 2023-Q1 ($50,203)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 3\n- Major Decline Quarters: 2023-Q2, 2024-Q1\n- Recent Performance (Last 2Q): $1,950 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: KOL_BOOST",
+      "content_type": "temporal_analysis",
+      "content_length": 246,
+      "word_count": 37,
+      "created_at": "2025-07-14T14:31:02.557981",
+      "channel_name": "kol_boost",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "RADIO - Quarterly Analysis:\n- Trend Direction: Stable\n- Best Quarter: 2023-Q1 ($890,620)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 2\n- Major Growth Quarters: 2023-Q1\n- Major Decline Quarters: 2023-Q2\n- Recent Performance (Last 2Q): $0 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: RADIO",
+      "content_type": "temporal_analysis",
+      "content_length": 255,
+      "word_count": 40,
+      "created_at": "2025-07-14T14:31:02.557985",
+      "channel_name": "radio",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "TIKTOK - Quarterly Analysis:\n- Trend Direction: Overall Growth\n- Best Quarter: 2023-Q1 ($27,169)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 2\n- Major Decline Quarters: 2023-Q2\n- Recent Performance (Last 2Q): $634 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: TIKTOK",
+      "content_type": "temporal_analysis",
+      "content_length": 232,
+      "word_count": 36,
+      "created_at": "2025-07-14T14:31:02.557990",
+      "channel_name": "tiktok",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "TV_SPONSOR - Quarterly Analysis:\n- Trend Direction: Overall Growth\n- Best Quarter: 2024-Q2 ($15,895)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 1\n- Recent Performance (Last 2Q): $7,948 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: TV_SPONSOR",
+      "content_type": "temporal_analysis",
+      "content_length": 204,
+      "word_count": 31,
+      "created_at": "2025-07-14T14:31:02.557993",
+      "channel_name": "tv_sponsor",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "TV_SPOT - Quarterly Analysis:\n- Trend Direction: Stable\n- Best Quarter: 2023-Q1 ($1,200,092)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 1\n- Major Decline Quarters: 2023-Q2\n- Recent Performance (Last 2Q): $0 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: TV_SPOT",
+      "content_type": "temporal_analysis",
+      "content_length": 226,
+      "word_count": 35,
+      "created_at": "2025-07-14T14:31:02.557997",
+      "channel_name": "tv_spot",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "YOUTUBE - Quarterly Analysis:\n- Trend Direction: Overall Growth\n- Best Quarter: 2023-Q1 ($849,421)\n- Worst Quarter: 2022-Q3 ($0)\n- Total Quarters Active: 3\n- Major Decline Quarters: 2023-Q2, 2023-Q4\n- Recent Performance (Last 2Q): $73,422 average",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "quarterly_channel_detail",
+      "section_name": "quarterly_channel_detail: YOUTUBE",
+      "content_type": "temporal_analysis",
+      "content_length": 246,
+      "word_count": 37,
+      "created_at": "2025-07-14T14:31:02.558001",
+      "channel_name": "youtube",
+      "analysis_type": "quarterly"
+    }
+  },
+  {
+    "page_content": "=== SPIKE AND DIP ANALYSIS ===\nRevenue Anomaly Analysis - Spikes and Dips Across All Channels:\n\nTop Revenue Spikes (Highest Magnitude):\n1. TIKTOK in 2023-02: $63,130 (+168% above average)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "spike_dip_analysis",
+      "section_name": "=== SPIKE AND DIP ANALYSIS ===",
+      "content_type": "general_analysis",
+      "content_length": 187,
+      "word_count": 29,
+      "created_at": "2025-07-14T14:31:02.558007"
+    }
+  },
+  {
+    "page_content": "Seasonal Patterns:\n- Most Common Spike Month: February (1 occurrences)\n\nChannel Volatility Analysis (Revenue Consistency):\n- Most Stable Channel: ACTIVATION (7% volatility)\n- Most Volatile Channel: TV_SPONSOR (103% volatility)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "seasonal_patterns",
+      "section_name": "Seasonal Patterns",
+      "content_type": "general_analysis",
+      "content_length": 226,
+      "word_count": 29,
+      "created_at": "2025-07-14T14:31:02.558013"
+    }
+  },
+  {
+    "page_content": "=== CHANNEL COMPARISON ===\nChannel Performance Comparison and Rankings:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "channel_comparison",
+      "section_name": "=== CHANNEL COMPARISON ===",
+      "content_type": "channel_performance",
+      "content_length": 71,
+      "word_count": 9,
+      "created_at": "2025-07-14T14:31:02.558015"
+    }
+  },
+  {
+    "page_content": "Total Revenue Rankings:\n1. ACTIVATION: $11,777,945 cumulative revenue\n2. FACEBOOK: $5,835,347 cumulative revenue\n3. KOL: $4,381,111 cumulative revenue\n4. YOUTUBE: $3,916,611 cumulative revenue\n5. TV_SPOT: $3,369,766 cumulative revenue\n6. RADIO: $3,235,556 cumulative revenue\n7. TV_SPONSOR: $347,826 cumulative revenue\n8. KOL_BOOST: $282,656 cumulative revenue\n9. TIKTOK: $141,133 cumulative revenue\n\nConsistency Rankings (% of months active):\n1. FACEBOOK: 83% of months with revenue\n2. KOL: 42% of months with revenue\n3. ACTIVATION: 38% of months with revenue\n4. KOL_BOOST: 38% of months with revenue\n5. YOUTUBE: 33% of months with revenue\n6. RADIO: 29% of months with revenue\n7. TIKTOK: 25% of months with revenue\n8. TV_SPOT: 17% of months with revenue\n9. TV_SPONSOR: 12% of months with revenue\n\nPeak Performance Rankings (Highest single month):\n1. ACTIVATION: $1,376,579 peak monthly revenue\n2. TV_SPOT: $1,349,152 peak monthly revenue\n3. RADIO: $890,620 peak monthly revenue\n4. YOUTUBE: $849,421 peak monthly revenue\n5. KOL: $673,887 peak monthly revenue\n6. FACEBOOK: $598,305 peak monthly revenue\n7. TV_SPONSOR: $248,299 peak monthly revenue\n8. KOL_BOOST: $69,155 peak monthly revenue\n9. TIKTOK: $63,130 peak monthly revenue",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "revenue_rankings",
+      "section_name": "Total Revenue Rankings",
+      "content_type": "temporal_analysis",
+      "content_length": 1228,
+      "word_count": 177,
+      "created_at": "2025-07-14T14:31:02.558028",
+      "analysis_focus": "channel_ranking"
+    }
+  },
+  {
+    "page_content": "Channel Lifecycle Analysis:\n- KOL: Active/Mature (Active: 2023-02 to 2024-06)\n- TV_SPOT: Dormant (Active: 2023-02 to 2023-05)\n- TV_SPONSOR: Launch Phase (Active: 2024-04 to 2024-06)\n- RADIO: Dormant (Active: 2022-10 to 2023-05)\n- ACTIVATION: Active/Mature (Active: 2023-10 to 2024-06)\n- FACEBOOK: Active/Mature (Active: 2022-10 to 2024-06)\n- YOUTUBE: Active/Mature (Active: 2023-02 to 2024-06)\n- TIKTOK: Active/Mature (Active: 2023-02 to 2024-06)\n- KOL_BOOST: Active/Mature (Active: 2023-03 to 2024-06)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "lifecycle_analysis",
+      "section_name": "Channel Lifecycle Analysis",
+      "content_type": "general_analysis",
+      "content_length": 502,
+      "word_count": 67,
+      "created_at": "2025-07-14T14:31:02.558037"
+    }
+  },
+  {
+    "page_content": "=== MOMENTUM ANALYSIS ===\nChannel Growth Momentum and Trend Analysis:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_analysis",
+      "section_name": "=== MOMENTUM ANALYSIS ===",
+      "content_type": "general_analysis",
+      "content_length": 69,
+      "word_count": 10,
+      "created_at": "2025-07-14T14:31:02.558040"
+    }
+  },
+  {
+    "page_content": "KOL - 6-Month Momentum Analysis:\n- Growth Momentum: Strong Positive (+809%)\n- Trend Consistency: 20% of months showed growth\n- Recent Average (Last 3 months): $413,395\n- Previous Average (3 months prior): $45,479",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: KOL",
+      "content_type": "general_analysis",
+      "content_length": 212,
+      "word_count": 33,
+      "created_at": "2025-07-14T14:31:02.558045",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "TV_SPOT - 6-Month Momentum Analysis:\n- Growth Momentum: Neutral (+0%)\n- Trend Consistency: 0% of months showed growth\n- Recent Average (Last 3 months): $0\n- Previous Average (3 months prior): $0",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: TV_SPOT",
+      "content_type": "general_analysis",
+      "content_length": 194,
+      "word_count": 32,
+      "created_at": "2025-07-14T14:31:02.558070",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "TV_SPONSOR - 6-Month Momentum Analysis:\n- Growth Momentum: Neutral (+0%)\n- Trend Consistency: 20% of months showed growth\n- Recent Average (Last 3 months): $115,942\n- Previous Average (3 months prior): $0",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: TV_SPONSOR",
+      "content_type": "general_analysis",
+      "content_length": 204,
+      "word_count": 32,
+      "created_at": "2025-07-14T14:31:02.558094",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "RADIO - 6-Month Momentum Analysis:\n- Growth Momentum: Neutral (+0%)\n- Trend Consistency: 0% of months showed growth\n- Recent Average (Last 3 months): $0\n- Previous Average (3 months prior): $0",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: RADIO",
+      "content_type": "general_analysis",
+      "content_length": 192,
+      "word_count": 32,
+      "created_at": "2025-07-14T14:31:02.558119",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "ACTIVATION - 6-Month Momentum Analysis:\n- Growth Momentum: Neutral (+0%)\n- Trend Consistency: 80% of months showed growth\n- Recent Average (Last 3 months): $1,322,824\n- Previous Average (3 months prior): $1,322,824",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: ACTIVATION",
+      "content_type": "general_analysis",
+      "content_length": 214,
+      "word_count": 32,
+      "created_at": "2025-07-14T14:31:02.558142",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "FACEBOOK - 6-Month Momentum Analysis:\n- Growth Momentum: Strong Positive (+571%)\n- Trend Consistency: 20% of months showed growth\n- Recent Average (Last 3 months): $312,366\n- Previous Average (3 months prior): $46,584",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: FACEBOOK",
+      "content_type": "general_analysis",
+      "content_length": 217,
+      "word_count": 33,
+      "created_at": "2025-07-14T14:31:02.558166",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "YOUTUBE - 6-Month Momentum Analysis:\n- Growth Momentum: Neutral (+0%)\n- Trend Consistency: 20% of months showed growth\n- Recent Average (Last 3 months): $531,151\n- Previous Average (3 months prior): $0",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: YOUTUBE",
+      "content_type": "general_analysis",
+      "content_length": 201,
+      "word_count": 32,
+      "created_at": "2025-07-14T14:31:02.558191",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "TIKTOK - 6-Month Momentum Analysis:\n- Growth Momentum: Neutral (+0%)\n- Trend Consistency: 20% of months showed growth\n- Recent Average (Last 3 months): $13,657\n- Previous Average (3 months prior): $0",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: TIKTOK",
+      "content_type": "general_analysis",
+      "content_length": 199,
+      "word_count": 32,
+      "created_at": "2025-07-14T14:31:02.558215",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "KOL_BOOST - 6-Month Momentum Analysis:\n- Growth Momentum: Strong Positive (+928%)\n- Trend Consistency: 20% of months showed growth\n- Recent Average (Last 3 months): $30,768\n- Previous Average (3 months prior): $2,992",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "momentum_channel_detail",
+      "section_name": "momentum_channel_detail: KOL_BOOST",
+      "content_type": "general_analysis",
+      "content_length": 216,
+      "word_count": 33,
+      "created_at": "2025-07-14T14:31:02.558238",
+      "channel_name": "unknown",
+      "analysis_type": "momentum"
+    }
+  },
+  {
+    "page_content": "Title: Return on investment\n\nInsights: Your return on investment (ROI) helps\nyou understand how your marketing activities impacted your business objectives.\nKol_Boost drove the highest ROI at 5.0. For every $1\nyou spent on Kol_Boost, you saw $5.00 in revenue.\nKol_Boost had the highest effectiveness, which is your\nincremental outcome per media unit. Tv_Sponsor had the highest marginal\nROI at 2.98. Kol_Boost drove the lowest CPIK\nat $0.20. For every KPI unit, you spent $0.20.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_insights",
+      "section_name": "Title Return on investment",
+      "content_type": "insights_methodology",
+      "content_length": 478,
+      "word_count": 75,
+      "created_at": "2025-07-14T14:31:02.558267"
+    }
+  },
+  {
+    "page_content": "ROI vs Effectiveness Analysis:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_effectiveness",
+      "section_name": "ROI vs Effectiveness Analysis",
+      "content_type": "general_analysis",
+      "content_length": 30,
+      "word_count": 4,
+      "created_at": "2025-07-14T14:31:02.558274"
+    }
+  },
+  {
+    "page_content": "Performance Overview:\n- Average ROI across channels: 4.0x\n- Average effectiveness: 4.0057 incremental outcome per impression\n- Total media spend analyzed: $45,197,221",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "performance_overview",
+      "section_name": "Performance Overview",
+      "content_type": "roi_analysis",
+      "content_length": 166,
+      "word_count": 22,
+      "created_at": "2025-07-14T14:31:02.558276"
+    }
+  },
+  {
+    "page_content": "ROI Rankings:\n1. KOL_BOOST: 5.0x ROI\n2. TIKTOK: 5.0x ROI\n3. TV_SPONSOR: 5.0x ROI\n4. RADIO: 4.5x ROI\n5. YOUTUBE: 4.0x ROI\n6. KOL: 3.9x ROI\n7. ACTIVATION: 3.8x ROI\n8. FACEBOOK: 3.6x ROI\n9. TV_SPOT: 1.3x ROI",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_rankings",
+      "section_name": "ROI Rankings",
+      "content_type": "ranking_analysis",
+      "content_length": 204,
+      "word_count": 38,
+      "created_at": "2025-07-14T14:31:02.558280",
+      "analysis_focus": "performance_ranking"
+    }
+  },
+  {
+    "page_content": "Effectiveness Rankings:\n1. KOL_BOOST: 5.0005 outcome per impression\n2. TIKTOK: 5.0002 outcome per impression\n3. TV_SPONSOR: 4.9981 outcome per impression\n4. RADIO: 4.5270 outcome per impression\n5. YOUTUBE: 3.9836 outcome per impression\n6. KOL: 3.8645 outcome per impression\n7. ACTIVATION: 3.8338 outcome per impression\n8. FACEBOOK: 3.5885 outcome per impression\n9. TV_SPOT: 1.2550 outcome per impression",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "effectiveness_rankings",
+      "section_name": "Effectiveness Rankings",
+      "content_type": "ranking_analysis",
+      "content_length": 403,
+      "word_count": 56,
+      "created_at": "2025-07-14T14:31:02.558285",
+      "analysis_focus": "performance_ranking"
+    }
+  },
+  {
+    "page_content": "Spend Allocation:\n1. ACTIVATION: $12,963,048 (28.7% of total spend)\n2. TV_SPOT: $11,540,248 (25.5% of total spend)\n3. FACEBOOK: $7,147,552 (15.8% of total spend)\n4. KOL: $5,140,650 (11.4% of total spend)\n5. YOUTUBE: $4,368,572 (9.7% of total spend)\n6. RADIO: $3,295,000 (7.3% of total spend)\n7. TV_SPONSOR: $341,463 (0.8% of total spend)\n8. KOL_BOOST: $265,330 (0.6% of total spend)\n9. TIKTOK: $135,358 (0.3% of total spend)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "spend_allocation",
+      "section_name": "Spend Allocation",
+      "content_type": "budget_analysis",
+      "content_length": 424,
+      "word_count": 65,
+      "created_at": "2025-07-14T14:31:02.558290"
+    }
+  },
+  {
+    "page_content": "Channel Performance Categories:\n\nOptimization Needed:\n- KOL (3.9x ROI, 3.8645 effectiveness)\n- TV_SPOT (1.3x ROI, 1.2550 effectiveness)\n- ACTIVATION (3.8x ROI, 3.8338 effectiveness)\n- FACEBOOK (3.6x ROI, 3.5885 effectiveness)\n- YOUTUBE (4.0x ROI, 3.9836 effectiveness)\n\nStar Performers:\n- TV_SPONSOR (5.0x ROI, 4.9981 effectiveness)\n- RADIO (4.5x ROI, 4.5270 effectiveness)\n- TIKTOK (5.0x ROI, 5.0002 effectiveness)\n- KOL_BOOST (5.0x ROI, 5.0005 effectiveness)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "performance_categories",
+      "section_name": "Channel Performance Categories",
+      "content_type": "roi_analysis",
+      "content_length": 460,
+      "word_count": 61,
+      "created_at": "2025-07-14T14:31:02.558294"
+    }
+  },
+  {
+    "page_content": "Strategic Insights:\n- KOL_BOOST delivers highest ROI (5.0x) - prioritize for budget allocation\n- KOL_BOOST shows highest effectiveness (5.0005) - strong media performance per impression\n- ACTIVATION receives largest budget ($12,963,048) - monitor efficiency closely\n- KOL: Both ROI and effectiveness below average - requires optimization or budget reallocation\n- TV_SPOT: Both ROI and effectiveness below average - requires optimization or budget reallocation\n- TV_SPONSOR: Ideal performance - high ROI and effectiveness, maintain investment\n- RADIO: Ideal performance - high ROI and effectiveness, maintain investment\n- ACTIVATION: Both ROI and effectiveness below average - requires optimization or budget reallocation\n- FACEBOOK: Both ROI and effectiveness below average - requires optimization or budget reallocation\n- YOUTUBE: Both ROI and effectiveness below average - requires optimization or budget reallocation\n- TIKTOK: Ideal performance - high ROI and effectiveness, maintain investment\n- KOL_BOOST: Ideal performance - high ROI and effectiveness, maintain investment",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "strategic_insights",
+      "section_name": "Strategic Insights",
+      "content_type": "roi_analysis",
+      "content_length": 1078,
+      "word_count": 149,
+      "created_at": "2025-07-14T14:31:02.558301"
+    }
+  },
+  {
+    "page_content": "Methodology: Note: Effectiveness measures the\nincremental outcome generated per impression. A low ROI does not necessarily\nimply low media effectiveness; it may result from high media cost, as positioned\nin the upper-left corner of the chart. Conversely, a high ROI can coexist with\nlow media effectiveness and low media costs, as indicated in the bottom-right\ncorner of the chart. The diagonal section of the chart suggests that the ROI is\nprimarily influenced by media effectiveness. The size of the bubbles represents\nthe scale of the media spend.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "methodology",
+      "section_name": "Methodology",
+      "content_type": "budget_analysis",
+      "content_length": 550,
+      "word_count": 87,
+      "created_at": "2025-07-14T14:31:02.558308"
+    }
+  },
+  {
+    "page_content": "ROI vs Marginal ROI Performance Analysis:\n\nPerformance Metrics:\n- Average ROI across channels: 4.0x\n- Average Marginal ROI: 1.9x (additional return per additional dollar)\n- Total media spend analyzed: $45,197,221",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_marginal",
+      "section_name": "ROI vs Marginal ROI Performance Analysis",
+      "content_type": "roi_analysis",
+      "content_length": 212,
+      "word_count": 30,
+      "created_at": "2025-07-14T14:31:02.558311"
+    }
+  },
+  {
+    "page_content": "ROI Rankings:\n1. KOL_BOOST: 5.0x ROI\n2. TIKTOK: 5.0x ROI\n3. TV_SPONSOR: 5.0x ROI\n4. RADIO: 4.5x ROI\n5. YOUTUBE: 4.0x ROI\n6. KOL: 3.9x ROI\n7. ACTIVATION: 3.8x ROI\n8. FACEBOOK: 3.6x ROI\n9. TV_SPOT: 1.3x ROI\n\nMarginal ROI Rankings (Incremental Efficiency):\n1. TV_SPONSOR: 3.0x marginal ROI\n2. KOL_BOOST: 2.5x marginal ROI\n3. YOUTUBE: 2.5x marginal ROI\n4. ACTIVATION: 2.2x marginal ROI\n5. KOL: 1.9x marginal ROI\n6. TIKTOK: 1.5x marginal ROI\n7. RADIO: 1.4x marginal ROI\n8. FACEBOOK: 1.3x marginal ROI\n9. TV_SPOT: 0.6x marginal ROI\n\nSpend Distribution:\n1. ACTIVATION: $12,963,048 (28.7% of total spend)\n2. TV_SPOT: $11,540,248 (25.5% of total spend)\n3. FACEBOOK: $7,147,552 (15.8% of total spend)\n4. KOL: $5,140,650 (11.4% of total spend)\n5. YOUTUBE: $4,368,572 (9.7% of total spend)\n6. RADIO: $3,295,000 (7.3% of total spend)\n7. TV_SPONSOR: $341,463 (0.8% of total spend)\n8. KOL_BOOST: $265,330 (0.6% of total spend)\n9. TIKTOK: $135,358 (0.3% of total spend)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_rankings",
+      "section_name": "ROI Rankings",
+      "content_type": "budget_analysis",
+      "content_length": 953,
+      "word_count": 153,
+      "created_at": "2025-07-14T14:31:02.558320",
+      "analysis_focus": "performance_ranking"
+    }
+  },
+  {
+    "page_content": "Saturation Indicators:\n- KOL: Moderate saturation signal (ROI/Marginal ROI ratio: 2.1x)\n- TV_SPOT: Moderate saturation signal (ROI/Marginal ROI ratio: 2.1x)\n- TV_SPONSOR: Low saturation signal (ROI/Marginal ROI ratio: 1.7x)\n- RADIO: High saturation signal (ROI/Marginal ROI ratio: 3.2x)\n- ACTIVATION: Low saturation signal (ROI/Marginal ROI ratio: 1.8x)\n- FACEBOOK: High saturation signal (ROI/Marginal ROI ratio: 2.7x)\n- YOUTUBE: Low saturation signal (ROI/Marginal ROI ratio: 1.6x)\n- TIKTOK: High saturation signal (ROI/Marginal ROI ratio: 3.4x)\n- KOL_BOOST: Low saturation signal (ROI/Marginal ROI ratio: 2.0x)\n\nEfficiency Gap Analysis:\n- KOL: 2.0x gap between current and marginal returns\n- TV_SPOT: 0.7x gap between current and marginal returns\n- TV_SPONSOR: 2.0x gap between current and marginal returns\n- RADIO: 3.1x gap between current and marginal returns\n- ACTIVATION: 1.7x gap between current and marginal returns\n- FACEBOOK: 2.3x gap between current and marginal returns\n- YOUTUBE: 1.5x gap between current and marginal returns\n- TIKTOK: 3.5x gap between current and marginal returns\n- KOL_BOOST: 2.5x gap between current and marginal returns\n\nPerformance Consistency:\n- ROI variation across channels: 1.11 standard deviation\n- Marginal ROI variation: 0.70 standard deviation\n- ROI and marginal ROI show similar variation patterns\n\nChannel Performance Patterns:\n- KOL_BOOST has highest ROI while TV_SPONSOR has highest marginal ROI - different optimization opportunities\n- KOL: Low spend allocation (11.4%) but above-average marginal efficiency\n- TV_SPONSOR: Low spend allocation (0.8%) but above-average marginal efficiency\n- YOUTUBE: Low spend allocation (9.7%) but above-average marginal efficiency\n- KOL_BOOST: Low spend allocation (0.6%) but above-average marginal efficiency",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "saturation_indicators",
+      "section_name": "Saturation Indicators",
+      "content_type": "roi_analysis",
+      "content_length": 1792,
+      "word_count": 251,
+      "created_at": "2025-07-14T14:31:02.558330"
+    }
+  },
+  {
+    "page_content": "Diminishing Returns Assessment:\n- KOL: Moderate diminishing returns (current ROI 2.1x higher than marginal)\n- TV_SPOT: Moderate diminishing returns (current ROI 2.1x higher than marginal)\n- TV_SPONSOR: Minimal diminishing returns (current ROI 1.7x higher than marginal)\n- RADIO: Strong diminishing returns pattern (current ROI 3.2x higher than marginal)\n- ACTIVATION: Minimal diminishing returns (current ROI 1.8x higher than marginal)\n- FACEBOOK: Moderate diminishing returns (current ROI 2.7x higher than marginal)\n- YOUTUBE: Minimal diminishing returns (current ROI 1.6x higher than marginal)\n- TIKTOK: Strong diminishing returns pattern (current ROI 3.4x higher than marginal)\n- KOL_BOOST: Minimal diminishing returns (current ROI 2.0x higher than marginal)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "diminishing_returns",
+      "section_name": "Diminishing Returns Assessment",
+      "content_type": "general_analysis",
+      "content_length": 761,
+      "word_count": 104,
+      "created_at": "2025-07-14T14:31:02.558343"
+    }
+  },
+  {
+    "page_content": "Methodology: Note: Marginal ROI measures the additional\nreturn generated for every additional dollar spent. It's an indicator of\nefficiency of additional spend. Channels with a high ROI but a low marginal ROI\nare likely in the saturation phase, where the initial investments have paid off,\nbut additional investment does not bring in as much return. Conversely, channels\nthat have a high ROI and a high marginal ROI perform well and continue to yield\nhigh returns with additional spending. The size of the bubbles represents the\nscale of the media spend.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "methodology",
+      "section_name": "Methodology",
+      "content_type": "budget_analysis",
+      "content_length": 554,
+      "word_count": 90,
+      "created_at": "2025-07-14T14:31:02.558351"
+    }
+  },
+  {
+    "page_content": "ROI and CPIK Performance Analysis with Confidence Intervals:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_cpik",
+      "section_name": "ROI and CPIK Performance Analysis with Confidence Intervals",
+      "content_type": "roi_analysis",
+      "content_length": 60,
+      "word_count": 8,
+      "created_at": "2025-07-14T14:31:02.558353",
+      "analysis_focus": "statistical_confidence"
+    }
+  },
+  {
+    "page_content": "ROI Performance with 90% Credible Intervals:\n1. KOL_BOOST:\n   - Point Estimate: 5.00x ROI\n   - Confidence Range: 4.91x to 5.10x\n   - Uncertainty Level: ±4% around point estimate\n2. TIKTOK:\n   - Point Estimate: 5.00x ROI\n   - Confidence Range: 4.95x to 5.05x\n   - Uncertainty Level: ±2% around point estimate\n3. TV_SPONSOR:\n   - Point Estimate: 5.00x ROI\n   - Confidence Range: 4.88x to 5.12x\n   - Uncertainty Level: ±5% around point estimate\n4. RADIO:\n   - Point Estimate: 4.53x ROI\n   - Confidence Range: 3.58x to 5.61x\n   - Uncertainty Level: ±45% around point estimate\n5. YOUTUBE:\n   - Point Estimate: 3.98x ROI\n   - Confidence Range: 2.95x to 5.22x\n   - Uncertainty Level: ±57% around point estimate\n6. KOL:\n   - Point Estimate: 3.86x ROI\n   - Confidence Range: 2.66x to 5.33x\n   - Uncertainty Level: ±69% around point estimate\n7. ACTIVATION:\n   - Point Estimate: 3.83x ROI\n   - Confidence Range: 1.84x to 6.24x\n   - Uncertainty Level: ±115% around point estimate\n8. FACEBOOK:\n   - Point Estimate: 3.59x ROI\n   - Confidence Range: 2.25x to 5.32x\n   - Uncertainty Level: ±86% around point estimate\n9. TV_SPOT:\n   - Point Estimate: 1.26x ROI\n   - Confidence Range: 0.73x to 1.92x\n   - Uncertainty Level: ±95% around point estimate\n\nROI Confidence Analysis:\n- Most Reliable ROI Estimate: TIKTOK (±2% uncertainty)\n- Least Reliable ROI Estimate: ACTIVATION (±115% uncertainty)\n\nROI Statistical Significance:\n- ACTIVATION and FACEBOOK: Overlapping confidence intervals (no statistically significant difference)\n- ACTIVATION and KOL: Overlapping confidence intervals (no statistically significant difference)\n- ACTIVATION and KOL_BOOST: Overlapping confidence intervals (no statistically significant difference)\n- ACTIVATION and RADIO: Overlapping confidence intervals (no statistically significant difference)\n- ACTIVATION and TIKTOK: Overlapping confidence intervals (no statistically significant difference)\n- ACTIVATION and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)\n- ACTIVATION and TV_SPOT: Overlapping confidence intervals (no statistically significant difference)\n- ACTIVATION and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)\n- FACEBOOK and KOL: Overlapping confidence intervals (no statistically significant difference)\n- FACEBOOK and KOL_BOOST: Overlapping confidence intervals (no statistically significant difference)\n- FACEBOOK and RADIO: Overlapping confidence intervals (no statistically significant difference)\n- FACEBOOK and TIKTOK: Overlapping confidence intervals (no statistically significant difference)\n- FACEBOOK and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)\n- FACEBOOK significantly outperforms TV_SPOT (non-overlapping intervals)\n- FACEBOOK and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)\n- KOL and KOL_BOOST: Overlapping confidence intervals (no statistically significant difference)\n- KOL and RADIO: Overlapping confidence intervals (no statistically significant difference)\n- KOL and TIKTOK: Overlapping confidence intervals (no statistically significant difference)\n- KOL and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)\n- KOL significantly outperforms TV_SPOT (non-overlapping intervals)\n- KOL and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)\n- KOL_BOOST and RADIO: Overlapping confidence intervals (no statistically significant difference)\n- KOL_BOOST and TIKTOK: Overlapping confidence intervals (no statistically significant difference)\n- KOL_BOOST and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)\n- KOL_BOOST significantly outperforms TV_SPOT (non-overlapping intervals)\n- KOL_BOOST and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)\n- RADIO and TIKTOK: Overlapping confidence intervals (no statistically significant difference)\n- RADIO and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)\n- RADIO significantly outperforms TV_SPOT (non-overlapping intervals)\n- RADIO and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)\n- TIKTOK and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)\n- TIKTOK significantly outperforms TV_SPOT (non-overlapping intervals)\n- TIKTOK and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)\n- TV_SPONSOR significantly outperforms TV_SPOT (non-overlapping intervals)\n- TV_SPONSOR and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)\n- YOUTUBE significantly outperforms TV_SPOT (non-overlapping intervals)",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "roi_confidence",
+      "section_name": "ROI Performance with 90% Credible Intervals",
+      "content_type": "roi_analysis",
+      "content_length": 4768,
+      "word_count": 576,
+      "created_at": "2025-07-14T14:31:02.558392",
+      "analysis_focus": "statistical_confidence"
+    }
+  },
+  {
+    "page_content": "CPIK Performance with 90% Credible Intervals:\n1. KOL_BOOST (Best to Worst CPIK):\n   - Point Estimate: $0.200 per KPI unit\n   - Confidence Range: $0.196 to $0.204\n   - Uncertainty Level: ±4% around point estimate\n2. TIKTOK (Best to Worst CPIK):\n   - Point Estimate: $0.200 per KPI unit\n   - Confidence Range: $0.198 to $0.202\n   - Uncertainty Level: ±2% around point estimate\n3. TV_SPONSOR (Best to Worst CPIK):\n   - Point Estimate: $0.200 per KPI unit\n   - Confidence Range: $0.195 to $0.205\n   - Uncertainty Level: ±5% around point estimate\n4. RADIO (Best to Worst CPIK):\n   - Point Estimate: $0.223 per KPI unit\n   - Confidence Range: $0.178 to $0.279\n   - Uncertainty Level: ±45% around point estimate\n5. YOUTUBE (Best to Worst CPIK):\n   - Point Estimate: $0.254 per KPI unit\n   - Confidence Range: $0.192 to $0.339\n   - Uncertainty Level: ±58% around point estimate\n6. KOL (Best to Worst CPIK):\n   - Point Estimate: $0.264 per KPI unit\n   - Confidence Range: $0.188 to $0.376\n   - Uncertainty Level: ±71% around point estimate\n7. ACTIVATION (Best to Worst CPIK):\n   - Point Estimate: $0.269 per KPI unit\n   - Confidence Range: $0.160 to $0.543\n   - Uncertainty Level: ±142% around point estimate\n8. FACEBOOK (Best to Worst CPIK):\n   - Point Estimate: $0.287 per KPI unit\n   - Confidence Range: $0.188 to $0.445\n   - Uncertainty Level: ±89% around point estimate\n9. TV_SPOT (Best to Worst CPIK):\n   - Point Estimate: $0.827 per KPI unit\n   - Confidence Range: $0.520 to $1.374\n   - Uncertainty Level: ±103% around point estimate\n\nCPIK Confidence Analysis:\n- Most Reliable CPIK Estimate: TIKTOK (±2% uncertainty)\n- Least Reliable CPIK Estimate: ACTIVATION (±142% uncertainty)\n\nCPIK Statistical Significance:\n- ACTIVATION and FACEBOOK: Overlapping CPIK intervals (no statistically significant difference)\n- ACTIVATION and KOL: Overlapping CPIK intervals (no statistically significant difference)\n- ACTIVATION and KOL_BOOST: Overlapping CPIK intervals (no statistically significant difference)\n- ACTIVATION and RADIO: Overlapping CPIK intervals (no statistically significant difference)\n- ACTIVATION and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)\n- ACTIVATION and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)\n- ACTIVATION and TV_SPOT: Overlapping CPIK intervals (no statistically significant difference)\n- ACTIVATION and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)\n- FACEBOOK and KOL: Overlapping CPIK intervals (no statistically significant difference)\n- FACEBOOK and KOL_BOOST: Overlapping CPIK intervals (no statistically significant difference)\n- FACEBOOK and RADIO: Overlapping CPIK intervals (no statistically significant difference)\n- FACEBOOK and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)\n- FACEBOOK and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)\n- FACEBOOK significantly more cost-efficient than TV_SPOT\n- FACEBOOK and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)\n- KOL and KOL_BOOST: Overlapping CPIK intervals (no statistically significant difference)\n- KOL and RADIO: Overlapping CPIK intervals (no statistically significant difference)\n- KOL and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)\n- KOL and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)\n- KOL significantly more cost-efficient than TV_SPOT\n- KOL and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)\n- KOL_BOOST and RADIO: Overlapping CPIK intervals (no statistically significant difference)\n- KOL_BOOST and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)\n- KOL_BOOST and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)\n- KOL_BOOST significantly more cost-efficient than TV_SPOT\n- KOL_BOOST and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)\n- RADIO and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)\n- RADIO and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)\n- RADIO significantly more cost-efficient than TV_SPOT\n- RADIO and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)\n- TIKTOK and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)\n- TIKTOK significantly more cost-efficient than TV_SPOT\n- TIKTOK and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)\n- TV_SPONSOR significantly more cost-efficient than TV_SPOT\n- TV_SPONSOR and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)\n- YOUTUBE significantly more cost-efficient than TV_SPOT",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "cpik_performance",
+      "section_name": "CPIK Performance with 90% Credible Intervals",
+      "content_type": "statistical_analysis",
+      "content_length": 4792,
+      "word_count": 630,
+      "created_at": "2025-07-14T14:31:02.558465",
+      "analysis_focus": "statistical_confidence"
+    }
+  },
+  {
+    "page_content": "Combined ROI and CPIK Insights:\n\nHigh Confidence Performers (Low uncertainty in both ROI and CPIK):\n- KOL_BOOST: 5.00x ROI (±4%), $0.200 CPIK (±4%)\n- TIKTOK: 5.00x ROI (±2%), $0.200 CPIK (±2%)\n- TV_SPONSOR: 5.00x ROI (±5%), $0.200 CPIK (±5%)\n- RADIO: 4.53x ROI (±45%), $0.223 CPIK (±45%)\n\nUncertainty Patterns:\n- Average ROI uncertainty: ±53%\n- Average CPIK uncertainty: ±58%\n- CPIK estimates show higher uncertainty than ROI estimates\n\nModel Reliability Assessment:\n- High ROI Confidence: KOL_BOOST, TIKTOK, TV_SPONSOR (narrow intervals)\n- Low ROI Confidence: ACTIVATION, FACEBOOK, TV_SPOT (wide intervals)\n- High CPIK Confidence: KOL_BOOST, TIKTOK, TV_SPONSOR (narrow intervals)\n- Low CPIK Confidence: ACTIVATION, FACEBOOK, KOL, TV_SPOT (wide intervals)\n\nMethodology Note: Note: CPIK (cost per incremental KPI) point\nestimate is determined by the posterior median, whereas ROI point estimate is\ndetermined by the posterior mean.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "combined_insights",
+      "section_name": "Combined ROI and CPIK Insights",
+      "content_type": "insights_methodology",
+      "content_length": 930,
+      "word_count": 134,
+      "created_at": "2025-07-14T14:31:02.558481"
+    }
+  },
+  {
+    "page_content": "Marketing Response Curves Performance Analysis:",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "response_curves",
+      "section_name": "Marketing Response Curves Performance Analysis",
+      "content_type": "general_analysis",
+      "content_length": 47,
+      "word_count": 5,
+      "created_at": "2025-07-14T14:31:02.558484"
+    }
+  },
+  {
+    "page_content": "Current Channel Performance:\n1. TV_SPONSOR:\n   - Current Spend: $341,463 (0.8% of total)\n   - Current Revenue: $1,706,650 (1.2% of total)\n   - Current ROI: 5.00x\n2. RADIO:\n   - Current Spend: $3,295,000 (7.4% of total)\n   - Current Revenue: $14,916,628 (10.4% of total)\n   - Current ROI: 4.53x\n3. YOUTUBE:\n   - Current Spend: $4,368,572 (9.8% of total)\n   - Current Revenue: $17,402,620 (12.1% of total)\n   - Current ROI: 3.98x\n4. KOL:\n   - Current Spend: $5,140,650 (11.5% of total)\n   - Current Revenue: $19,866,100 (13.8% of total)\n   - Current ROI: 3.86x\n5. ACTIVATION:\n   - Current Spend: $12,963,048 (28.9% of total)\n   - Current Revenue: $49,697,312 (34.6% of total)\n   - Current ROI: 3.83x\n6. FACEBOOK:\n   - Current Spend: $7,147,552 (16.0% of total)\n   - Current Revenue: $25,648,736 (17.8% of total)\n   - Current ROI: 3.59x\n7. TV_SPOT:\n   - Current Spend: $11,540,248 (25.8% of total)\n   - Current Revenue: $14,483,313 (10.1% of total)\n   - Current ROI: 1.26x",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "current_performance",
+      "section_name": "Current Channel Performance",
+      "content_type": "roi_analysis",
+      "content_length": 969,
+      "word_count": 143,
+      "created_at": "2025-07-14T14:31:02.558490"
+    }
+  },
+  {
+    "page_content": "Portfolio Summary:\n- Total Spend: $44,796,533\n- Total Revenue: $143,721,359\n- Overall ROI: 3.21x\n- Active Channels: 7",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "portfolio_summary",
+      "section_name": "Portfolio Summary",
+      "content_type": "budget_analysis",
+      "content_length": 117,
+      "word_count": 18,
+      "created_at": "2025-07-14T14:31:02.558493"
+    }
+  },
+  {
+    "page_content": "Spend Increase Scenario Analysis:\n\n25% Spend Increase Scenarios:\n- TV_SPONSOR: +$85,366 → +$235,487 (Marginal ROI: 2.76x)\n- RADIO: +$823,750 → +$1,048,923 (Marginal ROI: 1.27x)\n- YOUTUBE: +$1,092,143 → +$2,514,652 (Marginal ROI: 2.30x)\n- KOL: +$1,285,162 → +$2,200,658 (Marginal ROI: 1.71x)\n- ACTIVATION: +$3,240,762 → +$6,376,468 (Marginal ROI: 1.97x)\n- FACEBOOK: +$1,786,888 → +$2,126,128 (Marginal ROI: 1.19x)\n- TV_SPOT: +$2,885,062 → +$1,542,903 (Marginal ROI: 0.53x)\nPortfolio 25% Increase: +$11,199,133 → +$16,045,219 (Portfolio Marginal ROI: 1.43x)\n\n50% Spend Increase Scenarios:\n- TV_SPONSOR: +$170,732 → +$438,110 (Marginal ROI: 2.57x)\n- RADIO: +$1,647,500 → +$1,895,140 (Marginal ROI: 1.15x)\n- YOUTUBE: +$2,184,286 → +$4,709,210 (Marginal ROI: 2.16x)\n- KOL: +$2,570,325 → +$4,038,400 (Marginal ROI: 1.57x)\n- ACTIVATION: +$6,481,524 → +$11,700,384 (Marginal ROI: 1.81x)\n- FACEBOOK: +$3,573,776 → +$3,862,276 (Marginal ROI: 1.08x)\n- TV_SPOT: +$5,770,124 → +$2,819,871 (Marginal ROI: 0.49x)\nPortfolio 50% Increase: +$22,398,267 → +$29,463,391 (Portfolio Marginal ROI: 1.32x)\n\n100% Spend Increase Scenarios:\n- TV_SPONSOR: +$341,463 → +$772,357 (Marginal ROI: 2.26x)\n- RADIO: +$3,295,000 → +$3,200,890 (Marginal ROI: 0.97x)\n- YOUTUBE: +$4,368,572 → +$8,397,040 (Marginal ROI: 1.92x)\n- KOL: +$5,140,650 → +$6,970,844 (Marginal ROI: 1.36x)\n- ACTIVATION: +$12,963,048 → +$20,121,168 (Marginal ROI: 1.55x)\n- FACEBOOK: +$7,147,552 → +$6,574,364 (Marginal ROI: 0.92x)\n- TV_SPOT: +$11,540,248 → +$4,836,091 (Marginal ROI: 0.42x)\nPortfolio 100% Increase: +$44,796,533 → +$50,872,754 (Portfolio Marginal ROI: 1.14x)\n\nMarginal Returns Analysis:\n\nEfficiency Threshold Analysis:\n- TV_SPONSOR: Efficiency maintained until 1.3x current spend\n- RADIO: Efficiency maintained until 1.2x current spend\n- YOUTUBE: Efficiency maintained until 1.3x current spend\n- KOL: Efficiency maintained until 1.2x current spend\n- ACTIVATION: Efficiency maintained until 1.3x current spend\n- FACEBOOK: Efficiency maintained until 1.2x current spend\n- TV_SPOT: Efficiency maintained until 1.2x current spend\n\nScale and Growth Opportunity Analysis:\n- Most Efficient Channel: TV_SPONSOR (5.00x ROI)\n- Largest Spend Channel: ACTIVATION ($12,963,048)\n- Highest Revenue Channel: ACTIVATION ($49,697,312)\n\nSpend Scale Differences:\n- ACTIVATION spends 38.0x more than TV_SPONSOR\n- ACTIVATION spends 3.9x more than RADIO\n- ACTIVATION spends 3.0x more than YOUTUBE\n- ACTIVATION spends 2.5x more than KOL\n- ACTIVATION spends 1.8x more than FACEBOOK\n- ACTIVATION spends 1.1x more than TV_SPOT\n\nPortfolio Concentration:\n- Spend Concentration: Top channel (ACTIVATION) represents 28.9% of total spend\n- Revenue Concentration: Top channel (ACTIVATION) represents 34.6% of total revenue\n- Channels with >10% spend share: 4 of 7\n\nGrowth Potential Summary:\n- TV_SPONSOR: Up to 52% revenue growth potential (max 2.2x current spend)\n- RADIO: Up to 24% revenue growth potential (max 2.2x current spend)\n- YOUTUBE: Up to 55% revenue growth potential (max 2.2x current spend)\n- KOL: Up to 40% revenue growth potential (max 2.2x current spend)\n- ACTIVATION: Up to 46% revenue growth potential (max 2.2x current spend)\n- FACEBOOK: Up to 29% revenue growth potential (max 2.2x current spend)\n- TV_SPOT: Up to 38% revenue growth potential (max 2.2x current spend)\n\nMethodology Note: Response curves show cumulative incremental revenue from total media spend over the selected time period, constructed based on historical flighting patterns.",
+    "metadata": {
+      "source": "mmm_summary_report",
+      "section": "scenario_analysis",
+      "section_name": "Spend Increase Scenario Analysis",
+      "content_type": "budget_analysis",
+      "content_length": 3485,
+      "word_count": 488,
+      "created_at": "2025-07-14T14:31:02.558533",
+      "analysis_focus": "scenario_planning"
+    }
+  }
+]

@@ -17,7 +17,7 @@ pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
 
 # set the pinecone index
 
-index_name = "planidac-v2"
+index_name = "m150"
 index = pc.Index(index_name)
 
 # initialize embeddings model + vector store

@@ -1,24 +1,29 @@
 Channel Contribution Analysis:
 
 Business Context: Your channel contributions help you
-understand what drove your revenue. Dv_360_X1 and Google drove the most overall
+understand what drove your revenue. Activation and Facebook drove the most overall
 revenue.
 
 Revenue Attribution:
-- Baseline revenue accounts for 90.9% of total revenue
-- Marketing channels drive 9.1% of total revenue
-- Total revenue split: 90.9% organic/baseline vs 9.1% paid marketing
+- Baseline revenue accounts for 88.0% of total revenue
+- Marketing channels drive 12.0% of total revenue
+- Total revenue split: 88.0% organic/baseline vs 12.0% paid marketing
 
 Marketing Channel Performance:
-- DV_360_X1 contributes 6.0% of total revenue ($7,227,618)
-- GOOGLE contributes 2.0% of total revenue ($2,444,298)
-- META contributes 1.0% of total revenue ($1,245,430)
-- TIKTOK contributes 0.1% of total revenue ($61,527)
+- ACTIVATION contributes 4.1% of total revenue ($49,697,312)
+- FACEBOOK contributes 2.1% of total revenue ($25,648,736)
+- KOL contributes 1.6% of total revenue ($19,866,100)
+- YOUTUBE contributes 1.4% of total revenue ($17,402,620)
+- RADIO contributes 1.2% of total revenue ($14,916,628)
+- TV_SPOT contributes 1.2% of total revenue ($14,483,313)
+- TV_SPONSOR contributes 0.1% of total revenue ($1,706,650)
+- KOL_BOOST contributes 0.1% of total revenue ($1,326,770)
+- TIKTOK contributes 0.1% of total revenue ($676,812)
 
 Key Insights:
-- DV_360_X1 is the top performing marketing channel at 6.0%
-- Baseline/organic traffic dominates revenue generation at 90.9%
-- Marketing channels collectively contribute 9.1% to total revenue
+- ACTIVATION is the top performing marketing channel at 4.1%
+- Baseline/organic traffic dominates revenue generation at 88.0%
+- Marketing channels collectively contribute 12.0% to total revenue
 
 Methodology: Note: This graphic encompasses all of
 your revenue drivers, but breaks down your marketing revenue by the baseline
@@ -28,225 +33,403 @@ Marketing Channel Spend and ROI Analysis:
 Performance Overview:
 - Marketing channels account for 100.0% of attributed revenue
 - Total marketing spend allocation: 100.0%
-- Average ROI across all channels: 4.8x
+- Average ROI across all channels: 4.0x
 
 Channel Performance by ROI:
-- META: 5.1x ROI, 11.3% revenue share, 10.4% spend share
-- TIKTOK: 5.0x ROI, 0.6% revenue share, 0.5% spend share
-- GOOGLE: 4.6x ROI, 22.3% revenue share, 22.5% spend share
-- DV_360_X1: 4.6x ROI, 65.8% revenue share, 66.6% spend share
+- KOL_BOOST: 5.0x ROI, 0.9% revenue share, 0.6% spend share
+- TIKTOK: 5.0x ROI, 0.5% revenue share, 0.3% spend share
+- TV_SPONSOR: 5.0x ROI, 1.2% revenue share, 0.8% spend share
+- RADIO: 4.5x ROI, 10.2% revenue share, 7.3% spend share
+- YOUTUBE: 4.0x ROI, 11.9% revenue share, 9.7% spend share
+- KOL: 3.9x ROI, 13.6% revenue share, 11.4% spend share
+- ACTIVATION: 3.8x ROI, 34.1% revenue share, 28.7% spend share
+- FACEBOOK: 3.6x ROI, 17.6% revenue share, 15.8% spend share
+- TV_SPOT: 1.3x ROI, 9.9% revenue share, 25.5% spend share
 
 Channel Efficiency Analysis:
-- Most efficient spend allocation: META (revenue/spend ratio: 1.09)
-- Least efficient spend allocation: DV_360_X1 (revenue/spend ratio: 0.99)
+- Most efficient spend allocation: KOL_BOOST (revenue/spend ratio: 1.55)
+- Least efficient spend allocation: TV_SPOT (revenue/spend ratio: 0.39)
 
 ROI Performance:
-- Highest ROI: META at 5.1x return
-- Lowest ROI: DV_360_X1 at 4.6x return
-- ROI range: 4.6x to 5.1x across all channels
+- Highest ROI: KOL_BOOST at 5.0x return
+- Lowest ROI: TV_SPOT at 1.3x return
+- ROI range: 1.3x to 5.0x across all channels
 
 Budget Allocation Insights:
-- META: Over-performing (generates 11.3% revenue with 10.4% spend)
-- TIKTOK: Over-performing (generates 0.6% revenue with 0.5% spend)
-- GOOGLE: Under-performing (generates 22.3% revenue with 22.5% spend)
-- DV_360_X1: Under-performing (generates 65.8% revenue with 66.6% spend)
+- KOL_BOOST: Over-performing (generates 0.9% revenue with 0.6% spend)
+- TIKTOK: Over-performing (generates 0.5% revenue with 0.3% spend)
+- TV_SPONSOR: Over-performing (generates 1.2% revenue with 0.8% spend)
+- RADIO: Over-performing (generates 10.2% revenue with 7.3% spend)
+- YOUTUBE: Over-performing (generates 11.9% revenue with 9.7% spend)
+- KOL: Over-performing (generates 13.6% revenue with 11.4% spend)
+- ACTIVATION: Over-performing (generates 34.1% revenue with 28.7% spend)
+- FACEBOOK: Over-performing (generates 17.6% revenue with 15.8% spend)
+- TV_SPOT: Under-performing (generates 9.9% revenue with 25.5% spend)
 
 Methodology: Note: Return on investment is calculated by
 dividing the revenue attributed to a channel by marketing costs.
 === MONTHLY CHANNEL PERFORMANCE WITH ANOMALIES ===
 Monthly Channel Performance Analysis with Anomaly Detection:
 
-DV_360_X1 - Monthly Performance:
-- Average Monthly Revenue: $161,021
-- Peak Month: 2024-08 ($286,080)
-- Lowest Month: 2022-12 ($0)
-- Active Months: 10 out of 30
-- Decline Periods: 2025-01 (-55%), 2025-02 (-80%)
+ACTIVATION - Monthly Performance:
+- Average Monthly Revenue: $1,308,661
+- Peak Month: 2023-12 ($1,376,579)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 9 out of 24
 
 
-GOOGLE - Monthly Performance:
-- Average Monthly Revenue: $35,335
-- Peak Month: 2023-10 ($71,109)
-- Lowest Month: 2022-12 ($0)
-- Active Months: 16 out of 30
-- High Growth Periods: 2024-05 (+1598%), 2024-10 (+220%)
-- Decline Periods: 2024-01 (-74%), 2024-02 (-82%), 2024-09 (-77%)
+FACEBOOK - Monthly Performance:
+- Average Monthly Revenue: $291,767
+- Peak Month: 2022-11 ($598,305)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 20 out of 24
+- High Growth Periods: 2023-06 (+668%), 2023-11 (+1767%), 2024-04 (+24442%)
+- Decline Periods: 2023-05 (-91%), 2023-07 (-89%), 2023-10 (-89%)
 
 
-META - Monthly Performance:
-- Average Monthly Revenue: $20,639
-- Peak Month: 2024-05 ($35,488)
-- Lowest Month: 2022-12 ($0)
-- Active Months: 14 out of 30
-- High Growth Periods: 2024-05 (+79%)
-- Decline Periods: 2025-01 (-58%), 2025-02 (-63%)
+KOL - Monthly Performance:
+- Average Monthly Revenue: $438,111
+- Peak Month: 2024-04 ($673,887)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 10 out of 24
+- Decline Periods: 2023-05 (-63%), 2024-01 (-69%), 2024-06 (-71%)
+
+
+KOL_BOOST - Monthly Performance:
+- Average Monthly Revenue: $31,406
+- Peak Month: 2024-04 ($69,155)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 9 out of 24
+- High Growth Periods: 2023-12 (+936%)
+- Decline Periods: 2023-05 (-81%), 2024-01 (-82%), 2024-05 (-72%)
+
+
+RADIO - Monthly Performance:
+- Average Monthly Revenue: $462,222
+- Peak Month: 2023-03 ($890,620)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 7 out of 24
+- Decline Periods: 2022-11 (-64%), 2022-12 (-78%), 2023-05 (-83%)
 
 
 TIKTOK - Monthly Performance:
-- Average Monthly Revenue: $3,254
-- Peak Month: 2024-12 ($7,722)
-- Lowest Month: 2022-12 ($0)
-- Active Months: 4 out of 30
-- High Growth Periods: 2024-12 (+208%)
-- Decline Periods: 2025-01 (-70%), 2025-02 (-80%)
+- Average Monthly Revenue: $23,522
+- Peak Month: 2023-02 ($63,130)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 6 out of 24
+- Revenue Spikes Detected: 1
+  • 2023-02: $63,130 (+168% above average)
+- Decline Periods: 2023-03 (-57%), 2023-04 (-64%), 2024-05 (-78%)
+
+
+TV_SPONSOR - Monthly Performance:
+- Average Monthly Revenue: $115,942
+- Peak Month: 2024-04 ($248,299)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 3 out of 24
+- Decline Periods: 2024-05 (-66%), 2024-06 (-81%)
+
+
+TV_SPOT - Monthly Performance:
+- Average Monthly Revenue: $842,441
+- Peak Month: 2023-02 ($1,349,152)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 4 out of 24
+- Decline Periods: 2023-05 (-86%)
+
+
+YOUTUBE - Monthly Performance:
+- Average Monthly Revenue: $489,576
+- Peak Month: 2023-03 ($849,421)
+- Lowest Month: 2022-07 ($0)
+- Active Months: 8 out of 24
+- Decline Periods: 2024-06 (-76%)
 
 === QUARTERLY CHANNEL TRENDS ===
 Quarterly Channel Performance Analysis with Trend Detection:
 
-DV_360_X1 - Quarterly Analysis:
+ACTIVATION - Quarterly Analysis:
+- Trend Direction: Overall Growth
+- Best Quarter: 2023-Q4 ($1,376,579)
+- Worst Quarter: 2022-Q3 ($0)
+- Total Quarters Active: 3
+- Recent Performance (Last 2Q): $1,376,579 average
+
+
+FACEBOOK - Quarterly Analysis:
+- Trend Direction: Overall Growth
+- Best Quarter: 2022-Q4 ($597,634)
+- Worst Quarter: 2022-Q3 ($0)
+- Total Quarters Active: 7
+- Major Growth Quarters: 2024-Q2
+- Major Decline Quarters: 2023-Q2, 2024-Q1
+- Recent Performance (Last 2Q): $124,782 average
+
+
+KOL - Quarterly Analysis:
+- Trend Direction: Overall Growth
+- Best Quarter: 2023-Q1 ($666,441)
+- Worst Quarter: 2022-Q3 ($0)
+- Total Quarters Active: 3
+- Major Decline Quarters: 2023-Q2, 2024-Q1
+- Recent Performance (Last 2Q): $64,354 average
+
+
+KOL_BOOST - Quarterly Analysis:
+- Trend Direction: Overall Growth
+- Best Quarter: 2023-Q1 ($50,203)
+- Worst Quarter: 2022-Q3 ($0)
+- Total Quarters Active: 3
+- Major Decline Quarters: 2023-Q2, 2024-Q1
+- Recent Performance (Last 2Q): $1,950 average
+
+
+RADIO - Quarterly Analysis:
 - Trend Direction: Stable
-- Best Quarter: 2024-Q3 ($276,999)
-- Worst Quarter: 2022-Q4 ($0)
+- Best Quarter: 2023-Q1 ($890,620)
+- Worst Quarter: 2022-Q3 ($0)
 - Total Quarters Active: 2
-- Major Decline Quarters: 2025-Q1
+- Major Growth Quarters: 2023-Q1
+- Major Decline Quarters: 2023-Q2
 - Recent Performance (Last 2Q): $0 average
-
-
-GOOGLE - Quarterly Analysis:
-- Trend Direction: Stable
-- Best Quarter: 2023-Q4 ($66,506)
-- Worst Quarter: 2022-Q4 ($0)
-- Total Quarters Active: 4
-- Major Growth Quarters: 2024-Q4
-- Major Decline Quarters: 2024-Q1, 2024-Q3, 2025-Q1
-- Recent Performance (Last 2Q): $0 average
-
-
-META - Quarterly Analysis:
-- Trend Direction: Consistently Declining
-- Best Quarter: 2024-Q2 ($34,550)
-- Worst Quarter: 2022-Q4 ($0)
-- Total Quarters Active: 5
-- Major Decline Quarters: 2025-Q1
-- Recent Performance (Last 2Q): $5,039 average
 
 
 TIKTOK - Quarterly Analysis:
-- Trend Direction: Stable
-- Best Quarter: 2024-Q4 ($7,722)
-- Worst Quarter: 2022-Q4 ($0)
+- Trend Direction: Overall Growth
+- Best Quarter: 2023-Q1 ($27,169)
+- Worst Quarter: 2022-Q3 ($0)
+- Total Quarters Active: 2
+- Major Decline Quarters: 2023-Q2
+- Recent Performance (Last 2Q): $634 average
+
+
+TV_SPONSOR - Quarterly Analysis:
+- Trend Direction: Overall Growth
+- Best Quarter: 2024-Q2 ($15,895)
+- Worst Quarter: 2022-Q3 ($0)
 - Total Quarters Active: 1
-- Major Decline Quarters: 2025-Q1
+- Recent Performance (Last 2Q): $7,948 average
+
+
+TV_SPOT - Quarterly Analysis:
+- Trend Direction: Stable
+- Best Quarter: 2023-Q1 ($1,200,092)
+- Worst Quarter: 2022-Q3 ($0)
+- Total Quarters Active: 1
+- Major Decline Quarters: 2023-Q2
 - Recent Performance (Last 2Q): $0 average
+
+
+YOUTUBE - Quarterly Analysis:
+- Trend Direction: Overall Growth
+- Best Quarter: 2023-Q1 ($849,421)
+- Worst Quarter: 2022-Q3 ($0)
+- Total Quarters Active: 3
+- Major Decline Quarters: 2023-Q2, 2023-Q4
+- Recent Performance (Last 2Q): $73,422 average
 
 === SPIKE AND DIP ANALYSIS ===
 Revenue Anomaly Analysis - Spikes and Dips Across All Channels:
 
+Top Revenue Spikes (Highest Magnitude):
+1. TIKTOK in 2023-02: $63,130 (+168% above average)
+
+Seasonal Patterns:
+- Most Common Spike Month: February (1 occurrences)
+
 Channel Volatility Analysis (Revenue Consistency):
-- Most Stable Channel: META (58% volatility)
-- Most Volatile Channel: TIKTOK (96% volatility)
+- Most Stable Channel: ACTIVATION (7% volatility)
+- Most Volatile Channel: TV_SPONSOR (103% volatility)
 
 === CHANNEL COMPARISON ===
 Channel Performance Comparison and Rankings:
 
 Total Revenue Rankings:
-1. DV_360_X1: $1,610,209 cumulative revenue
-2. GOOGLE: $565,360 cumulative revenue
-3. META: $288,948 cumulative revenue
-4. TIKTOK: $13,017 cumulative revenue
+1. ACTIVATION: $11,777,945 cumulative revenue
+2. FACEBOOK: $5,835,347 cumulative revenue
+3. KOL: $4,381,111 cumulative revenue
+4. YOUTUBE: $3,916,611 cumulative revenue
+5. TV_SPOT: $3,369,766 cumulative revenue
+6. RADIO: $3,235,556 cumulative revenue
+7. TV_SPONSOR: $347,826 cumulative revenue
+8. KOL_BOOST: $282,656 cumulative revenue
+9. TIKTOK: $141,133 cumulative revenue
 
 Consistency Rankings (% of months active):
-1. GOOGLE: 53% of months with revenue
-2. META: 47% of months with revenue
-3. DV_360_X1: 33% of months with revenue
-4. TIKTOK: 13% of months with revenue
+1. FACEBOOK: 83% of months with revenue
+2. KOL: 42% of months with revenue
+3. ACTIVATION: 38% of months with revenue
+4. KOL_BOOST: 38% of months with revenue
+5. YOUTUBE: 33% of months with revenue
+6. RADIO: 29% of months with revenue
+7. TIKTOK: 25% of months with revenue
+8. TV_SPOT: 17% of months with revenue
+9. TV_SPONSOR: 12% of months with revenue
 
 Peak Performance Rankings (Highest single month):
-1. DV_360_X1: $286,080 peak monthly revenue
-2. GOOGLE: $71,109 peak monthly revenue
-3. META: $35,488 peak monthly revenue
-4. TIKTOK: $7,722 peak monthly revenue
+1. ACTIVATION: $1,376,579 peak monthly revenue
+2. TV_SPOT: $1,349,152 peak monthly revenue
+3. RADIO: $890,620 peak monthly revenue
+4. YOUTUBE: $849,421 peak monthly revenue
+5. KOL: $673,887 peak monthly revenue
+6. FACEBOOK: $598,305 peak monthly revenue
+7. TV_SPONSOR: $248,299 peak monthly revenue
+8. KOL_BOOST: $69,155 peak monthly revenue
+9. TIKTOK: $63,130 peak monthly revenue
 
 Channel Lifecycle Analysis:
-- DV_360_X1: Dormant (Active: 2024-01 to 2025-02)
-- GOOGLE: Dormant (Active: 2023-10 to 2025-02)
-- META: Active/Mature (Active: 2024-04 to 2025-05)
-- TIKTOK: Dormant (Active: 2024-11 to 2025-02)
+- KOL: Active/Mature (Active: 2023-02 to 2024-06)
+- TV_SPOT: Dormant (Active: 2023-02 to 2023-05)
+- TV_SPONSOR: Launch Phase (Active: 2024-04 to 2024-06)
+- RADIO: Dormant (Active: 2022-10 to 2023-05)
+- ACTIVATION: Active/Mature (Active: 2023-10 to 2024-06)
+- FACEBOOK: Active/Mature (Active: 2022-10 to 2024-06)
+- YOUTUBE: Active/Mature (Active: 2023-02 to 2024-06)
+- TIKTOK: Active/Mature (Active: 2023-02 to 2024-06)
+- KOL_BOOST: Active/Mature (Active: 2023-03 to 2024-06)
 
 === MOMENTUM ANALYSIS ===
 Channel Growth Momentum and Trend Analysis:
 
-DV_360_X1 - 6-Month Momentum Analysis:
-- Growth Momentum: Strong Negative (-100%)
-- Trend Consistency: 0% of months showed growth
-- Recent Average (Last 3 months): $0
-- Previous Average (3 months prior): $108,797
-
-
-GOOGLE - 6-Month Momentum Analysis:
-- Growth Momentum: Strong Negative (-100%)
-- Trend Consistency: 0% of months showed growth
-- Recent Average (Last 3 months): $0
-- Previous Average (3 months prior): $18,947
-
-
-META - 6-Month Momentum Analysis:
-- Growth Momentum: Strong Negative (-67%)
+KOL - 6-Month Momentum Analysis:
+- Growth Momentum: Strong Positive (+809%)
 - Trend Consistency: 20% of months showed growth
-- Recent Average (Last 3 months): $4,841
-- Previous Average (3 months prior): $14,516
+- Recent Average (Last 3 months): $413,395
+- Previous Average (3 months prior): $45,479
+
+
+TV_SPOT - 6-Month Momentum Analysis:
+- Growth Momentum: Neutral (+0%)
+- Trend Consistency: 0% of months showed growth
+- Recent Average (Last 3 months): $0
+- Previous Average (3 months prior): $0
+
+
+TV_SPONSOR - 6-Month Momentum Analysis:
+- Growth Momentum: Neutral (+0%)
+- Trend Consistency: 20% of months showed growth
+- Recent Average (Last 3 months): $115,942
+- Previous Average (3 months prior): $0
+
+
+RADIO - 6-Month Momentum Analysis:
+- Growth Momentum: Neutral (+0%)
+- Trend Consistency: 0% of months showed growth
+- Recent Average (Last 3 months): $0
+- Previous Average (3 months prior): $0
+
+
+ACTIVATION - 6-Month Momentum Analysis:
+- Growth Momentum: Neutral (+0%)
+- Trend Consistency: 80% of months showed growth
+- Recent Average (Last 3 months): $1,322,824
+- Previous Average (3 months prior): $1,322,824
+
+
+FACEBOOK - 6-Month Momentum Analysis:
+- Growth Momentum: Strong Positive (+571%)
+- Trend Consistency: 20% of months showed growth
+- Recent Average (Last 3 months): $312,366
+- Previous Average (3 months prior): $46,584
+
+
+YOUTUBE - 6-Month Momentum Analysis:
+- Growth Momentum: Neutral (+0%)
+- Trend Consistency: 20% of months showed growth
+- Recent Average (Last 3 months): $531,151
+- Previous Average (3 months prior): $0
 
 
 TIKTOK - 6-Month Momentum Analysis:
-- Growth Momentum: Strong Negative (-100%)
-- Trend Consistency: 0% of months showed growth
-- Recent Average (Last 3 months): $0
-- Previous Average (3 months prior): $3,504
+- Growth Momentum: Neutral (+0%)
+- Trend Consistency: 20% of months showed growth
+- Recent Average (Last 3 months): $13,657
+- Previous Average (3 months prior): $0
+
+
+KOL_BOOST - 6-Month Momentum Analysis:
+- Growth Momentum: Strong Positive (+928%)
+- Trend Consistency: 20% of months showed growth
+- Recent Average (Last 3 months): $30,768
+- Previous Average (3 months prior): $2,992
 Title: Return on investment
 
 Insights: Your return on investment (ROI) helps
 you understand how your marketing activities impacted your business objectives.
-Meta drove the highest ROI at 5.1. For every $1
-you spent on Meta, you saw $5.11 in revenue.
-Dv_360_X1 had the highest effectiveness, which is your
-incremental outcome per media unit. Meta had the highest marginal
-ROI at 2.08. Meta drove the lowest CPIK
+Kol_Boost drove the highest ROI at 5.0. For every $1
+you spent on Kol_Boost, you saw $5.00 in revenue.
+Kol_Boost had the highest effectiveness, which is your
+incremental outcome per media unit. Tv_Sponsor had the highest marginal
+ROI at 2.98. Kol_Boost drove the lowest CPIK
 at $0.20. For every KPI unit, you spent $0.20.
 ROI vs Effectiveness Analysis:
 
 Performance Overview:
-- Average ROI across channels: 4.8x
-- Average effectiveness: 0.0169 incremental outcome per impression
-- Total media spend analyzed: $2,340,830
+- Average ROI across channels: 4.0x
+- Average effectiveness: 4.0057 incremental outcome per impression
+- Total media spend analyzed: $45,197,221
 
 ROI Rankings:
-1. META: 5.1x ROI
+1. KOL_BOOST: 5.0x ROI
 2. TIKTOK: 5.0x ROI
-3. GOOGLE: 4.6x ROI
-4. DV_360_X1: 4.6x ROI
+3. TV_SPONSOR: 5.0x ROI
+4. RADIO: 4.5x ROI
+5. YOUTUBE: 4.0x ROI
+6. KOL: 3.9x ROI
+7. ACTIVATION: 3.8x ROI
+8. FACEBOOK: 3.6x ROI
+9. TV_SPOT: 1.3x ROI
 
 Effectiveness Rankings:
-1. DV_360_X1: 0.0491 outcome per impression
-2. GOOGLE: 0.0065 outcome per impression
-3. META: 0.0062 outcome per impression
-4. TIKTOK: 0.0057 outcome per impression
+1. KOL_BOOST: 5.0005 outcome per impression
+2. TIKTOK: 5.0002 outcome per impression
+3. TV_SPONSOR: 4.9981 outcome per impression
+4. RADIO: 4.5270 outcome per impression
+5. YOUTUBE: 3.9836 outcome per impression
+6. KOL: 3.8645 outcome per impression
+7. ACTIVATION: 3.8338 outcome per impression
+8. FACEBOOK: 3.5885 outcome per impression
+9. TV_SPOT: 1.2550 outcome per impression
 
 Spend Allocation:
-1. DV_360_X1: $1,558,208 (66.6% of total spend)
-2. GOOGLE: $526,693 (22.5% of total spend)
-3. META: $243,623 (10.4% of total spend)
-4. TIKTOK: $12,306 (0.5% of total spend)
+1. ACTIVATION: $12,963,048 (28.7% of total spend)
+2. TV_SPOT: $11,540,248 (25.5% of total spend)
+3. FACEBOOK: $7,147,552 (15.8% of total spend)
+4. KOL: $5,140,650 (11.4% of total spend)
+5. YOUTUBE: $4,368,572 (9.7% of total spend)
+6. RADIO: $3,295,000 (7.3% of total spend)
+7. TV_SPONSOR: $341,463 (0.8% of total spend)
+8. KOL_BOOST: $265,330 (0.6% of total spend)
+9. TIKTOK: $135,358 (0.3% of total spend)
 
 Channel Performance Categories:
 
-High Potential:
-- DV_360_X1 (4.6x ROI, 0.0491 effectiveness)
-
 Optimization Needed:
-- GOOGLE (4.6x ROI, 0.0065 effectiveness)
+- KOL (3.9x ROI, 3.8645 effectiveness)
+- TV_SPOT (1.3x ROI, 1.2550 effectiveness)
+- ACTIVATION (3.8x ROI, 3.8338 effectiveness)
+- FACEBOOK (3.6x ROI, 3.5885 effectiveness)
+- YOUTUBE (4.0x ROI, 3.9836 effectiveness)
 
-Cost Efficient:
-- META (5.1x ROI, 0.0062 effectiveness)
-- TIKTOK (5.0x ROI, 0.0057 effectiveness)
+Star Performers:
+- TV_SPONSOR (5.0x ROI, 4.9981 effectiveness)
+- RADIO (4.5x ROI, 4.5270 effectiveness)
+- TIKTOK (5.0x ROI, 5.0002 effectiveness)
+- KOL_BOOST (5.0x ROI, 5.0005 effectiveness)
 
 Strategic Insights:
-- META delivers highest ROI (5.1x) - prioritize for budget allocation
-- DV_360_X1 shows highest effectiveness (0.0491) - strong media performance per impression
-- DV_360_X1 receives largest budget ($1,558,208) - monitor efficiency closely
-- DV_360_X1: High effectiveness but expensive - optimize costs to improve ROI
-- GOOGLE: Both ROI and effectiveness below average - requires optimization or budget reallocation
-- META: Cost efficient but low reach - consider scaling if effectiveness can be maintained
-- TIKTOK: Cost efficient but low reach - consider scaling if effectiveness can be maintained
+- KOL_BOOST delivers highest ROI (5.0x) - prioritize for budget allocation
+- KOL_BOOST shows highest effectiveness (5.0005) - strong media performance per impression
+- ACTIVATION receives largest budget ($12,963,048) - monitor efficiency closely
+- KOL: Both ROI and effectiveness below average - requires optimization or budget reallocation
+- TV_SPOT: Both ROI and effectiveness below average - requires optimization or budget reallocation
+- TV_SPONSOR: Ideal performance - high ROI and effectiveness, maintain investment
+- RADIO: Ideal performance - high ROI and effectiveness, maintain investment
+- ACTIVATION: Both ROI and effectiveness below average - requires optimization or budget reallocation
+- FACEBOOK: Both ROI and effectiveness below average - requires optimization or budget reallocation
+- YOUTUBE: Both ROI and effectiveness below average - requires optimization or budget reallocation
+- TIKTOK: Ideal performance - high ROI and effectiveness, maintain investment
+- KOL_BOOST: Ideal performance - high ROI and effectiveness, maintain investment
 
 Methodology: Note: Effectiveness measures the
 incremental outcome generated per impression. A low ROI does not necessarily
@@ -259,56 +442,87 @@ the scale of the media spend.
 ROI vs Marginal ROI Performance Analysis:
 
 Performance Metrics:
-- Average ROI across channels: 4.8x
-- Average Marginal ROI: 2.0x (additional return per additional dollar)
-- Total media spend analyzed: $2,340,830
+- Average ROI across channels: 4.0x
+- Average Marginal ROI: 1.9x (additional return per additional dollar)
+- Total media spend analyzed: $45,197,221
 
 ROI Rankings:
-1. META: 5.1x ROI
+1. KOL_BOOST: 5.0x ROI
 2. TIKTOK: 5.0x ROI
-3. GOOGLE: 4.6x ROI
-4. DV_360_X1: 4.6x ROI
+3. TV_SPONSOR: 5.0x ROI
+4. RADIO: 4.5x ROI
+5. YOUTUBE: 4.0x ROI
+6. KOL: 3.9x ROI
+7. ACTIVATION: 3.8x ROI
+8. FACEBOOK: 3.6x ROI
+9. TV_SPOT: 1.3x ROI
 
 Marginal ROI Rankings (Incremental Efficiency):
-1. META: 2.1x marginal ROI
-2. TIKTOK: 2.0x marginal ROI
-3. GOOGLE: 1.9x marginal ROI
-4. DV_360_X1: 1.8x marginal ROI
+1. TV_SPONSOR: 3.0x marginal ROI
+2. KOL_BOOST: 2.5x marginal ROI
+3. YOUTUBE: 2.5x marginal ROI
+4. ACTIVATION: 2.2x marginal ROI
+5. KOL: 1.9x marginal ROI
+6. TIKTOK: 1.5x marginal ROI
+7. RADIO: 1.4x marginal ROI
+8. FACEBOOK: 1.3x marginal ROI
+9. TV_SPOT: 0.6x marginal ROI
 
 Spend Distribution:
-1. DV_360_X1: $1,558,208 (66.6% of total spend)
-2. GOOGLE: $526,693 (22.5% of total spend)
-3. META: $243,623 (10.4% of total spend)
-4. TIKTOK: $12,306 (0.5% of total spend)
+1. ACTIVATION: $12,963,048 (28.7% of total spend)
+2. TV_SPOT: $11,540,248 (25.5% of total spend)
+3. FACEBOOK: $7,147,552 (15.8% of total spend)
+4. KOL: $5,140,650 (11.4% of total spend)
+5. YOUTUBE: $4,368,572 (9.7% of total spend)
+6. RADIO: $3,295,000 (7.3% of total spend)
+7. TV_SPONSOR: $341,463 (0.8% of total spend)
+8. KOL_BOOST: $265,330 (0.6% of total spend)
+9. TIKTOK: $135,358 (0.3% of total spend)
 
 Saturation Indicators:
-- DV_360_X1: High saturation signal (ROI/Marginal ROI ratio: 2.6x)
-- GOOGLE: Moderate saturation signal (ROI/Marginal ROI ratio: 2.4x)
-- META: Moderate saturation signal (ROI/Marginal ROI ratio: 2.5x)
-- TIKTOK: Moderate saturation signal (ROI/Marginal ROI ratio: 2.5x)
+- KOL: Moderate saturation signal (ROI/Marginal ROI ratio: 2.1x)
+- TV_SPOT: Moderate saturation signal (ROI/Marginal ROI ratio: 2.1x)
+- TV_SPONSOR: Low saturation signal (ROI/Marginal ROI ratio: 1.7x)
+- RADIO: High saturation signal (ROI/Marginal ROI ratio: 3.2x)
+- ACTIVATION: Low saturation signal (ROI/Marginal ROI ratio: 1.8x)
+- FACEBOOK: High saturation signal (ROI/Marginal ROI ratio: 2.7x)
+- YOUTUBE: Low saturation signal (ROI/Marginal ROI ratio: 1.6x)
+- TIKTOK: High saturation signal (ROI/Marginal ROI ratio: 3.4x)
+- KOL_BOOST: Low saturation signal (ROI/Marginal ROI ratio: 2.0x)
 
 Efficiency Gap Analysis:
-- DV_360_X1: 2.9x gap between current and marginal returns
-- GOOGLE: 2.7x gap between current and marginal returns
-- META: 3.0x gap between current and marginal returns
-- TIKTOK: 3.0x gap between current and marginal returns
+- KOL: 2.0x gap between current and marginal returns
+- TV_SPOT: 0.7x gap between current and marginal returns
+- TV_SPONSOR: 2.0x gap between current and marginal returns
+- RADIO: 3.1x gap between current and marginal returns
+- ACTIVATION: 1.7x gap between current and marginal returns
+- FACEBOOK: 2.3x gap between current and marginal returns
+- YOUTUBE: 1.5x gap between current and marginal returns
+- TIKTOK: 3.5x gap between current and marginal returns
+- KOL_BOOST: 2.5x gap between current and marginal returns
 
 Performance Consistency:
-- ROI variation across channels: 0.21 standard deviation
-- Marginal ROI variation: 0.12 standard deviation
+- ROI variation across channels: 1.11 standard deviation
+- Marginal ROI variation: 0.70 standard deviation
 - ROI and marginal ROI show similar variation patterns
 
 Channel Performance Patterns:
-- META leads in both ROI and marginal ROI - consistent high performer
-- DV_360_X1: High spend concentration (66.6%) with below-average marginal efficiency
-- META: Low spend allocation (10.4%) but above-average marginal efficiency
-- TIKTOK: Low spend allocation (0.5%) but above-average marginal efficiency
+- KOL_BOOST has highest ROI while TV_SPONSOR has highest marginal ROI - different optimization opportunities
+- KOL: Low spend allocation (11.4%) but above-average marginal efficiency
+- TV_SPONSOR: Low spend allocation (0.8%) but above-average marginal efficiency
+- YOUTUBE: Low spend allocation (9.7%) but above-average marginal efficiency
+- KOL_BOOST: Low spend allocation (0.6%) but above-average marginal efficiency
 
 Diminishing Returns Assessment:
-- DV_360_X1: Moderate diminishing returns (current ROI 2.6x higher than marginal)
-- GOOGLE: Moderate diminishing returns (current ROI 2.4x higher than marginal)
-- META: Moderate diminishing returns (current ROI 2.5x higher than marginal)
-- TIKTOK: Moderate diminishing returns (current ROI 2.5x higher than marginal)
+- KOL: Moderate diminishing returns (current ROI 2.1x higher than marginal)
+- TV_SPOT: Moderate diminishing returns (current ROI 2.1x higher than marginal)
+- TV_SPONSOR: Minimal diminishing returns (current ROI 1.7x higher than marginal)
+- RADIO: Strong diminishing returns pattern (current ROI 3.2x higher than marginal)
+- ACTIVATION: Minimal diminishing returns (current ROI 1.8x higher than marginal)
+- FACEBOOK: Moderate diminishing returns (current ROI 2.7x higher than marginal)
+- YOUTUBE: Minimal diminishing returns (current ROI 1.6x higher than marginal)
+- TIKTOK: Strong diminishing returns pattern (current ROI 3.4x higher than marginal)
+- KOL_BOOST: Minimal diminishing returns (current ROI 2.0x higher than marginal)
 
 Methodology: Note: Marginal ROI measures the additional
 return generated for every additional dollar spent. It's an indicator of
@@ -321,159 +535,292 @@ scale of the media spend.
 ROI and CPIK Performance Analysis with Confidence Intervals:
 
 ROI Performance with 90% Credible Intervals:
-1. META:
-   - Point Estimate: 5.11x ROI
-   - Confidence Range: 3.54x to 6.98x
-   - Uncertainty Level: ±67% around point estimate
+1. KOL_BOOST:
+   - Point Estimate: 5.00x ROI
+   - Confidence Range: 4.91x to 5.10x
+   - Uncertainty Level: ±4% around point estimate
 2. TIKTOK:
    - Point Estimate: 5.00x ROI
-   - Confidence Range: 4.92x to 5.08x
-   - Uncertainty Level: ±3% around point estimate
-3. GOOGLE:
-   - Point Estimate: 4.64x ROI
-   - Confidence Range: 2.18x to 8.31x
-   - Uncertainty Level: ±132% around point estimate
-4. DV_360_X1:
-   - Point Estimate: 4.64x ROI
-   - Confidence Range: 1.40x to 8.48x
-   - Uncertainty Level: ±153% around point estimate
+   - Confidence Range: 4.95x to 5.05x
+   - Uncertainty Level: ±2% around point estimate
+3. TV_SPONSOR:
+   - Point Estimate: 5.00x ROI
+   - Confidence Range: 4.88x to 5.12x
+   - Uncertainty Level: ±5% around point estimate
+4. RADIO:
+   - Point Estimate: 4.53x ROI
+   - Confidence Range: 3.58x to 5.61x
+   - Uncertainty Level: ±45% around point estimate
+5. YOUTUBE:
+   - Point Estimate: 3.98x ROI
+   - Confidence Range: 2.95x to 5.22x
+   - Uncertainty Level: ±57% around point estimate
+6. KOL:
+   - Point Estimate: 3.86x ROI
+   - Confidence Range: 2.66x to 5.33x
+   - Uncertainty Level: ±69% around point estimate
+7. ACTIVATION:
+   - Point Estimate: 3.83x ROI
+   - Confidence Range: 1.84x to 6.24x
+   - Uncertainty Level: ±115% around point estimate
+8. FACEBOOK:
+   - Point Estimate: 3.59x ROI
+   - Confidence Range: 2.25x to 5.32x
+   - Uncertainty Level: ±86% around point estimate
+9. TV_SPOT:
+   - Point Estimate: 1.26x ROI
+   - Confidence Range: 0.73x to 1.92x
+   - Uncertainty Level: ±95% around point estimate
 
 ROI Confidence Analysis:
-- Most Reliable ROI Estimate: TIKTOK (±3% uncertainty)
-- Least Reliable ROI Estimate: DV_360_X1 (±153% uncertainty)
+- Most Reliable ROI Estimate: TIKTOK (±2% uncertainty)
+- Least Reliable ROI Estimate: ACTIVATION (±115% uncertainty)
 
 ROI Statistical Significance:
-- DV_360_X1 and GOOGLE: Overlapping confidence intervals (no statistically significant difference)
-- DV_360_X1 and META: Overlapping confidence intervals (no statistically significant difference)
-- DV_360_X1 and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
-- GOOGLE and META: Overlapping confidence intervals (no statistically significant difference)
-- GOOGLE and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
-- META and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and FACEBOOK: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and KOL: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and KOL_BOOST: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and RADIO: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and TV_SPOT: Overlapping confidence intervals (no statistically significant difference)
+- ACTIVATION and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)
+- FACEBOOK and KOL: Overlapping confidence intervals (no statistically significant difference)
+- FACEBOOK and KOL_BOOST: Overlapping confidence intervals (no statistically significant difference)
+- FACEBOOK and RADIO: Overlapping confidence intervals (no statistically significant difference)
+- FACEBOOK and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- FACEBOOK and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)
+- FACEBOOK significantly outperforms TV_SPOT (non-overlapping intervals)
+- FACEBOOK and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)
+- KOL and KOL_BOOST: Overlapping confidence intervals (no statistically significant difference)
+- KOL and RADIO: Overlapping confidence intervals (no statistically significant difference)
+- KOL and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- KOL and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)
+- KOL significantly outperforms TV_SPOT (non-overlapping intervals)
+- KOL and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)
+- KOL_BOOST and RADIO: Overlapping confidence intervals (no statistically significant difference)
+- KOL_BOOST and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- KOL_BOOST and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)
+- KOL_BOOST significantly outperforms TV_SPOT (non-overlapping intervals)
+- KOL_BOOST and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)
+- RADIO and TIKTOK: Overlapping confidence intervals (no statistically significant difference)
+- RADIO and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)
+- RADIO significantly outperforms TV_SPOT (non-overlapping intervals)
+- RADIO and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)
+- TIKTOK and TV_SPONSOR: Overlapping confidence intervals (no statistically significant difference)
+- TIKTOK significantly outperforms TV_SPOT (non-overlapping intervals)
+- TIKTOK and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)
+- TV_SPONSOR significantly outperforms TV_SPOT (non-overlapping intervals)
+- TV_SPONSOR and YOUTUBE: Overlapping confidence intervals (no statistically significant difference)
+- YOUTUBE significantly outperforms TV_SPOT (non-overlapping intervals)
 
 CPIK Performance with 90% Credible Intervals:
-1. META (Best to Worst CPIK):
+1. KOL_BOOST (Best to Worst CPIK):
    - Point Estimate: $0.200 per KPI unit
-   - Confidence Range: $0.143 to $0.282
-   - Uncertainty Level: ±70% around point estimate
+   - Confidence Range: $0.196 to $0.204
+   - Uncertainty Level: ±4% around point estimate
 2. TIKTOK (Best to Worst CPIK):
    - Point Estimate: $0.200 per KPI unit
-   - Confidence Range: $0.197 to $0.203
-   - Uncertainty Level: ±3% around point estimate
-3. DV_360_X1 (Best to Worst CPIK):
-   - Point Estimate: $0.224 per KPI unit
-   - Confidence Range: $0.118 to $0.716
-   - Uncertainty Level: ±268% around point estimate
-4. GOOGLE (Best to Worst CPIK):
-   - Point Estimate: $0.234 per KPI unit
-   - Confidence Range: $0.120 to $0.460
-   - Uncertainty Level: ±145% around point estimate
+   - Confidence Range: $0.198 to $0.202
+   - Uncertainty Level: ±2% around point estimate
+3. TV_SPONSOR (Best to Worst CPIK):
+   - Point Estimate: $0.200 per KPI unit
+   - Confidence Range: $0.195 to $0.205
+   - Uncertainty Level: ±5% around point estimate
+4. RADIO (Best to Worst CPIK):
+   - Point Estimate: $0.223 per KPI unit
+   - Confidence Range: $0.178 to $0.279
+   - Uncertainty Level: ±45% around point estimate
+5. YOUTUBE (Best to Worst CPIK):
+   - Point Estimate: $0.254 per KPI unit
+   - Confidence Range: $0.192 to $0.339
+   - Uncertainty Level: ±58% around point estimate
+6. KOL (Best to Worst CPIK):
+   - Point Estimate: $0.264 per KPI unit
+   - Confidence Range: $0.188 to $0.376
+   - Uncertainty Level: ±71% around point estimate
+7. ACTIVATION (Best to Worst CPIK):
+   - Point Estimate: $0.269 per KPI unit
+   - Confidence Range: $0.160 to $0.543
+   - Uncertainty Level: ±142% around point estimate
+8. FACEBOOK (Best to Worst CPIK):
+   - Point Estimate: $0.287 per KPI unit
+   - Confidence Range: $0.188 to $0.445
+   - Uncertainty Level: ±89% around point estimate
+9. TV_SPOT (Best to Worst CPIK):
+   - Point Estimate: $0.827 per KPI unit
+   - Confidence Range: $0.520 to $1.374
+   - Uncertainty Level: ±103% around point estimate
 
 CPIK Confidence Analysis:
-- Most Reliable CPIK Estimate: TIKTOK (±3% uncertainty)
-- Least Reliable CPIK Estimate: DV_360_X1 (±268% uncertainty)
+- Most Reliable CPIK Estimate: TIKTOK (±2% uncertainty)
+- Least Reliable CPIK Estimate: ACTIVATION (±142% uncertainty)
 
 CPIK Statistical Significance:
-- DV_360_X1 and GOOGLE: Overlapping CPIK intervals (no statistically significant difference)
-- DV_360_X1 and META: Overlapping CPIK intervals (no statistically significant difference)
-- DV_360_X1 and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
-- GOOGLE and META: Overlapping CPIK intervals (no statistically significant difference)
-- GOOGLE and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
-- META and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and FACEBOOK: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and KOL: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and KOL_BOOST: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and RADIO: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and TV_SPOT: Overlapping CPIK intervals (no statistically significant difference)
+- ACTIVATION and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)
+- FACEBOOK and KOL: Overlapping CPIK intervals (no statistically significant difference)
+- FACEBOOK and KOL_BOOST: Overlapping CPIK intervals (no statistically significant difference)
+- FACEBOOK and RADIO: Overlapping CPIK intervals (no statistically significant difference)
+- FACEBOOK and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- FACEBOOK and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)
+- FACEBOOK significantly more cost-efficient than TV_SPOT
+- FACEBOOK and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)
+- KOL and KOL_BOOST: Overlapping CPIK intervals (no statistically significant difference)
+- KOL and RADIO: Overlapping CPIK intervals (no statistically significant difference)
+- KOL and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- KOL and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)
+- KOL significantly more cost-efficient than TV_SPOT
+- KOL and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)
+- KOL_BOOST and RADIO: Overlapping CPIK intervals (no statistically significant difference)
+- KOL_BOOST and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- KOL_BOOST and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)
+- KOL_BOOST significantly more cost-efficient than TV_SPOT
+- KOL_BOOST and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)
+- RADIO and TIKTOK: Overlapping CPIK intervals (no statistically significant difference)
+- RADIO and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)
+- RADIO significantly more cost-efficient than TV_SPOT
+- RADIO and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)
+- TIKTOK and TV_SPONSOR: Overlapping CPIK intervals (no statistically significant difference)
+- TIKTOK significantly more cost-efficient than TV_SPOT
+- TIKTOK and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)
+- TV_SPONSOR significantly more cost-efficient than TV_SPOT
+- TV_SPONSOR and YOUTUBE: Overlapping CPIK intervals (no statistically significant difference)
+- YOUTUBE significantly more cost-efficient than TV_SPOT
 
 Combined ROI and CPIK Insights:
 
 High Confidence Performers (Low uncertainty in both ROI and CPIK):
-- TIKTOK: 5.00x ROI (±3%), $0.200 CPIK (±3%)
+- KOL_BOOST: 5.00x ROI (±4%), $0.200 CPIK (±4%)
+- TIKTOK: 5.00x ROI (±2%), $0.200 CPIK (±2%)
+- TV_SPONSOR: 5.00x ROI (±5%), $0.200 CPIK (±5%)
+- RADIO: 4.53x ROI (±45%), $0.223 CPIK (±45%)
 
 Uncertainty Patterns:
-- Average ROI uncertainty: ±89%
-- Average CPIK uncertainty: ±121%
+- Average ROI uncertainty: ±53%
+- Average CPIK uncertainty: ±58%
 - CPIK estimates show higher uncertainty than ROI estimates
 
 Model Reliability Assessment:
-- High ROI Confidence: TIKTOK (narrow intervals)
-- Low ROI Confidence: DV_360_X1, GOOGLE (wide intervals)
-- High CPIK Confidence: TIKTOK (narrow intervals)
-- Low CPIK Confidence: DV_360_X1, GOOGLE (wide intervals)
+- High ROI Confidence: KOL_BOOST, TIKTOK, TV_SPONSOR (narrow intervals)
+- Low ROI Confidence: ACTIVATION, FACEBOOK, TV_SPOT (wide intervals)
+- High CPIK Confidence: KOL_BOOST, TIKTOK, TV_SPONSOR (narrow intervals)
+- Low CPIK Confidence: ACTIVATION, FACEBOOK, KOL, TV_SPOT (wide intervals)
 
 Methodology Note: Note: CPIK (cost per incremental KPI) point
 estimate is determined by the posterior median, whereas ROI point estimate is
 determined by the posterior mean.Marketing Response Curves Performance Analysis:
 
 Current Channel Performance:
-1. META:
-   - Current Spend: $243,623 (10.4% of total)
-   - Current Revenue: $1,245,430 (11.3% of total)
-   - Current ROI: 5.11x
-2. TIKTOK:
-   - Current Spend: $12,306 (0.5% of total)
-   - Current Revenue: $61,527 (0.6% of total)
+1. TV_SPONSOR:
+   - Current Spend: $341,463 (0.8% of total)
+   - Current Revenue: $1,706,650 (1.2% of total)
    - Current ROI: 5.00x
-3. GOOGLE:
-   - Current Spend: $526,693 (22.5% of total)
-   - Current Revenue: $2,444,298 (22.3% of total)
-   - Current ROI: 4.64x
-4. DV_360_X1:
-   - Current Spend: $1,558,208 (66.6% of total)
-   - Current Revenue: $7,227,618 (65.8% of total)
-   - Current ROI: 4.64x
+2. RADIO:
+   - Current Spend: $3,295,000 (7.4% of total)
+   - Current Revenue: $14,916,628 (10.4% of total)
+   - Current ROI: 4.53x
+3. YOUTUBE:
+   - Current Spend: $4,368,572 (9.8% of total)
+   - Current Revenue: $17,402,620 (12.1% of total)
+   - Current ROI: 3.98x
+4. KOL:
+   - Current Spend: $5,140,650 (11.5% of total)
+   - Current Revenue: $19,866,100 (13.8% of total)
+   - Current ROI: 3.86x
+5. ACTIVATION:
+   - Current Spend: $12,963,048 (28.9% of total)
+   - Current Revenue: $49,697,312 (34.6% of total)
+   - Current ROI: 3.83x
+6. FACEBOOK:
+   - Current Spend: $7,147,552 (16.0% of total)
+   - Current Revenue: $25,648,736 (17.8% of total)
+   - Current ROI: 3.59x
+7. TV_SPOT:
+   - Current Spend: $11,540,248 (25.8% of total)
+   - Current Revenue: $14,483,313 (10.1% of total)
+   - Current ROI: 1.26x
 
 Portfolio Summary:
-- Total Spend: $2,340,830
-- Total Revenue: $10,978,873
-- Overall ROI: 4.69x
-- Active Channels: 4
+- Total Spend: $44,796,533
+- Total Revenue: $143,721,359
+- Overall ROI: 3.21x
+- Active Channels: 7
 
 Spend Increase Scenario Analysis:
 
 25% Spend Increase Scenarios:
-- META: +$60,906 → +$113,594 (Marginal ROI: 1.87x)
-- TIKTOK: +$3,077 → +$5,627 (Marginal ROI: 1.83x)
-- GOOGLE: +$131,673 → +$228,438 (Marginal ROI: 1.73x)
-- DV_360_X1: +$389,552 → +$614,472 (Marginal ROI: 1.58x)
-Portfolio 25% Increase: +$585,208 → +$962,132 (Portfolio Marginal ROI: 1.64x)
+- TV_SPONSOR: +$85,366 → +$235,487 (Marginal ROI: 2.76x)
+- RADIO: +$823,750 → +$1,048,923 (Marginal ROI: 1.27x)
+- YOUTUBE: +$1,092,143 → +$2,514,652 (Marginal ROI: 2.30x)
+- KOL: +$1,285,162 → +$2,200,658 (Marginal ROI: 1.71x)
+- ACTIVATION: +$3,240,762 → +$6,376,468 (Marginal ROI: 1.97x)
+- FACEBOOK: +$1,786,888 → +$2,126,128 (Marginal ROI: 1.19x)
+- TV_SPOT: +$2,885,062 → +$1,542,903 (Marginal ROI: 0.53x)
+Portfolio 25% Increase: +$11,199,133 → +$16,045,219 (Portfolio Marginal ROI: 1.43x)
 
 50% Spend Increase Scenarios:
-- META: +$121,811 → +$206,189 (Marginal ROI: 1.69x)
-- TIKTOK: +$6,153 → +$10,243 (Marginal ROI: 1.66x)
-- GOOGLE: +$263,346 → +$414,808 (Marginal ROI: 1.58x)
-- DV_360_X1: +$779,104 → +$1,105,102 (Marginal ROI: 1.42x)
-Portfolio 50% Increase: +$1,170,415 → +$1,736,342 (Portfolio Marginal ROI: 1.48x)
+- TV_SPONSOR: +$170,732 → +$438,110 (Marginal ROI: 2.57x)
+- RADIO: +$1,647,500 → +$1,895,140 (Marginal ROI: 1.15x)
+- YOUTUBE: +$2,184,286 → +$4,709,210 (Marginal ROI: 2.16x)
+- KOL: +$2,570,325 → +$4,038,400 (Marginal ROI: 1.57x)
+- ACTIVATION: +$6,481,524 → +$11,700,384 (Marginal ROI: 1.81x)
+- FACEBOOK: +$3,573,776 → +$3,862,276 (Marginal ROI: 1.08x)
+- TV_SPOT: +$5,770,124 → +$2,819,871 (Marginal ROI: 0.49x)
+Portfolio 50% Increase: +$22,398,267 → +$29,463,391 (Portfolio Marginal ROI: 1.32x)
 
 100% Spend Increase Scenarios:
-- META: +$243,623 → +$350,315 (Marginal ROI: 1.44x)
-- TIKTOK: +$12,306 → +$17,486 (Marginal ROI: 1.42x)
-- GOOGLE: +$526,693 → +$704,568 (Marginal ROI: 1.34x)
-- DV_360_X1: +$1,558,208 → +$1,847,447 (Marginal ROI: 1.19x)
-Portfolio 100% Increase: +$2,340,830 → +$2,919,815 (Portfolio Marginal ROI: 1.25x)
+- TV_SPONSOR: +$341,463 → +$772,357 (Marginal ROI: 2.26x)
+- RADIO: +$3,295,000 → +$3,200,890 (Marginal ROI: 0.97x)
+- YOUTUBE: +$4,368,572 → +$8,397,040 (Marginal ROI: 1.92x)
+- KOL: +$5,140,650 → +$6,970,844 (Marginal ROI: 1.36x)
+- ACTIVATION: +$12,963,048 → +$20,121,168 (Marginal ROI: 1.55x)
+- FACEBOOK: +$7,147,552 → +$6,574,364 (Marginal ROI: 0.92x)
+- TV_SPOT: +$11,540,248 → +$4,836,091 (Marginal ROI: 0.42x)
+Portfolio 100% Increase: +$44,796,533 → +$50,872,754 (Portfolio Marginal ROI: 1.14x)
 
 Marginal Returns Analysis:
 
 Efficiency Threshold Analysis:
-- META: Efficiency maintained until 1.2x current spend
-- TIKTOK: Efficiency maintained until 1.2x current spend
-- GOOGLE: Efficiency maintained until 1.2x current spend
-- DV_360_X1: Efficiency maintained until 1.2x current spend
+- TV_SPONSOR: Efficiency maintained until 1.3x current spend
+- RADIO: Efficiency maintained until 1.2x current spend
+- YOUTUBE: Efficiency maintained until 1.3x current spend
+- KOL: Efficiency maintained until 1.2x current spend
+- ACTIVATION: Efficiency maintained until 1.3x current spend
+- FACEBOOK: Efficiency maintained until 1.2x current spend
+- TV_SPOT: Efficiency maintained until 1.2x current spend
 
 Scale and Growth Opportunity Analysis:
-- Most Efficient Channel: META (5.11x ROI)
-- Largest Spend Channel: DV_360_X1 ($1,558,208)
-- Highest Revenue Channel: DV_360_X1 ($7,227,618)
+- Most Efficient Channel: TV_SPONSOR (5.00x ROI)
+- Largest Spend Channel: ACTIVATION ($12,963,048)
+- Highest Revenue Channel: ACTIVATION ($49,697,312)
 
 Spend Scale Differences:
-- DV_360_X1 spends 126.6x more than TIKTOK
-- DV_360_X1 spends 6.4x more than META
-- DV_360_X1 spends 3.0x more than GOOGLE
+- ACTIVATION spends 38.0x more than TV_SPONSOR
+- ACTIVATION spends 3.9x more than RADIO
+- ACTIVATION spends 3.0x more than YOUTUBE
+- ACTIVATION spends 2.5x more than KOL
+- ACTIVATION spends 1.8x more than FACEBOOK
+- ACTIVATION spends 1.1x more than TV_SPOT
 
 Portfolio Concentration:
-- Spend Concentration: Top channel (DV_360_X1) represents 66.6% of total spend
-- Revenue Concentration: Top channel (DV_360_X1) represents 65.8% of total revenue
-- Channels with >10% spend share: 3 of 4
+- Spend Concentration: Top channel (ACTIVATION) represents 28.9% of total spend
+- Revenue Concentration: Top channel (ACTIVATION) represents 34.6% of total revenue
+- Channels with >10% spend share: 4 of 7
 
 Growth Potential Summary:
-- META: Up to 32% revenue growth potential (max 2.2x current spend)
-- TIKTOK: Up to 32% revenue growth potential (max 2.2x current spend)
-- GOOGLE: Up to 32% revenue growth potential (max 2.2x current spend)
-- DV_360_X1: Up to 29% revenue growth potential (max 2.2x current spend)
+- TV_SPONSOR: Up to 52% revenue growth potential (max 2.2x current spend)
+- RADIO: Up to 24% revenue growth potential (max 2.2x current spend)
+- YOUTUBE: Up to 55% revenue growth potential (max 2.2x current spend)
+- KOL: Up to 40% revenue growth potential (max 2.2x current spend)
+- ACTIVATION: Up to 46% revenue growth potential (max 2.2x current spend)
+- FACEBOOK: Up to 29% revenue growth potential (max 2.2x current spend)
+- TV_SPOT: Up to 38% revenue growth potential (max 2.2x current spend)
 
 Methodology Note: Response curves show cumulative incremental revenue from total media spend over the selected time period, constructed based on historical flighting patterns.

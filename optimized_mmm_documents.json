@@ -1,0 +1,165 @@
+[
+  {
+    "page_content": "Time period: Jul 4, 2022 - Jul 1, 2024\n- Non-optimized budget: $45M\n- Optimized budget: $45M (delta: $0)\n- Non-optimized ROI: 3.2\n- Optimized ROI: 3.4 (delta: +0.1)\n- Non-optimized incremental revenue: $146M\n- Optimized incremental revenue: $152M (delta: +$6M)",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "summary_metrics",
+      "section_name": "Time period",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 260,
+      "report_type": "optimization_results"
+    }
+  },
+  {
+    "page_content": "Budget Allocation Table:\n- activation: 29% to 37%\n- tv_spot: 26% to 18%\n- kol: 11% to 13%\n- youtube: 10% to 13%\n- facebook: 16% to 12%\n- radio: 7% to 6%\n- tv_sponsor: 1% to 1%\n- kol_boost: 1% to 1%\n- tiktok: 0% to 0%",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "budget_allocation",
+      "section_name": "Budget Allocation Table",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 216,
+      "report_type": "channel_allocation"
+    }
+  },
+  {
+    "page_content": "Insights:\n1. These are the estimated results\nfrom a fixed budget scenario with a channel-level spend constraint of\n-30% to +30% of the non-optimized spend. The non-optimized spend for each\nchannel is equal to the historical spend during the period from 2022-07-04 to\n2024-06-24.\n2. You can see the channel-level budget shifts and\nthe performance lift after optimization.\n3. These response curves depict the\nrelationship between marketing spend and the resulting incremental revenue and\nshow the optimal spend amount for each channel that maximizes the total\nincremental revenue while staying within the channel-level spend\nconstraints.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "insights",
+      "section_name": "Insights",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 635,
+      "report_type": "analysis_insights"
+    }
+  },
+  {
+    "page_content": "Chart Title: Change in optimized spend for each channel\nDescription: Note: Each bar represents the change in\noptimized spend for a channel. Negative values indicate a decrease in spend\nwhile positive values indicate an increase from your non-optimized spend.\nData Points:\ntv_spot       Spend Change: (Decrease) $-3,460,000\nfacebook      Spend Change: (Decrease) $-1,770,000\nradio         Spend Change: (Decrease) $-570,000\ntiktok        Spend Change: (Decrease) $-30,000\nactivation    Spend Change: (Increase) $3,800,000\nyoutube       Spend Change: (Increase) $1,310,000\nkol           Spend Change: (Increase) $540,000\ntv_sponsor    Spend Change: (Increase) $100,000\nkol_boost     Spend Change: (Increase) $80,000",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "chart_1",
+      "section_name": "Chart: Change in optimized spend for each channel",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 713,
+      "report_type": "data_visualization",
+      "chart_title": "Change in optimized spend for each channel"
+    }
+  },
+  {
+    "page_content": "Chart Title: Optimized budget allocation\nDescription: Note: The \"non_optimized\" bar presents the\nincremental revenue before optimization, and the subsequent bars represent the\nchange in incremental revenue for each channel based on the optimal spend\nlevel. The final bar labeled \"optimized\" shows the total incremental revenue\nafter optimization.\nData Points:\nkol          $5,680,000\ntv_spot      $8,080,000\ntv_sponsor   $440,000\nradio        $2,730,000\nactivation   $16,760,000\nfacebook     $5,380,000\nyoutube      $5,680,000\ntiktok       $110,000\nkol_boost    $350,000",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "chart_2",
+      "section_name": "Chart: Optimized budget allocation",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 570,
+      "report_type": "data_visualization",
+      "chart_title": "Optimized budget allocation"
+    }
+  },
+  {
+    "page_content": "Percentage Allocation:\nkol          12.6%\ntv_spot      17.9%\ntv_sponsor   1.0%\nradio        6.0%\nactivation   37.1%\nfacebook     11.9%\nyoutube      12.6%\ntiktok       0.2%\nkol_boost    0.8%",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "percentage_allocation",
+      "section_name": "Percentage Allocation",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 189,
+      "report_type": "allocation_breakdown"
+    }
+  },
+  {
+    "page_content": "Chart Title: Optimized incremental revenue across all channels\nDescription: Note: The \"non_optimized\" bar presents the\nincremental revenue before optimization, and the subsequent bars represent the\nchange in incremental revenue for each channel based on the optimal spend\nlevel. The final bar labeled \"optimized\" shows the total incremental revenue\nafter optimization.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "chart_3",
+      "section_name": "Chart: Optimized incremental revenue across all channels",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 368,
+      "report_type": "data_visualization",
+      "chart_title": "Optimized incremental revenue across all channels"
+    }
+  },
+  {
+    "page_content": "Non-optimized Revenue: $145,745,072.00\n\nChannel revenue change:\nactivation   $7,363,328.00 (Increase)\nyoutube      $2,974,818.00 (Increase)\nfacebook     $-2,683,926.00 (Decrease)\ntv_spot      $-2,371,982.00 (Decrease)\nkol          $  977,014.00 (Increase)\nradio        $ -897,651.00 (Decrease)\ntv_sponsor   $  273,048.62 (Increase)\nkol_boost    $  179,869.88 (Increase)\ntiktok       $  -47,465.62 (Decrease)\n\nTotal Optimization Impact change: $5,767,053.88\nNet Change: -145,745,072.00\nOptimized Revenue change: $0.00",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "revenue_details",
+      "section_name": "Revenue Details",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 516,
+      "report_type": "revenue_analysis"
+    }
+  },
+  {
+    "page_content": "Channel: Activation\nNo clear diminishing return point was found.\nThe optimal spend range is estimated to be $9.07M to $16.85\nAt the maximum spend, the expected revenue uncertainty ranges from $31.72M to $115.40M.\nThe optimized spend is $16,760,000.\nThe non-optimized spend is $12,960,000.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "channel_analysis",
+      "section_name": "Channel: Activation",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 288,
+      "report_type": "channel_performance",
+      "channel_name": "activation"
+    }
+  },
+  {
+    "page_content": "Channel: Tv_spot\nNo clear diminishing return point was found.\nThe optimal spend range is estimated to be $8.08M to $15.00\nAt the maximum spend, the expected revenue uncertainty ranges from $10.97M to $30.06M.\nThe optimized spend is $8,080,000.\nThe non-optimized spend is $11,540,000.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "channel_analysis",
+      "section_name": "Channel: Tv_spot",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 283,
+      "report_type": "channel_performance",
+      "channel_name": "tv_spot"
+    }
+  },
+  {
+    "page_content": "Channel: Kol\nNo clear diminishing return point was found.\nThe optimal spend range is estimated to be $3.60M to $6.68\nAt the maximum spend, the expected revenue uncertainty ranges from $17.96M to $37.96M.\nThe optimized spend is $5,680,000.\nThe non-optimized spend is $5,140,000.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "channel_analysis",
+      "section_name": "Channel: Kol",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 277,
+      "report_type": "channel_performance",
+      "channel_name": "kol"
+    }
+  },
+  {
+    "page_content": "Channel: Youtube\nNo clear diminishing return point was found.\nThe optimal spend range is estimated to be $3.06M to $5.68\nAt the maximum spend, the expected revenue uncertainty ranges from $18.02M to $34.75M.\nThe optimized spend is $5,680,000.\nThe non-optimized spend is $4,370,000.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "channel_analysis",
+      "section_name": "Channel: Youtube",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 281,
+      "report_type": "channel_performance",
+      "channel_name": "youtube"
+    }
+  },
+  {
+    "page_content": "Channel: Facebook\nNo clear diminishing return point was found.\nThe optimal spend range is estimated to be $5.00M to $9.29\nAt the maximum spend, the expected revenue uncertainty ranges from $20.40M to $47.39M.\nThe optimized spend is $5,380,000.\nThe non-optimized spend is $7,150,000.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "channel_analysis",
+      "section_name": "Channel: Facebook",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 282,
+      "report_type": "channel_performance",
+      "channel_name": "facebook"
+    }
+  },
+  {
+    "page_content": "Channel: Radio\nNo clear diminishing return point was found.\nThe optimal spend range is estimated to be $2.31M to $4.29\nAt the maximum spend, the expected revenue uncertainty ranges from $14.15M to $22.68M.\nThe optimized spend is $2,730,000.\nThe non-optimized spend is $3,300,000.",
+    "metadata": {
+      "source": "mmm_report",
+      "section": "channel_analysis",
+      "section_name": "Channel: Radio",
+      "time_period": "Jul 4, 2022 - Jul 1, 2024",
+      "content_length": 279,
+      "report_type": "channel_performance",
+      "channel_name": "radio"
+    }
+  }
+]

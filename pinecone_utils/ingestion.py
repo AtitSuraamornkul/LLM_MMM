@@ -4,6 +4,9 @@ import re
 from dotenv import load_dotenv
 import doc_process
 import json
+import process_optimize
+import process_summary
+import uuid
 
 from pinecone import Pinecone, ServerlessSpec
 
@@ -19,7 +22,7 @@ with open("llm_input/llm_input.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 # initialize pinecone database
-index_name = "planidac-v2"  # change if desired
+index_name = "m150"  # change if desired
 
 # check whether index exists, and create if not
 existing_indexes = [index_info["name"] for index_info in pc.list_indexes()]
@@ -44,28 +47,26 @@ embeddings = HuggingFaceEmbeddings(
 vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 
 
-# chunks = doc_process.split_to_chunks(text)
-# documents =  doc_process.add_document(chunks)
+optim_json_documents, optim_validation = process_optimize.process_mmm_report_complete('llm_input/llm_input.txt')
+optimize_json_data = optim_json_documents
 
-#Read and process JSON ---
-with open("marketing_analysis_rag_documents.json", "r", encoding="utf-8") as f:
-    json_data = json.load(f)
+summ_json_documents, summ_validation = process_summary.process_mmm_summary_report_complete('summary_output/summary_extract_output.txt')
+summary_json_data = summ_json_documents
 
-documents = [
-     Document(page_content=entry["page_content"], metadata=entry["metadata"])
-     for entry in json_data
-]
+
+all_json_data = optimize_json_data + summary_json_data
+
+documents = all_json_data
+
+# documents = [
+#     Document(page_content=entry["page_content"], metadata=entry["metadata"]) for entry in all_json_data
+#  ]
 
 
  # generate unique id's
 
-start_id = 11
-i = 0
-uuids = []
-
-while i < len(documents):
-    i += 1
-    uuids.append(f"id{start_id+i}")
+uuids = [str(uuid.uuid4()) for _ in documents]
 
 # # add to database
 vector_store.add_documents(documents=documents, ids=uuids)
+

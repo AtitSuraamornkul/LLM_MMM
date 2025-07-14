@@ -4,7 +4,7 @@ from groq import Groq
 import time
 import re
 from dotenv import load_dotenv
-import llm
+import utils.llm as llm
 import utils.check_token as check_token
 import tiktoken
 
@@ -78,7 +78,7 @@ def initialize_rag():
     """Initialize RAG components with caching for better performance"""
     # Initialize Pinecone
     pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
-    index_name = "planidac-v2"
+    index_name = "m150"
     index = pc.Index(index_name)
     
     # Initialize embeddings and vector store
@@ -513,7 +513,7 @@ with st.expander("Display Charts", expanded=False):
 
     for (label, chart_id), tab in zip(chart_options, tabs):
         with tab:
-            df = extract_vega_dataset_from_html('output/summary_output.html', chart_id)
+            df = extract_vega_dataset_from_html('output/new_summary_output.html', chart_id)
             
             if df is not None and not df.empty:     
                 # Customize chart for each chart_id
@@ -712,7 +712,7 @@ if st.button("Click For Budget Optimization Summary Report"):
 
 if st.button("Click For Optimization Dashboard"):
     try:
-        with open('output/optimization_output.html', 'r', encoding='utf-8') as f:
+        with open('output/new_optimization_output.html', 'r', encoding='utf-8') as f:
             html_content = f.read()
         
         # Store in session state to trigger modal
