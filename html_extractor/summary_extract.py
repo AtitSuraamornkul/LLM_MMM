@@ -29,7 +29,7 @@ def get_channel_contribution(soup):
     chart_description = chart_card.find("chart-description")
     chart_description_content = chart_description.get_text(strip=True) if chart_description else None
     
-    # [Same JSON extraction logic as before...]
+    # JSON extraction logic
     script_tag = chart_card.find("script", {"type": "text/javascript"})
     channel_data = []
     
@@ -61,9 +61,14 @@ def get_channel_contribution(soup):
     
     marketing_channels.sort(key=lambda x: x.get('incremental_outcome', 0), reverse=True)
     
-    # Format for RAG/Vector DB
-    baseline_pct = round(baseline_data.get('pct_of_contribution', 0) * 100, 1) if baseline_data else 0
-    total_marketing_pct = round(sum(ch.get('pct_of_contribution', 0) for ch in marketing_channels) * 100, 1)
+    # Calculate revenue totals
+    baseline_revenue = baseline_data.get('incremental_outcome', 0) if baseline_data else 0
+    marketing_revenue = sum(ch.get('incremental_outcome', 0) for ch in marketing_channels)
+    total_revenue = baseline_revenue + marketing_revenue
+    
+    # Use original data percentages (convert to display format)
+    baseline_pct = baseline_data.get('pct_of_contribution', 0) * 100 if baseline_data else 0
+    total_marketing_pct = sum(ch.get('pct_of_contribution', 0) for ch in marketing_channels) * 100
     
     # Create structured, searchable content
     rag_content = f"""
@@ -72,26 +77,32 @@ Channel Contribution Analysis:
 Business Context: {insight_text_content}
 
 Revenue Attribution:
-- Baseline revenue accounts for {baseline_pct}% of total revenue
-- Marketing channels drive {total_marketing_pct}% of total revenue
-- Total revenue split: {baseline_pct}% organic/baseline vs {total_marketing_pct}% paid marketing
+- Baseline revenue accounts for {baseline_pct:.1f}% of total revenue
+- Marketing channels drive {total_marketing_pct:.1f}% of total revenue
+- Total revenue split: {baseline_pct:.1f}% organic/baseline vs {total_marketing_pct:.1f}% paid marketing
+- Combined Total Revenue: THB {total_revenue:,.0f} (Baseline: THB {baseline_revenue:,.0f} + Marketing: THB {marketing_revenue:,.0f})
 
 Marketing Channel Performance:
 """.strip()
+    
+    # Add BASELINE first
+    if baseline_data:
+        rag_content += f"\n- BASELINE contributes {baseline_pct:.1f}% of total revenue (THB {baseline_revenue:,.0f})"
         
-    # Add individual channel performance
+    # Add individual marketing channel performance using original data
     for i, channel in enumerate(marketing_channels, 1):
-        ch_pct = round(channel.get('pct_of_contribution', 0) * 100, 1)
+        ch_pct = channel.get('pct_of_contribution', 0) * 100
         revenue = channel.get('incremental_outcome', 0)
-        rag_content += f"\n- {channel.get('channel')} contributes {ch_pct}% of total revenue (${revenue:,.0f})"
+        rag_content += f"\n- {channel.get('channel')} contributes {ch_pct:.1f}% of total revenue (THB {revenue:,.0f})"
     
     # Add key insights for better retrieval
     if marketing_channels:
         top_channel = marketing_channels[0]
-        top_ch_pct = round(top_channel.get('pct_of_contribution', 0) * 100, 1)
-        rag_content += f"\n\nKey Insights:\n- {top_channel.get('channel')} is the top performing marketing channel at {top_ch_pct}%"
-        rag_content += f"\n- Baseline/organic traffic dominates revenue generation at {baseline_pct}%"
-        rag_content += f"\n- Marketing channels collectively contribute {total_marketing_pct}% to total revenue"
+        top_ch_pct = top_channel.get('pct_of_contribution', 0) * 100
+        rag_content += f"\n\nKey Insights:\n- {top_channel.get('channel')} is the top performing marketing channel at {top_ch_pct:.1f}%"
+        rag_content += f"\n- Baseline/organic traffic dominates revenue generation at {baseline_pct:.1f}%"
+        rag_content += f"\n- Marketing channels collectively contribute {total_marketing_pct:.1f}% to total revenue"
+        rag_content += f"\n- Total business revenue is THB {total_revenue:,.0f} across all channels"
     
     if chart_description_content:
         rag_content += f"\n\nMethodology: {chart_description_content}"
@@ -184,7 +195,7 @@ Performance Overview:
 - Total marketing spend allocation: {total_spend_pct:.1f}%
 - Average ROI across all channels: {avg_roi:.1f}x
 
-Channel Performance by ROI:
+Channel Performance by ROI (Within Media Channel Only):
 """.strip()
     
     # Add individual channel performance
@@ -416,9 +427,9 @@ def create_monthly_channel_summaries_with_anomalies(channel_monthly_data):
         
         summary += f"""
 {channel.upper()} - Monthly Performance:
-- Average Monthly Revenue: ${avg_revenue:,.0f}
-- Peak Month: {peak_month[0]} (${peak_month[1]['revenue']:,.0f})
-- Lowest Month: {trough_month[0]} (${trough_month[1]['revenue']:,.0f})
+- Average Monthly Revenue: THB{avg_revenue:,.0f}
+- Peak Month: {peak_month[0]} (THB{peak_month[1]['revenue']:,.0f})
+- Lowest Month: {trough_month[0]} (THB{trough_month[1]['revenue']:,.0f})
 - Active Months: {len([r for r in revenues if r > 0])} out of {len(monthly_data)}
 """
         
@@ -426,13 +437,13 @@ def create_monthly_channel_summaries_with_anomalies(channel_monthly_data):
         if spikes:
             summary += f"- Revenue Spikes Detected: {len(spikes)}\n"
             for spike in sorted(spikes, key=lambda x: x['magnitude'], reverse=True)[:3]:
-                summary += f"  • {spike['period']}: ${spike['revenue']:,.0f} (+{spike['magnitude']:.0f}% above average)\n"
+                summary += f"  • {spike['period']}: THB{spike['revenue']:,.0f} (+{spike['magnitude']:.0f}% above average)\n"
         
         # Add dip analysis
         if dips:
             summary += f"- Revenue Dips Detected: {len(dips)}\n"
             for dip in sorted(dips, key=lambda x: x['magnitude'], reverse=True)[:3]:
-                summary += f"  • {dip['period']}: ${dip['revenue']:,.0f} (-{dip['magnitude']:.0f}% below average)\n"
+                summary += f"  • {dip['period']}: THB{dip['revenue']:,.0f} (-{dip['magnitude']:.0f}% below average)\n"
         
         # Month-over-month growth analysis
         sorted_months = sorted(monthly_data.keys())
@@ -512,8 +523,8 @@ def create_quarterly_channel_summaries_with_trends(channel_quarterly_data):
         summary += f"""
 {channel.upper()} - Quarterly Analysis:
 - Trend Direction: {trend_direction.title()}
-- Best Quarter: {best_quarter[0]} (${best_quarter[1]['revenue']:,.0f})
-- Worst Quarter: {worst_quarter[0]} (${worst_quarter[1]['revenue']:,.0f})
+- Best Quarter: {best_quarter[0]} (THB{best_quarter[1]['revenue']:,.0f})
+- Worst Quarter: {worst_quarter[0]} (THB{worst_quarter[1]['revenue']:,.0f})
 - Total Quarters Active: {len([r for r in revenues if r > 0])}
 """
         
@@ -530,7 +541,7 @@ def create_quarterly_channel_summaries_with_trends(channel_quarterly_data):
         if len(sorted_quarters) >= 2:
             recent_quarters = sorted_quarters[-2:]
             recent_avg = statistics.mean([quarterly_data[q]['revenue'] for q in recent_quarters])
-            summary += f"- Recent Performance (Last 2Q): ${recent_avg:,.0f} average\n"
+            summary += f"- Recent Performance (Last 2Q): THB{recent_avg:,.0f} average\n"
         
         summary += "\n"
     
@@ -565,14 +576,14 @@ def create_anomaly_analysis(channel_monthly_data):
         summary += f"\nTop Revenue Spikes (Highest Magnitude):\n"
         top_spikes = sorted(all_spikes, key=lambda x: x['magnitude'], reverse=True)[:5]
         for i, spike in enumerate(top_spikes, 1):
-            summary += f"{i}. {spike['channel'].upper()} in {spike['period']}: ${spike['revenue']:,.0f} (+{spike['magnitude']:.0f}% above average)\n"
+            summary += f"{i}. {spike['channel'].upper()} in {spike['period']}: THB{spike['revenue']:,.0f} (+{spike['magnitude']:.0f}% above average)\n"
     
     # Analyze biggest dips
     if all_dips:
         summary += f"\nSignificant Revenue Dips:\n"
         top_dips = sorted(all_dips, key=lambda x: x['magnitude'], reverse=True)[:5]
         for i, dip in enumerate(top_dips, 1):
-            summary += f"{i}. {dip['channel'].upper()} in {dip['period']}: ${dip['revenue']:,.0f} (-{dip['magnitude']:.0f}% below average)\n"
+            summary += f"{i}. {dip['channel'].upper()} in {dip['period']}: THB{dip['revenue']:,.0f} (-{dip['magnitude']:.0f}% below average)\n"
     
     # Seasonal spike analysis
     spike_months = defaultdict(int)
@@ -655,7 +666,7 @@ def create_channel_comparison_analysis(channel_monthly_data, channel_quarterly_d
         summary += f"\nTotal Revenue Rankings:\n"
         revenue_ranking = sorted(channel_totals.items(), key=lambda x: x[1], reverse=True)
         for i, (channel, total_rev) in enumerate(revenue_ranking, 1):
-            summary += f"{i}. {channel.upper()}: ${total_rev:,.0f} cumulative revenue\n"
+            summary += f"{i}. {channel.upper()}: THB{total_rev:,.0f} cumulative revenue\n"
     
     if channel_consistency:
         summary += f"\nConsistency Rankings (% of months active):\n"
@@ -667,7 +678,7 @@ def create_channel_comparison_analysis(channel_monthly_data, channel_quarterly_d
         summary += f"\nPeak Performance Rankings (Highest single month):\n"
         peak_ranking = sorted(channel_peak_performance.items(), key=lambda x: x[1], reverse=True)
         for i, (channel, peak_rev) in enumerate(peak_ranking, 1):
-            summary += f"{i}. {channel.upper()}: ${peak_rev:,.0f} peak monthly revenue\n"
+            summary += f"{i}. {channel.upper()}: THB{peak_rev:,.0f} peak monthly revenue\n"
     
     # Channel lifecycle analysis
     summary += f"\nChannel Lifecycle Analysis:\n"
@@ -745,8 +756,8 @@ def create_momentum_analysis(channel_monthly_data, channel_quarterly_data):
 {channel.upper()} - 6-Month Momentum Analysis:
 - Growth Momentum: {momentum.title()} ({momentum_pct:+.0f}%)
 - Trend Consistency: {trend_consistency:.0f}% of months showed growth
-- Recent Average (Last 3 months): ${second_half_avg:,.0f}
-- Previous Average (3 months prior): ${first_half_avg:,.0f}
+- Recent Average (Last 3 months): THB{second_half_avg:,.0f}
+- Previous Average (3 months prior): THB{first_half_avg:,.0f}
 """
         
     
@@ -880,7 +891,7 @@ ROI vs Effectiveness Analysis:
 Performance Overview:
 - Average ROI across channels: {avg_roi:.1f}x
 - Average effectiveness: {avg_effectiveness:.4f} incremental outcome per impression
-- Total media spend analyzed: ${total_spend:,.0f}
+- Total media spend analyzed: THB{total_spend:,.0f}
 
 ROI Rankings:
 """.strip()
@@ -895,7 +906,7 @@ ROI Rankings:
     analysis += f"\n\nSpend Allocation:"
     for i, channel in enumerate(by_spend, 1):
         spend_pct = (channel['spend'] / total_spend) * 100
-        analysis += f"\n{i}. {channel['channel'].upper()}: ${channel['spend']:,.0f} ({spend_pct:.1f}% of total spend)"
+        analysis += f"\n{i}. {channel['channel'].upper()}: THB{channel['spend']:,.0f} ({spend_pct:.1f}% of total spend)"
     
     # Channel categorization
     analysis += f"\n\nChannel Performance Categories:"
@@ -922,7 +933,7 @@ ROI Rankings:
     
     analysis += f"\n- {highest_roi['channel'].upper()} delivers highest ROI ({highest_roi['roi']:.1f}x) - prioritize for budget allocation"
     analysis += f"\n- {highest_effectiveness['channel'].upper()} shows highest effectiveness ({highest_effectiveness['effectiveness']:.4f}) - strong media performance per impression"
-    analysis += f"\n- {largest_spend['channel'].upper()} receives largest budget (${largest_spend['spend']:,.0f}) - monitor efficiency closely"
+    analysis += f"\n- {largest_spend['channel'].upper()} receives largest budget (THB{largest_spend['spend']:,.0f}) - monitor efficiency closely"
     
     # Efficiency vs spend analysis
     for channel, data in channel_categories.items():
@@ -1010,7 +1021,7 @@ ROI vs Marginal ROI Performance Analysis:
 Performance Metrics:
 - Average ROI across channels: {avg_roi:.1f}x
 - Average Marginal ROI: {avg_marginal_roi:.1f}x (additional return per additional dollar)
-- Total media spend analyzed: ${total_spend:,.0f}
+- Total media spend analyzed: THB{total_spend:,.0f}
 
 ROI Rankings:
 """.strip()
@@ -1025,7 +1036,7 @@ ROI Rankings:
     analysis += f"\n\nSpend Distribution:"
     for i, channel in enumerate(by_spend, 1):
         spend_pct = (channel['spend'] / total_spend) * 100
-        analysis += f"\n{i}. {channel['channel'].upper()}: ${channel['spend']:,.0f} ({spend_pct:.1f}% of total spend)"
+        analysis += f"\n{i}. {channel['channel'].upper()}: THB{channel['spend']:,.0f} ({spend_pct:.1f}% of total spend)"
     
     # Saturation analysis (key insight for MMM)
     analysis += f"\n\nSaturation Indicators:"
@@ -1206,8 +1217,8 @@ def analyze_roi_cpik_confidence(roi_data, cpik_data, cpik_description):
             uncertainty = (cpik_range / channel['cpik']) * 100
             
             analysis += f"\n{i}. {channel['channel'].upper()} (Best to Worst CPIK):"
-            analysis += f"\n   - Point Estimate: ${channel['cpik']:.3f} per KPI unit"
-            analysis += f"\n   - Confidence Range: ${channel['ci_lo']:.3f} to ${channel['ci_hi']:.3f}"
+            analysis += f"\n   - Point Estimate: THB{channel['cpik']:.3f} per KPI unit"
+            analysis += f"\n   - Confidence Range: THB{channel['ci_lo']:.3f} to THB{channel['ci_hi']:.3f}"
             analysis += f"\n   - Uncertainty Level: ±{uncertainty:.0f}% around point estimate"
         
         # CPIK Confidence Analysis
@@ -1261,7 +1272,7 @@ def analyze_roi_cpik_confidence(roi_data, cpik_data, cpik_description):
         if high_confidence_channels:
             analysis += f"\n\nHigh Confidence Performers (Low uncertainty in both ROI and CPIK):"
             for ch in sorted(high_confidence_channels, key=lambda x: x['roi'], reverse=True):
-                analysis += f"\n- {ch['channel'].upper()}: {ch['roi']:.2f}x ROI (±{ch['roi_uncertainty']:.0f}%), ${ch['cpik']:.3f} CPIK (±{ch['cpik_uncertainty']:.0f}%)"
+                analysis += f"\n- {ch['channel'].upper()}: {ch['roi']:.2f}x ROI (±{ch['roi_uncertainty']:.0f}%), THB{ch['cpik']:.3f} CPIK (±{ch['cpik_uncertainty']:.0f}%)"
         
         # Uncertainty patterns
         analysis += f"\n\nUncertainty Patterns:"
@@ -1442,13 +1453,12 @@ def extract_response_curves_data_for_rag(soup):
             spend_pct = (metrics['current_spend'] / total_spend) * 100
             revenue_pct = (metrics['current_revenue'] / total_revenue) * 100
             content += f"{i}. {channel.upper()}:\n"
-            content += f"   - Current Spend: ${metrics['current_spend']:,.0f} ({spend_pct:.1f}% of total)\n"
-            content += f"   - Current Revenue: ${metrics['current_revenue']:,.0f} ({revenue_pct:.1f}% of total)\n"
+            content += f"   - Current Spend: THB{metrics['current_spend']:,.0f} ({spend_pct:.1f}% of total)\n"
+            content += f"   - Current Revenue: THB{metrics['current_revenue']:,.0f} ({revenue_pct:.1f}% of total)\n"
             content += f"   - Current ROI: {metrics['current_roi']:.2f}x\n"
         
         content += f"\nPortfolio Summary:\n"
-        content += f"- Total Spend: ${total_spend:,.0f}\n"
-        content += f"- Total Revenue: ${total_revenue:,.0f}\n"
+        content += f"- Total Spend: THB{total_spend:,.0f}\n"
         content += f"- Overall ROI: {overall_roi:.2f}x\n"
         content += f"- Active Channels: {len(channel_metrics)}\n\n"
         
@@ -1465,14 +1475,14 @@ def extract_response_curves_data_for_rag(soup):
             for channel, metrics in sorted_channels:
                 if scenario_pct in metrics['scenarios']:
                     scenario = metrics['scenarios'][scenario_pct]
-                    content += f"- {channel.upper()}: +${scenario['additional_spend']:,.0f} → +${scenario['additional_revenue']:,.0f} (Marginal ROI: {scenario['marginal_roi']:.2f}x)\n"
+                    content += f"- {channel.upper()}: +THB{scenario['additional_spend']:,.0f} → +THB{scenario['additional_revenue']:,.0f} (Marginal ROI: {scenario['marginal_roi']:.2f}x)\n"
                     total_additional_spend += scenario['additional_spend']
                     total_additional_revenue += scenario['additional_revenue']
                     scenario_count += 1
             
             if total_additional_spend > 0:
                 portfolio_marginal_roi = total_additional_revenue / total_additional_spend
-                content += f"Portfolio {scenario_pct} Increase: +${total_additional_spend:,.0f} → +${total_additional_revenue:,.0f} (Portfolio Marginal ROI: {portfolio_marginal_roi:.2f}x)\n\n"
+                content += f"Portfolio {scenario_pct} Increase: +THB{total_additional_spend:,.0f} → +THB{total_additional_revenue:,.0f} (Portfolio Marginal ROI: {portfolio_marginal_roi:.2f}x)\n\n"
         
         # Marginal Returns Analysis
         content += "Marginal Returns Analysis:\n"
@@ -1501,8 +1511,8 @@ def extract_response_curves_data_for_rag(soup):
         largest_revenue = max(channel_metrics.items(), key=lambda x: x[1]['current_revenue'])
         
         content += f"- Most Efficient Channel: {most_efficient[0].upper()} ({most_efficient[1]['current_roi']:.2f}x ROI)\n"
-        content += f"- Largest Spend Channel: {largest_spend[0].upper()} (${largest_spend[1]['current_spend']:,.0f})\n"
-        content += f"- Highest Revenue Channel: {largest_revenue[0].upper()} (${largest_revenue[1]['current_revenue']:,.0f})\n"
+        content += f"- Largest Spend Channel: {largest_spend[0].upper()} (THB{largest_spend[1]['current_spend']:,.0f})\n"
+        content += f"- Highest Revenue Channel: {largest_revenue[0].upper()} (THB{largest_revenue[1]['current_revenue']:,.0f})\n"
         
         # Scale ratios
         spend_ratios = []

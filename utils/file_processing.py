@@ -8,7 +8,7 @@ import os
 
 import streamlit as st
 from langchain_experimental.agents import create_csv_agent
-#from langchain_ollama import ChatOllama
+from langchain_ollama import ChatOllama
 from langchain_groq import ChatGroq
 
 
@@ -20,12 +20,18 @@ def process_csv_with_agent(uploaded_file, user_prompt):
             tmp_file_path = tmp_file.name
         
         try:
-            llm = ChatGroq(
-                model="llama-3.3-70b-versatile",  # You can change this to your preferred model
-                temperature=0,
-                #base_url="http://localhost:11434",  # Default Ollama URL
-                # timeout=300,  # 5 minutes timeout for complex analysis
-            )
+            llm = ChatOllama(
+                 model="qwen2.5-coder:3b-instruct",  # You can change this to your preferred model
+                 temperature=0,
+                 base_url="http://localhost:11434",  # Default Ollama URL
+                 # timeout=300,  # 5 minutes timeout for complex analysis
+             )
+            # llm = ChatGroq(
+            #     model="llama-3.3-70b-versatile",  # You can change this to your preferred model
+            #     temperature=0,
+            #     #base_url="http://localhost:11434",  # Default Ollama URL
+            #     #timeout=300,  # 5 minutes timeout for complex analysis
+            # )
 
             agent = create_csv_agent(
                 llm,
@@ -40,13 +46,22 @@ def process_csv_with_agent(uploaded_file, user_prompt):
             The date format is in Year-Month-Date unless specified
 
             Based on the user's question: "{user_prompt}"
-            
+
+            PREPROCESSING STEPS:
+                1. First, examine the dataframe structure with df.info() and df.head()
+                2. Identify numeric columns only for correlation analysis
+                3. For date columns, keep them as datetime objects, do NOT convert to int64
+                4. Use df.select_dtypes(include=[np.number]) to get only numeric columns for correlation
+
             Analyze the CSV file ({uploaded_file.name}) to answer this question.
             Provide specific insights, statistics, and findings relevant to the question.
             Include any relevant data patterns, trends, or anomalies you discover.
+            If you need to work with dates, use pd.to_datetime() but don't convert to int64 for correlation
             
-            If the question is not heavily related to the content of the uploaded file, DO NOT continue to analyze. State that it is not related to {uploaded_file.name}
-            DO NOT provide any estimates, predictions, or calculations only facts
+            if encounter acronyms, don't assume the meaning, refer to it as the given acronym
+
+            DO NOT provide any estimates or predictions only facts
+            IGNORE index limit and index column
             """
             
             result = agent.invoke({"input": analysis_prompt})
@@ -137,24 +152,6 @@ def extract_file_content(uploaded_file, user_prompt=None):
     except Exception as e:
         return f"Error processing {uploaded_file.name}: {str(e)}"
 
-
-def process_uploaded_files(uploaded_files, user_prompt=None):
-    """Process files, storing CSV files separately for dynamic analysis"""
-    context_parts = []
-    csv_files = []
-    for file in uploaded_files:
-        if file.type == "text/csv":
-            # Store CSV files for dynamic processing
-            csv_files.append(file)
-            context_parts.append(f"=== CSV FILE: {file.name} ===\nCSV file uploaded and ready for dynamic analysis.\n")
-        else:
-            # Process static files normally
-            content = extract_file_content(file, None)
-            context_parts.append(f"=== FILE: {file.name} ===\n{content}\n")
-    # Store CSV files in session state for dynamic processing
-    if csv_files:
-        st.session_state.uploaded_csv_files = csv_files
-    return "\n".join(context_parts)
 
 
 def analyze_csv_files_dynamically(user_prompt):

@@ -2,7 +2,7 @@ import os
 import time
 import re
 from dotenv import load_dotenv
-import doc_process
+#import doc_process
 import json
 import process_optimize
 import process_summary
@@ -22,7 +22,7 @@ with open("llm_input/llm_input.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 # initialize pinecone database
-index_name = "m150"  # change if desired
+index_name = "m150-thb"  # change if desired
 
 # check whether index exists, and create if not
 existing_indexes = [index_info["name"] for index_info in pc.list_indexes()]

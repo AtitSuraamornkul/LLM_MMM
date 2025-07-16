@@ -222,7 +222,7 @@ if __name__ == "__main__":
     # Method 1: Comprehensive semantic processing
     print("=== Comprehensive Semantic Processing ===")
     documents, validation = process_mmm_report_complete(file_path)
-    save_documents_as_json(documents, "mmm_documents.json")
+    save_documents_as_json(documents, "optimized_mmm_documents.json")
     
     print(f"Processed {len(documents)} documents")
     print(f"Coverage ratio: {validation['coverage_ratio']:.2%}")

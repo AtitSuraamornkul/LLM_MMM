@@ -102,7 +102,7 @@ def spend_delta_chart_extractor(soup):
 
     for item in chart_data:
         change_type = "Increase" if item['spend'] > 0 else "Decrease"
-        output += f"{item['channel']: <12}  Spend Change: ({change_type}) ${item['spend']:,.0f}" + "\n"
+        output += f"{item['channel']: <12}  Spend Change: ({change_type}) THB{item['spend']:,.0f}" + "\n"
 
     
     return output
@@ -149,7 +149,7 @@ def spend_allocation_chart_extractor(soup):
 
 
     for item in chart_data:
-        output += f"{item['channel']: <12} ${item['spend']:,}" + "\n"
+        output += f"{item['channel']: <12} THB{item['spend']:,}" + "\n"
 
     #Calculate percentages
     total = sum(item['spend'] for item in chart_data)
@@ -208,16 +208,16 @@ def outcome_delta_extractor(soup):
     net_change = optimized['incremental_outcome'] - non_optimized['incremental_outcome'] if optimized and non_optimized else 0
 
     output =  f"Chart Title: {chart_title}" + "\n" + f"Description: {chart_description}" + "\n" + "\n"
-    output += f"Non-optimized Revenue: ${non_optimized['incremental_outcome']:,.2f}" + "\n" + "\n"
+    output += f"Non-optimized Revenue: THB{non_optimized['incremental_outcome']:,.2f}" + "\n" + "\n"
     output += "Channel revenue change:" + "\n"
     
     for item in sorted(channels, key=lambda x: abs(x['incremental_outcome']), reverse=True):
         change = "Increase" if item['incremental_outcome'] > 0 else "Decrease"
-        output += f"{item['channel']: <12} ${item['incremental_outcome']:>12,.2f} ({change})" + "\n"
+        output += f"{item['channel']: <12} THB{item['incremental_outcome']:>12,.2f} ({change})" + "\n"
     
-    output += "\n" + f"Total Optimization Impact change: ${total_impact:,.2f}" + "\n"
+    output += "\n" + f"Total Optimization Impact change: THB{total_impact:,.2f}" + "\n"
     output += f"Net Change: {'+' if net_change >= 0 else ''}{net_change:,.2f}" + "\n"
-    output += f"Optimized Revenue change: ${optimized['incremental_outcome']:,.2f}"
+    output += f"Optimized Revenue change: THB{optimized['incremental_outcome']:,.2f}"
 
     return output
 
@@ -284,27 +284,27 @@ def extract_insights_from_html(soup):
 
         if spend_threshold:
             summary.append(
-                f"Spend beyond ±30% of ${non_optimized:,.0f} (≈${spend_threshold:,.0f}) is considered to have diminishing returns."
+                f"Spend beyond ±30% of THB{non_optimized:,.0f} (≈THB{spend_threshold:,.0f}) is considered to have diminishing returns."
             )
         else:
             summary.append("No clear diminishing return point was found.")
 
         if min_spend and max_spend:
             summary.append(
-                f"The optimal spend range is estimated to be ${min_spend/1e6:.2f}M to ${max_spend/1e6:.2f}"
+                f"The optimal spend range is estimated to be THB{min_spend/1e6:.2f}M to THB{max_spend/1e6:.2f}"
             )
 
         if ci_lo and ci_hi:
             summary.append(
-                f"At the maximum spend, the expected revenue uncertainty ranges from ${ci_lo/1e6:.2f}M to ${ci_hi/1e6:.2f}M."
+                f"At the maximum spend, the expected revenue uncertainty ranges from THB{ci_lo/1e6:.2f}M to THB{ci_hi/1e6:.2f}M."
             )
         else:
             summary.append("Confidence interval at maximum spend is unavailable.")
 
         if optimized:
-            summary.append(f"The optimized spend is ${optimized:,.0f}.")
+            summary.append(f"The optimized spend is THB{optimized:,.0f}.")
         if non_optimized:
-            summary.append(f"The non-optimized spend is ${non_optimized:,.0f}.")
+            summary.append(f"The non-optimized spend is THB{non_optimized:,.0f}.")
 
         summaries.append("\n".join(summary))
 

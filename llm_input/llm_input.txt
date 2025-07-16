@@ -36,15 +36,15 @@ Description: Note: Each bar represents the change in
 optimized spend for a channel. Negative values indicate a decrease in spend
 while positive values indicate an increase from your non-optimized spend.
 Data Points:
-tv_spot       Spend Change: (Decrease) $-3,460,000
-facebook      Spend Change: (Decrease) $-1,770,000
-radio         Spend Change: (Decrease) $-570,000
-tiktok        Spend Change: (Decrease) $-30,000
-activation    Spend Change: (Increase) $3,800,000
-youtube       Spend Change: (Increase) $1,310,000
-kol           Spend Change: (Increase) $540,000
-tv_sponsor    Spend Change: (Increase) $100,000
-kol_boost     Spend Change: (Increase) $80,000
+tv_spot       Spend Change: (Decrease) THB-3,460,000
+facebook      Spend Change: (Decrease) THB-1,770,000
+radio         Spend Change: (Decrease) THB-570,000
+tiktok        Spend Change: (Decrease) THB-30,000
+activation    Spend Change: (Increase) THB3,800,000
+youtube       Spend Change: (Increase) THB1,310,000
+kol           Spend Change: (Increase) THB540,000
+tv_sponsor    Spend Change: (Increase) THB100,000
+kol_boost     Spend Change: (Increase) THB80,000
 
 Chart Title: Optimized budget allocation
 Description: Note: The "non_optimized" bar presents the
@@ -53,15 +53,15 @@ change in incremental revenue for each channel based on the optimal spend
 level. The final bar labeled "optimized" shows the total incremental revenue
 after optimization.
 Data Points:
-kol          $5,680,000
-tv_spot      $8,080,000
-tv_sponsor   $440,000
-radio        $2,730,000
-activation   $16,760,000
-facebook     $5,380,000
-youtube      $5,680,000
-tiktok       $110,000
-kol_boost    $350,000
+kol          THB5,680,000
+tv_spot      THB8,080,000
+tv_sponsor   THB440,000
+radio        THB2,730,000
+activation   THB16,760,000
+facebook     THB5,380,000
+youtube      THB5,680,000
+tiktok       THB110,000
+kol_boost    THB350,000
 
 Percentage Allocation:
 kol          12.6%
@@ -81,60 +81,60 @@ change in incremental revenue for each channel based on the optimal spend
 level. The final bar labeled "optimized" shows the total incremental revenue
 after optimization.
 
-Non-optimized Revenue: $145,745,072.00
+Non-optimized Revenue: THB145,745,072.00
 
 Channel revenue change:
-activation   $7,363,328.00 (Increase)
-youtube      $2,974,818.00 (Increase)
-facebook     $-2,683,926.00 (Decrease)
-tv_spot      $-2,371,982.00 (Decrease)
-kol          $  977,014.00 (Increase)
-radio        $ -897,651.00 (Decrease)
-tv_sponsor   $  273,048.62 (Increase)
-kol_boost    $  179,869.88 (Increase)
-tiktok       $  -47,465.62 (Decrease)
+activation   THB7,363,328.00 (Increase)
+youtube      THB2,974,818.00 (Increase)
+facebook     THB-2,683,926.00 (Decrease)
+tv_spot      THB-2,371,982.00 (Decrease)
+kol          THB  977,014.00 (Increase)
+radio        THB -897,651.00 (Decrease)
+tv_sponsor   THB  273,048.62 (Increase)
+kol_boost    THB  179,869.88 (Increase)
+tiktok       THB  -47,465.62 (Decrease)
 
-Total Optimization Impact change: $5,767,053.88
+Total Optimization Impact change: THB5,767,053.88
 Net Change: -145,745,072.00
-Optimized Revenue change: $0.00
+Optimized Revenue change: THB0.00
 Channel: Activation
 No clear diminishing return point was found.
-The optimal spend range is estimated to be $9.07M to $16.85
-At the maximum spend, the expected revenue uncertainty ranges from $31.72M to $115.40M.
-The optimized spend is $16,760,000.
-The non-optimized spend is $12,960,000.
+The optimal spend range is estimated to be THB9.07M to THB16.85
+At the maximum spend, the expected revenue uncertainty ranges from THB31.72M to THB115.40M.
+The optimized spend is THB16,760,000.
+The non-optimized spend is THB12,960,000.
 
 Channel: Tv_spot
 No clear diminishing return point was found.
-The optimal spend range is estimated to be $8.08M to $15.00
-At the maximum spend, the expected revenue uncertainty ranges from $10.97M to $30.06M.
-The optimized spend is $8,080,000.
-The non-optimized spend is $11,540,000.
+The optimal spend range is estimated to be THB8.08M to THB15.00
+At the maximum spend, the expected revenue uncertainty ranges from THB10.97M to THB30.06M.
+The optimized spend is THB8,080,000.
+The non-optimized spend is THB11,540,000.
 
 Channel: Kol
 No clear diminishing return point was found.
-The optimal spend range is estimated to be $3.60M to $6.68
-At the maximum spend, the expected revenue uncertainty ranges from $17.96M to $37.96M.
-The optimized spend is $5,680,000.
-The non-optimized spend is $5,140,000.
+The optimal spend range is estimated to be THB3.60M to THB6.68
+At the maximum spend, the expected revenue uncertainty ranges from THB17.96M to THB37.96M.
+The optimized spend is THB5,680,000.
+The non-optimized spend is THB5,140,000.
 
 Channel: Youtube
 No clear diminishing return point was found.
-The optimal spend range is estimated to be $3.06M to $5.68
-At the maximum spend, the expected revenue uncertainty ranges from $18.02M to $34.75M.
-The optimized spend is $5,680,000.
-The non-optimized spend is $4,370,000.
+The optimal spend range is estimated to be THB3.06M to THB5.68
+At the maximum spend, the expected revenue uncertainty ranges from THB18.02M to THB34.75M.
+The optimized spend is THB5,680,000.
+The non-optimized spend is THB4,370,000.
 
 Channel: Facebook
 No clear diminishing return point was found.
-The optimal spend range is estimated to be $5.00M to $9.29
-At the maximum spend, the expected revenue uncertainty ranges from $20.40M to $47.39M.
-The optimized spend is $5,380,000.
-The non-optimized spend is $7,150,000.
+The optimal spend range is estimated to be THB5.00M to THB9.29
+At the maximum spend, the expected revenue uncertainty ranges from THB20.40M to THB47.39M.
+The optimized spend is THB5,380,000.
+The non-optimized spend is THB7,150,000.
 
 Channel: Radio
 No clear diminishing return point was found.
-The optimal spend range is estimated to be $2.31M to $4.29
-At the maximum spend, the expected revenue uncertainty ranges from $14.15M to $22.68M.
-The optimized spend is $2,730,000.
-The non-optimized spend is $3,300,000.
+The optimal spend range is estimated to be THB2.31M to THB4.29
+At the maximum spend, the expected revenue uncertainty ranges from THB14.15M to THB22.68M.
+The optimized spend is THB2,730,000.
+The non-optimized spend is THB3,300,000.

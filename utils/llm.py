@@ -8,38 +8,56 @@ from langchain_groq import ChatGroq
 load_dotenv()
 
 def generate_llm_insights(optimization_results):
-    system_prompt = """MMM Budget Optimization Insights for Business Leaders
+    system_prompt = """
+MMM Budget Optimization Insights
 
 You are a marketing strategy advisor who specializes in turning complex Marketing Mix Modeling (MMM) optimization results into clear, actionable business insights for non-technical and management teams.
 
 When given structured MMM optimization results (including budgets, ROI, revenue, and channel allocations before and after optimization), your job is to:
 
-1. Summarize the key outcomes in plain language. Focus on what changed, HIGHLIGHT overall incremental revenue, what stayed the same, and what it means for the business.
-2. Explain the impact of budget changes for each channel. Clearly state which channels received more or less money, and what effect this had on sales or revenue.
-3. Highlight the most important takeaways. Identify which channels performed best, which ones underperformed, and where there may be opportunities for improvement.
-4. Give straightforward recommendations. Offer practical suggestions for next steps, such as where to invest more or less, or what to watch going forward.
-5. Point out any limitations or things to consider. Mention if there were restrictions or anything that might have limited the results, in terms that any business leader can understand.
+1. Summarize the key outcomes in **plain, concise language**. Focus on what changed, HIGHLIGHT overall incremental revenue, what stayed the same, and what it means for the business. **Limit the Summary to 3-4 sentences.**
+2. Explain the impact of budget changes for each channel. Clearly state which channels received more or less money, and what effect this had on sales or revenue. **Limit to 1-2 bullet points per channel.**
+3. Highlight the most important takeaways. Identify which channels performed best, which ones underperformed, and where there may be opportunities for improvement. **Limit to 3-5 bullet points.**
+4. Give straightforward recommendations. Offer practical suggestions for next steps, such as where to invest more or less, or what to watch going forward. **Limit to 3-5 bullet points.**
+5. Point out any limitations or things to consider. Mention if there were restrictions or anything that might have limited the results, in terms any business leader can understand. **Limit to 3-5 bullet points.**
 
-Format your response with these headings:
-- Summary
-- What Changed
-- Key Takeaways
-- Recommendations
-- Things to Consider
+**Keep each section brief and focused. Do not include background explanations or technical details unless absolutely necessary.**
 
-- CRITICAL: Replace ALL '$' (Dollar) references with 'THB' (Thai Baht) unless explicitly specified otherwise
-- Format large numbers clearly: Write "2,000,000" instead of "2.0M"
+Use these headings:
+- Summary (max 4 sentences)
+- What Changed (bulleted, 1-2 per channel)
+- Key Takeaways (bulleted, max 5)
+- Recommendations (bulleted, max 5)
+- Things to Consider (bulleted, max 5), Assume external factors are considered in the MMM model
 
-Use bullet points and short paragraphs. Avoid technical jargon."""
+**Replace ALL '$' (Dollar) references with 'THB' (Thai Baht)** (CRITICAL)
+
+Bold or italic text for emphasis or sub-header.
+
+Format large numbers clearly: Write "THB 2,000,000" instead of "THB 2.0".
+
+Use bullet points and short paragraphs. Avoid technical jargon.
+Format this as a final business report. Do not include any conversational elements, follow-up questions, or offers for additional analysis. Conclude with your final recommendations only.
+
+"""
 
     try:
-        # Initialize Ollama LLM
-        llm = ChatGroq(
-            model="llama3-70b-8192",  # You can change this to your preferred model
+
+        llm = ChatOllama(
+            model="gemma3:4b",  # You can change this to your preferred model
             temperature=1,
-            #base_url="http://localhost:11434",
-            #num_predict=2000,  # Equivalent to max_tokens
+            base_url="http://localhost:11434",
+            num_predict=2000,  # Equivalent to max_tokens
         )
+
+
+        # Initialize Ollama LLM
+        # llm = ChatGroq(
+        #     model="llama3-70b-8192",  # You can change this to your preferred model
+        #     temperature=1,
+        #     #base_url="http://localhost:11434",
+        #     #num_predict=2000,  # Equivalent to max_tokens
+        # )
 
         # Create the messages
         messages = [
@@ -59,55 +77,6 @@ Use bullet points and short paragraphs. Avoid technical jargon."""
     except Exception as e:
         return f"Error generating insights with Ollama: {str(e)}\nMake sure Ollama is running: 'ollama serve'"
 
-def generate_llm_insights_alternative(optimization_results):
-    """Alternative implementation using direct string formatting"""
-    system_prompt = """MMM Budget Optimization Insights for Business Leaders
-
-You are a marketing strategy advisor who specializes in turning complex Marketing Mix Modeling (MMM) optimization results into clear, actionable business insights for non-technical and management teams.
-
-When given structured MMM optimization results (including budgets, ROI, revenue, and channel allocations before and after optimization), your job is to:
-
-1. Summarize the key outcomes in plain language. Focus on what changed, HIGHLIGHT overall incremental revenue, what stayed the same, and what it means for the business.
-2. Explain the impact of budget changes for each channel. Clearly state which channels received more or less money, and what effect this had on sales or revenue.
-3. Highlight the most important takeaways. Identify which channels performed best, which ones underperformed, and where there may be opportunities for improvement.
-4. Give straightforward recommendations. Offer practical suggestions for next steps, such as where to invest more or less, or what to watch going forward.
-5. Point out any limitations or things to consider. Mention if there were restrictions or anything that might have limited the results, in terms that any business leader can understand.
-
-Format your response with these headings:
-- Summary
-- What Changed
-- Key Takeaways
-- Recommendations
-- Things to Consider
-
-Use bullet points and short paragraphs. Avoid technical jargon.
-
-Here are our MMM optimization results:
-{optimization_results}
-
-Please provide the business insights report."""
-
-    try:
-        # Initialize Ollama LLM
-        llm = ChatOllama(
-            model="llama3.2:3b",
-            temperature=1,
-            base_url="http://localhost:11434",
-        )
-
-        # Format the complete prompt
-        complete_prompt = system_prompt.format(optimization_results=optimization_results)
-
-        # Get response
-        response = llm.invoke(complete_prompt)
-        
-        if hasattr(response, 'content'):
-            return response.content
-        else:
-            return str(response)
-            
-    except Exception as e:
-        return f"Error generating insights with Ollama: {str(e)}\nMake sure Ollama is running: 'ollama serve'"
 
 def check_ollama_connection():
     """Check if Ollama is running and model is available"""
@@ -136,7 +105,7 @@ if __name__ == "__main__":
     print(f"✅ Ollama connected. Available models: {models_or_error}")
     
     # Check if preferred model is available
-    preferred_model = "llama3.1:8b"
+    preferred_model = "gemma3:4b"
     if preferred_model not in models_or_error:
         print(f"⚠️  Preferred model '{preferred_model}' not found.")
         print(f"Available models: {models_or_error}")
@@ -159,9 +128,7 @@ if __name__ == "__main__":
         insights_report = generate_llm_insights(optimization_results)
         
         print("✅ Insights generated successfully!")
-        print("\n" + "="*50)
         print(insights_report)
-        print("="*50)
 
         # Save to file
         os.makedirs('llm_output', exist_ok=True)

@@ -8,22 +8,25 @@ Revenue Attribution:
 - Baseline revenue accounts for 88.0% of total revenue
 - Marketing channels drive 12.0% of total revenue
 - Total revenue split: 88.0% organic/baseline vs 12.0% paid marketing
+- Combined Total Revenue: THB 1,209,910,157 (Baseline: THB 1,064,185,216 + Marketing: THB 145,724,941)
 
 Marketing Channel Performance:
-- ACTIVATION contributes 4.1% of total revenue ($49,697,312)
-- FACEBOOK contributes 2.1% of total revenue ($25,648,736)
-- KOL contributes 1.6% of total revenue ($19,866,100)
-- YOUTUBE contributes 1.4% of total revenue ($17,402,620)
-- RADIO contributes 1.2% of total revenue ($14,916,628)
-- TV_SPOT contributes 1.2% of total revenue ($14,483,313)
-- TV_SPONSOR contributes 0.1% of total revenue ($1,706,650)
-- KOL_BOOST contributes 0.1% of total revenue ($1,326,770)
-- TIKTOK contributes 0.1% of total revenue ($676,812)
+- BASELINE contributes 88.0% of total revenue (THB 1,064,185,216)
+- ACTIVATION contributes 4.1% of total revenue (THB 49,697,312)
+- FACEBOOK contributes 2.1% of total revenue (THB 25,648,736)
+- KOL contributes 1.6% of total revenue (THB 19,866,100)
+- YOUTUBE contributes 1.4% of total revenue (THB 17,402,620)
+- RADIO contributes 1.2% of total revenue (THB 14,916,628)
+- TV_SPOT contributes 1.2% of total revenue (THB 14,483,313)
+- TV_SPONSOR contributes 0.1% of total revenue (THB 1,706,650)
+- KOL_BOOST contributes 0.1% of total revenue (THB 1,326,770)
+- TIKTOK contributes 0.1% of total revenue (THB 676,812)
 
 Key Insights:
 - ACTIVATION is the top performing marketing channel at 4.1%
 - Baseline/organic traffic dominates revenue generation at 88.0%
 - Marketing channels collectively contribute 12.0% to total revenue
+- Total business revenue is THB 1,209,910,157 across all channels
 
 Methodology: Note: This graphic encompasses all of
 your revenue drivers, but breaks down your marketing revenue by the baseline
@@ -35,7 +38,7 @@ Performance Overview:
 - Total marketing spend allocation: 100.0%
 - Average ROI across all channels: 4.0x
 
-Channel Performance by ROI:
+Channel Performance by ROI (Within Media Channel Only):
 - KOL_BOOST: 5.0x ROI, 0.9% revenue share, 0.6% spend share
 - TIKTOK: 5.0x ROI, 0.5% revenue share, 0.3% spend share
 - TV_SPONSOR: 5.0x ROI, 1.2% revenue share, 0.8% spend share
@@ -72,76 +75,76 @@ dividing the revenue attributed to a channel by marketing costs.
 Monthly Channel Performance Analysis with Anomaly Detection:
 
 ACTIVATION - Monthly Performance:
-- Average Monthly Revenue: $1,308,661
-- Peak Month: 2023-12 ($1,376,579)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB1,308,661
+- Peak Month: 2023-12 (THB1,376,579)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 9 out of 24
 
 
 FACEBOOK - Monthly Performance:
-- Average Monthly Revenue: $291,767
-- Peak Month: 2022-11 ($598,305)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB291,767
+- Peak Month: 2022-11 (THB598,305)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 20 out of 24
 - High Growth Periods: 2023-06 (+668%), 2023-11 (+1767%), 2024-04 (+24442%)
 - Decline Periods: 2023-05 (-91%), 2023-07 (-89%), 2023-10 (-89%)
 
 
 KOL - Monthly Performance:
-- Average Monthly Revenue: $438,111
-- Peak Month: 2024-04 ($673,887)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB438,111
+- Peak Month: 2024-04 (THB673,887)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 10 out of 24
 - Decline Periods: 2023-05 (-63%), 2024-01 (-69%), 2024-06 (-71%)
 
 
 KOL_BOOST - Monthly Performance:
-- Average Monthly Revenue: $31,406
-- Peak Month: 2024-04 ($69,155)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB31,406
+- Peak Month: 2024-04 (THB69,155)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 9 out of 24
 - High Growth Periods: 2023-12 (+936%)
 - Decline Periods: 2023-05 (-81%), 2024-01 (-82%), 2024-05 (-72%)
 
 
 RADIO - Monthly Performance:
-- Average Monthly Revenue: $462,222
-- Peak Month: 2023-03 ($890,620)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB462,222
+- Peak Month: 2023-03 (THB890,620)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 7 out of 24
 - Decline Periods: 2022-11 (-64%), 2022-12 (-78%), 2023-05 (-83%)
 
 
 TIKTOK - Monthly Performance:
-- Average Monthly Revenue: $23,522
-- Peak Month: 2023-02 ($63,130)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB23,522
+- Peak Month: 2023-02 (THB63,130)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 6 out of 24
 - Revenue Spikes Detected: 1
-  • 2023-02: $63,130 (+168% above average)
+  • 2023-02: THB63,130 (+168% above average)
 - Decline Periods: 2023-03 (-57%), 2023-04 (-64%), 2024-05 (-78%)
 
 
 TV_SPONSOR - Monthly Performance:
-- Average Monthly Revenue: $115,942
-- Peak Month: 2024-04 ($248,299)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB115,942
+- Peak Month: 2024-04 (THB248,299)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 3 out of 24
 - Decline Periods: 2024-05 (-66%), 2024-06 (-81%)
 
 
 TV_SPOT - Monthly Performance:
-- Average Monthly Revenue: $842,441
-- Peak Month: 2023-02 ($1,349,152)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB842,441
+- Peak Month: 2023-02 (THB1,349,152)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 4 out of 24
 - Decline Periods: 2023-05 (-86%)
 
 
 YOUTUBE - Monthly Performance:
-- Average Monthly Revenue: $489,576
-- Peak Month: 2023-03 ($849,421)
-- Lowest Month: 2022-07 ($0)
+- Average Monthly Revenue: THB489,576
+- Peak Month: 2023-03 (THB849,421)
+- Lowest Month: 2022-07 (THB0)
 - Active Months: 8 out of 24
 - Decline Periods: 2024-06 (-76%)
 
@@ -150,89 +153,89 @@ Quarterly Channel Performance Analysis with Trend Detection:
 
 ACTIVATION - Quarterly Analysis:
 - Trend Direction: Overall Growth
-- Best Quarter: 2023-Q4 ($1,376,579)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2023-Q4 (THB1,376,579)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 3
-- Recent Performance (Last 2Q): $1,376,579 average
+- Recent Performance (Last 2Q): THB1,376,579 average
 
 
 FACEBOOK - Quarterly Analysis:
 - Trend Direction: Overall Growth
-- Best Quarter: 2022-Q4 ($597,634)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2022-Q4 (THB597,634)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 7
 - Major Growth Quarters: 2024-Q2
 - Major Decline Quarters: 2023-Q2, 2024-Q1
-- Recent Performance (Last 2Q): $124,782 average
+- Recent Performance (Last 2Q): THB124,782 average
 
 
 KOL - Quarterly Analysis:
 - Trend Direction: Overall Growth
-- Best Quarter: 2023-Q1 ($666,441)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2023-Q1 (THB666,441)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 3
 - Major Decline Quarters: 2023-Q2, 2024-Q1
-- Recent Performance (Last 2Q): $64,354 average
+- Recent Performance (Last 2Q): THB64,354 average
 
 
 KOL_BOOST - Quarterly Analysis:
 - Trend Direction: Overall Growth
-- Best Quarter: 2023-Q1 ($50,203)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2023-Q1 (THB50,203)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 3
 - Major Decline Quarters: 2023-Q2, 2024-Q1
-- Recent Performance (Last 2Q): $1,950 average
+- Recent Performance (Last 2Q): THB1,950 average
 
 
 RADIO - Quarterly Analysis:
 - Trend Direction: Stable
-- Best Quarter: 2023-Q1 ($890,620)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2023-Q1 (THB890,620)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 2
 - Major Growth Quarters: 2023-Q1
 - Major Decline Quarters: 2023-Q2
-- Recent Performance (Last 2Q): $0 average
+- Recent Performance (Last 2Q): THB0 average
 
 
 TIKTOK - Quarterly Analysis:
 - Trend Direction: Overall Growth
-- Best Quarter: 2023-Q1 ($27,169)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2023-Q1 (THB27,169)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 2
 - Major Decline Quarters: 2023-Q2
-- Recent Performance (Last 2Q): $634 average
+- Recent Performance (Last 2Q): THB634 average
 
 
 TV_SPONSOR - Quarterly Analysis:
 - Trend Direction: Overall Growth
-- Best Quarter: 2024-Q2 ($15,895)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2024-Q2 (THB15,895)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 1
-- Recent Performance (Last 2Q): $7,948 average
+- Recent Performance (Last 2Q): THB7,948 average
 
 
 TV_SPOT - Quarterly Analysis:
 - Trend Direction: Stable
-- Best Quarter: 2023-Q1 ($1,200,092)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2023-Q1 (THB1,200,092)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 1
 - Major Decline Quarters: 2023-Q2
-- Recent Performance (Last 2Q): $0 average
+- Recent Performance (Last 2Q): THB0 average
 
 
 YOUTUBE - Quarterly Analysis:
 - Trend Direction: Overall Growth
-- Best Quarter: 2023-Q1 ($849,421)
-- Worst Quarter: 2022-Q3 ($0)
+- Best Quarter: 2023-Q1 (THB849,421)
+- Worst Quarter: 2022-Q3 (THB0)
 - Total Quarters Active: 3
 - Major Decline Quarters: 2023-Q2, 2023-Q4
-- Recent Performance (Last 2Q): $73,422 average
+- Recent Performance (Last 2Q): THB73,422 average
 
 === SPIKE AND DIP ANALYSIS ===
 Revenue Anomaly Analysis - Spikes and Dips Across All Channels:
 
 Top Revenue Spikes (Highest Magnitude):
-1. TIKTOK in 2023-02: $63,130 (+168% above average)
+1. TIKTOK in 2023-02: THB63,130 (+168% above average)
 
 Seasonal Patterns:
 - Most Common Spike Month: February (1 occurrences)
@@ -245,15 +248,15 @@ Channel Volatility Analysis (Revenue Consistency):
 Channel Performance Comparison and Rankings:
 
 Total Revenue Rankings:
-1. ACTIVATION: $11,777,945 cumulative revenue
-2. FACEBOOK: $5,835,347 cumulative revenue
-3. KOL: $4,381,111 cumulative revenue
-4. YOUTUBE: $3,916,611 cumulative revenue
-5. TV_SPOT: $3,369,766 cumulative revenue
-6. RADIO: $3,235,556 cumulative revenue
-7. TV_SPONSOR: $347,826 cumulative revenue
-8. KOL_BOOST: $282,656 cumulative revenue
-9. TIKTOK: $141,133 cumulative revenue
+1. ACTIVATION: THB11,777,945 cumulative revenue
+2. FACEBOOK: THB5,835,347 cumulative revenue
+3. KOL: THB4,381,111 cumulative revenue
+4. YOUTUBE: THB3,916,611 cumulative revenue
+5. TV_SPOT: THB3,369,766 cumulative revenue
+6. RADIO: THB3,235,556 cumulative revenue
+7. TV_SPONSOR: THB347,826 cumulative revenue
+8. KOL_BOOST: THB282,656 cumulative revenue
+9. TIKTOK: THB141,133 cumulative revenue
 
 Consistency Rankings (% of months active):
 1. FACEBOOK: 83% of months with revenue
@@ -267,15 +270,15 @@ Consistency Rankings (% of months active):
 9. TV_SPONSOR: 12% of months with revenue
 
 Peak Performance Rankings (Highest single month):
-1. ACTIVATION: $1,376,579 peak monthly revenue
-2. TV_SPOT: $1,349,152 peak monthly revenue
-3. RADIO: $890,620 peak monthly revenue
-4. YOUTUBE: $849,421 peak monthly revenue
-5. KOL: $673,887 peak monthly revenue
-6. FACEBOOK: $598,305 peak monthly revenue
-7. TV_SPONSOR: $248,299 peak monthly revenue
-8. KOL_BOOST: $69,155 peak monthly revenue
-9. TIKTOK: $63,130 peak monthly revenue
+1. ACTIVATION: THB1,376,579 peak monthly revenue
+2. TV_SPOT: THB1,349,152 peak monthly revenue
+3. RADIO: THB890,620 peak monthly revenue
+4. YOUTUBE: THB849,421 peak monthly revenue
+5. KOL: THB673,887 peak monthly revenue
+6. FACEBOOK: THB598,305 peak monthly revenue
+7. TV_SPONSOR: THB248,299 peak monthly revenue
+8. KOL_BOOST: THB69,155 peak monthly revenue
+9. TIKTOK: THB63,130 peak monthly revenue
 
 Channel Lifecycle Analysis:
 - KOL: Active/Mature (Active: 2023-02 to 2024-06)
@@ -294,64 +297,64 @@ Channel Growth Momentum and Trend Analysis:
 KOL - 6-Month Momentum Analysis:
 - Growth Momentum: Strong Positive (+809%)
 - Trend Consistency: 20% of months showed growth
-- Recent Average (Last 3 months): $413,395
-- Previous Average (3 months prior): $45,479
+- Recent Average (Last 3 months): THB413,395
+- Previous Average (3 months prior): THB45,479
 
 
 TV_SPOT - 6-Month Momentum Analysis:
 - Growth Momentum: Neutral (+0%)
 - Trend Consistency: 0% of months showed growth
-- Recent Average (Last 3 months): $0
-- Previous Average (3 months prior): $0
+- Recent Average (Last 3 months): THB0
+- Previous Average (3 months prior): THB0
 
 
 TV_SPONSOR - 6-Month Momentum Analysis:
 - Growth Momentum: Neutral (+0%)
 - Trend Consistency: 20% of months showed growth
-- Recent Average (Last 3 months): $115,942
-- Previous Average (3 months prior): $0
+- Recent Average (Last 3 months): THB115,942
+- Previous Average (3 months prior): THB0
 
 
 RADIO - 6-Month Momentum Analysis:
 - Growth Momentum: Neutral (+0%)
 - Trend Consistency: 0% of months showed growth
-- Recent Average (Last 3 months): $0
-- Previous Average (3 months prior): $0
+- Recent Average (Last 3 months): THB0
+- Previous Average (3 months prior): THB0
 
 
 ACTIVATION - 6-Month Momentum Analysis:
 - Growth Momentum: Neutral (+0%)
 - Trend Consistency: 80% of months showed growth
-- Recent Average (Last 3 months): $1,322,824
-- Previous Average (3 months prior): $1,322,824
+- Recent Average (Last 3 months): THB1,322,824
+- Previous Average (3 months prior): THB1,322,824
 
 
 FACEBOOK - 6-Month Momentum Analysis:
 - Growth Momentum: Strong Positive (+571%)
 - Trend Consistency: 20% of months showed growth
-- Recent Average (Last 3 months): $312,366
-- Previous Average (3 months prior): $46,584
+- Recent Average (Last 3 months): THB312,366
+- Previous Average (3 months prior): THB46,584
 
 
 YOUTUBE - 6-Month Momentum Analysis:
 - Growth Momentum: Neutral (+0%)
 - Trend Consistency: 20% of months showed growth
-- Recent Average (Last 3 months): $531,151
-- Previous Average (3 months prior): $0
+- Recent Average (Last 3 months): THB531,151
+- Previous Average (3 months prior): THB0
 
 
 TIKTOK - 6-Month Momentum Analysis:
 - Growth Momentum: Neutral (+0%)
 - Trend Consistency: 20% of months showed growth
-- Recent Average (Last 3 months): $13,657
-- Previous Average (3 months prior): $0
+- Recent Average (Last 3 months): THB13,657
+- Previous Average (3 months prior): THB0
 
 
 KOL_BOOST - 6-Month Momentum Analysis:
 - Growth Momentum: Strong Positive (+928%)
 - Trend Consistency: 20% of months showed growth
-- Recent Average (Last 3 months): $30,768
-- Previous Average (3 months prior): $2,992
+- Recent Average (Last 3 months): THB30,768
+- Previous Average (3 months prior): THB2,992
 Title: Return on investment
 
 Insights: Your return on investment (ROI) helps
@@ -367,7 +370,7 @@ ROI vs Effectiveness Analysis:
 Performance Overview:
 - Average ROI across channels: 4.0x
 - Average effectiveness: 4.0057 incremental outcome per impression
-- Total media spend analyzed: $45,197,221
+- Total media spend analyzed: THB45,197,221
 
 ROI Rankings:
 1. KOL_BOOST: 5.0x ROI
@@ -392,15 +395,15 @@ Effectiveness Rankings:
 9. TV_SPOT: 1.2550 outcome per impression
 
 Spend Allocation:
-1. ACTIVATION: $12,963,048 (28.7% of total spend)
-2. TV_SPOT: $11,540,248 (25.5% of total spend)
-3. FACEBOOK: $7,147,552 (15.8% of total spend)
-4. KOL: $5,140,650 (11.4% of total spend)
-5. YOUTUBE: $4,368,572 (9.7% of total spend)
-6. RADIO: $3,295,000 (7.3% of total spend)
-7. TV_SPONSOR: $341,463 (0.8% of total spend)
-8. KOL_BOOST: $265,330 (0.6% of total spend)
-9. TIKTOK: $135,358 (0.3% of total spend)
+1. ACTIVATION: THB12,963,048 (28.7% of total spend)
+2. TV_SPOT: THB11,540,248 (25.5% of total spend)
+3. FACEBOOK: THB7,147,552 (15.8% of total spend)
+4. KOL: THB5,140,650 (11.4% of total spend)
+5. YOUTUBE: THB4,368,572 (9.7% of total spend)
+6. RADIO: THB3,295,000 (7.3% of total spend)
+7. TV_SPONSOR: THB341,463 (0.8% of total spend)
+8. KOL_BOOST: THB265,330 (0.6% of total spend)
+9. TIKTOK: THB135,358 (0.3% of total spend)
 
 Channel Performance Categories:
 
@@ -420,7 +423,7 @@ Star Performers:
 Strategic Insights:
 - KOL_BOOST delivers highest ROI (5.0x) - prioritize for budget allocation
 - KOL_BOOST shows highest effectiveness (5.0005) - strong media performance per impression
-- ACTIVATION receives largest budget ($12,963,048) - monitor efficiency closely
+- ACTIVATION receives largest budget (THB12,963,048) - monitor efficiency closely
 - KOL: Both ROI and effectiveness below average - requires optimization or budget reallocation
 - TV_SPOT: Both ROI and effectiveness below average - requires optimization or budget reallocation
 - TV_SPONSOR: Ideal performance - high ROI and effectiveness, maintain investment
@@ -444,7 +447,7 @@ ROI vs Marginal ROI Performance Analysis:
 Performance Metrics:
 - Average ROI across channels: 4.0x
 - Average Marginal ROI: 1.9x (additional return per additional dollar)
-- Total media spend analyzed: $45,197,221
+- Total media spend analyzed: THB45,197,221
 
 ROI Rankings:
 1. KOL_BOOST: 5.0x ROI
@@ -469,15 +472,15 @@ Marginal ROI Rankings (Incremental Efficiency):
 9. TV_SPOT: 0.6x marginal ROI
 
 Spend Distribution:
-1. ACTIVATION: $12,963,048 (28.7% of total spend)
-2. TV_SPOT: $11,540,248 (25.5% of total spend)
-3. FACEBOOK: $7,147,552 (15.8% of total spend)
-4. KOL: $5,140,650 (11.4% of total spend)
-5. YOUTUBE: $4,368,572 (9.7% of total spend)
-6. RADIO: $3,295,000 (7.3% of total spend)
-7. TV_SPONSOR: $341,463 (0.8% of total spend)
-8. KOL_BOOST: $265,330 (0.6% of total spend)
-9. TIKTOK: $135,358 (0.3% of total spend)
+1. ACTIVATION: THB12,963,048 (28.7% of total spend)
+2. TV_SPOT: THB11,540,248 (25.5% of total spend)
+3. FACEBOOK: THB7,147,552 (15.8% of total spend)
+4. KOL: THB5,140,650 (11.4% of total spend)
+5. YOUTUBE: THB4,368,572 (9.7% of total spend)
+6. RADIO: THB3,295,000 (7.3% of total spend)
+7. TV_SPONSOR: THB341,463 (0.8% of total spend)
+8. KOL_BOOST: THB265,330 (0.6% of total spend)
+9. TIKTOK: THB135,358 (0.3% of total spend)
 
 Saturation Indicators:
 - KOL: Moderate saturation signal (ROI/Marginal ROI ratio: 2.1x)
@@ -616,40 +619,40 @@ ROI Statistical Significance:
 
 CPIK Performance with 90% Credible Intervals:
 1. KOL_BOOST (Best to Worst CPIK):
-   - Point Estimate: $0.200 per KPI unit
-   - Confidence Range: $0.196 to $0.204
+   - Point Estimate: THB0.200 per KPI unit
+   - Confidence Range: THB0.196 to THB0.204
    - Uncertainty Level: ±4% around point estimate
 2. TIKTOK (Best to Worst CPIK):
-   - Point Estimate: $0.200 per KPI unit
-   - Confidence Range: $0.198 to $0.202
+   - Point Estimate: THB0.200 per KPI unit
+   - Confidence Range: THB0.198 to THB0.202
    - Uncertainty Level: ±2% around point estimate
 3. TV_SPONSOR (Best to Worst CPIK):
-   - Point Estimate: $0.200 per KPI unit
-   - Confidence Range: $0.195 to $0.205
+   - Point Estimate: THB0.200 per KPI unit
+   - Confidence Range: THB0.195 to THB0.205
    - Uncertainty Level: ±5% around point estimate
 4. RADIO (Best to Worst CPIK):
-   - Point Estimate: $0.223 per KPI unit
-   - Confidence Range: $0.178 to $0.279
+   - Point Estimate: THB0.223 per KPI unit
+   - Confidence Range: THB0.178 to THB0.279
    - Uncertainty Level: ±45% around point estimate
 5. YOUTUBE (Best to Worst CPIK):
-   - Point Estimate: $0.254 per KPI unit
-   - Confidence Range: $0.192 to $0.339
+   - Point Estimate: THB0.254 per KPI unit
+   - Confidence Range: THB0.192 to THB0.339
    - Uncertainty Level: ±58% around point estimate
 6. KOL (Best to Worst CPIK):
-   - Point Estimate: $0.264 per KPI unit
-   - Confidence Range: $0.188 to $0.376
+   - Point Estimate: THB0.264 per KPI unit
+   - Confidence Range: THB0.188 to THB0.376
    - Uncertainty Level: ±71% around point estimate
 7. ACTIVATION (Best to Worst CPIK):
-   - Point Estimate: $0.269 per KPI unit
-   - Confidence Range: $0.160 to $0.543
+   - Point Estimate: THB0.269 per KPI unit
+   - Confidence Range: THB0.160 to THB0.543
    - Uncertainty Level: ±142% around point estimate
 8. FACEBOOK (Best to Worst CPIK):
-   - Point Estimate: $0.287 per KPI unit
-   - Confidence Range: $0.188 to $0.445
+   - Point Estimate: THB0.287 per KPI unit
+   - Confidence Range: THB0.188 to THB0.445
    - Uncertainty Level: ±89% around point estimate
 9. TV_SPOT (Best to Worst CPIK):
-   - Point Estimate: $0.827 per KPI unit
-   - Confidence Range: $0.520 to $1.374
+   - Point Estimate: THB0.827 per KPI unit
+   - Confidence Range: THB0.520 to THB1.374
    - Uncertainty Level: ±103% around point estimate
 
 CPIK Confidence Analysis:
@@ -697,10 +700,10 @@ CPIK Statistical Significance:
 Combined ROI and CPIK Insights:
 
 High Confidence Performers (Low uncertainty in both ROI and CPIK):
-- KOL_BOOST: 5.00x ROI (±4%), $0.200 CPIK (±4%)
-- TIKTOK: 5.00x ROI (±2%), $0.200 CPIK (±2%)
-- TV_SPONSOR: 5.00x ROI (±5%), $0.200 CPIK (±5%)
-- RADIO: 4.53x ROI (±45%), $0.223 CPIK (±45%)
+- KOL_BOOST: 5.00x ROI (±4%), THB0.200 CPIK (±4%)
+- TIKTOK: 5.00x ROI (±2%), THB0.200 CPIK (±2%)
+- TV_SPONSOR: 5.00x ROI (±5%), THB0.200 CPIK (±5%)
+- RADIO: 4.53x ROI (±45%), THB0.223 CPIK (±45%)
 
 Uncertainty Patterns:
 - Average ROI uncertainty: ±53%
@@ -719,71 +722,70 @@ determined by the posterior mean.Marketing Response Curves Performance Analysis:
 
 Current Channel Performance:
 1. TV_SPONSOR:
-   - Current Spend: $341,463 (0.8% of total)
-   - Current Revenue: $1,706,650 (1.2% of total)
+   - Current Spend: THB341,463 (0.8% of total)
+   - Current Revenue: THB1,706,650 (1.2% of total)
    - Current ROI: 5.00x
 2. RADIO:
-   - Current Spend: $3,295,000 (7.4% of total)
-   - Current Revenue: $14,916,628 (10.4% of total)
+   - Current Spend: THB3,295,000 (7.4% of total)
+   - Current Revenue: THB14,916,628 (10.4% of total)
    - Current ROI: 4.53x
 3. YOUTUBE:
-   - Current Spend: $4,368,572 (9.8% of total)
-   - Current Revenue: $17,402,620 (12.1% of total)
+   - Current Spend: THB4,368,572 (9.8% of total)
+   - Current Revenue: THB17,402,620 (12.1% of total)
    - Current ROI: 3.98x
 4. KOL:
-   - Current Spend: $5,140,650 (11.5% of total)
-   - Current Revenue: $19,866,100 (13.8% of total)
+   - Current Spend: THB5,140,650 (11.5% of total)
+   - Current Revenue: THB19,866,100 (13.8% of total)
    - Current ROI: 3.86x
 5. ACTIVATION:
-   - Current Spend: $12,963,048 (28.9% of total)
-   - Current Revenue: $49,697,312 (34.6% of total)
+   - Current Spend: THB12,963,048 (28.9% of total)
+   - Current Revenue: THB49,697,312 (34.6% of total)
    - Current ROI: 3.83x
 6. FACEBOOK:
-   - Current Spend: $7,147,552 (16.0% of total)
-   - Current Revenue: $25,648,736 (17.8% of total)
+   - Current Spend: THB7,147,552 (16.0% of total)
+   - Current Revenue: THB25,648,736 (17.8% of total)
    - Current ROI: 3.59x
 7. TV_SPOT:
-   - Current Spend: $11,540,248 (25.8% of total)
-   - Current Revenue: $14,483,313 (10.1% of total)
+   - Current Spend: THB11,540,248 (25.8% of total)
+   - Current Revenue: THB14,483,313 (10.1% of total)
    - Current ROI: 1.26x
 
 Portfolio Summary:
-- Total Spend: $44,796,533
-- Total Revenue: $143,721,359
+- Total Spend: THB44,796,533
 - Overall ROI: 3.21x
 - Active Channels: 7
 
 Spend Increase Scenario Analysis:
 
 25% Spend Increase Scenarios:
-- TV_SPONSOR: +$85,366 → +$235,487 (Marginal ROI: 2.76x)
-- RADIO: +$823,750 → +$1,048,923 (Marginal ROI: 1.27x)
-- YOUTUBE: +$1,092,143 → +$2,514,652 (Marginal ROI: 2.30x)
-- KOL: +$1,285,162 → +$2,200,658 (Marginal ROI: 1.71x)
-- ACTIVATION: +$3,240,762 → +$6,376,468 (Marginal ROI: 1.97x)
-- FACEBOOK: +$1,786,888 → +$2,126,128 (Marginal ROI: 1.19x)
-- TV_SPOT: +$2,885,062 → +$1,542,903 (Marginal ROI: 0.53x)
-Portfolio 25% Increase: +$11,199,133 → +$16,045,219 (Portfolio Marginal ROI: 1.43x)
+- TV_SPONSOR: +THB85,366 → +THB235,487 (Marginal ROI: 2.76x)
+- RADIO: +THB823,750 → +THB1,048,923 (Marginal ROI: 1.27x)
+- YOUTUBE: +THB1,092,143 → +THB2,514,652 (Marginal ROI: 2.30x)
+- KOL: +THB1,285,162 → +THB2,200,658 (Marginal ROI: 1.71x)
+- ACTIVATION: +THB3,240,762 → +THB6,376,468 (Marginal ROI: 1.97x)
+- FACEBOOK: +THB1,786,888 → +THB2,126,128 (Marginal ROI: 1.19x)
+- TV_SPOT: +THB2,885,062 → +THB1,542,903 (Marginal ROI: 0.53x)
+Portfolio 25% Increase: +THB11,199,133 → +THB16,045,219 (Portfolio Marginal ROI: 1.43x)
 
 50% Spend Increase Scenarios:
-- TV_SPONSOR: +$170,732 → +$438,110 (Marginal ROI: 2.57x)
-- RADIO: +$1,647,500 → +$1,895,140 (Marginal ROI: 1.15x)
-- YOUTUBE: +$2,184,286 → +$4,709,210 (Marginal ROI: 2.16x)
-- KOL: +$2,570,325 → +$4,038,400 (Marginal ROI: 1.57x)
-- ACTIVATION: +$6,481,524 → +$11,700,384 (Marginal ROI: 1.81x)
-- FACEBOOK: +$3,573,776 → +$3,862,276 (Marginal ROI: 1.08x)
-- TV_SPOT: +$5,770,124 → +$2,819,871 (Marginal ROI: 0.49x)
-Portfolio 50% Increase: +$22,398,267 → +$29,463,391 (Portfolio Marginal ROI: 1.32x)
+- TV_SPONSOR: +THB170,732 → +THB438,110 (Marginal ROI: 2.57x)
+- RADIO: +THB1,647,500 → +THB1,895,140 (Marginal ROI: 1.15x)
+- YOUTUBE: +THB2,184,286 → +THB4,709,210 (Marginal ROI: 2.16x)
+- KOL: +THB2,570,325 → +THB4,038,400 (Marginal ROI: 1.57x)
+- ACTIVATION: +THB6,481,524 → +THB11,700,384 (Marginal ROI: 1.81x)
+- FACEBOOK: +THB3,573,776 → +THB3,862,276 (Marginal ROI: 1.08x)
+- TV_SPOT: +THB5,770,124 → +THB2,819,871 (Marginal ROI: 0.49x)
+Portfolio 50% Increase: +THB22,398,267 → +THB29,463,391 (Portfolio Marginal ROI: 1.32x)
 
 100% Spend Increase Scenarios:
-- TV_SPONSOR: +$341,463 → +$772,357 (Marginal ROI: 2.26x)
-- RADIO: +$3,295,000 → +$3,200,890 (Marginal ROI: 0.97x)
-- YOUTUBE: +$4,368,572 → +$8,397,040 (Marginal ROI: 1.92x)
-- KOL: +$5,140,650 → +$6,970,844 (Marginal ROI: 1.36x)
-- ACTIVATION: +$12,963,048 → +$20,121,168 (Marginal ROI: 1.55x)
-- FACEBOOK: +$7,147,552 → +$6,574,364 (Marginal ROI: 0.92x)
-- TV_SPOT: +$11,540,248 → +$4,836,091 (Marginal ROI: 0.42x)
-Portfolio 100% Increase: +$44,796,533 → +$50,872,754 (Portfolio Marginal ROI: 1.14x)
+- TV_SPONSOR: +THB341,463 → +THB772,357 (Marginal ROI: 2.26x)
+- RADIO: +THB3,295,000 → +THB3,200,890 (Marginal ROI: 0.97x)
+- YOUTUBE: +THB4,368,572 → +THB8,397,040 (Marginal ROI: 1.92x)
+- KOL: +THB5,140,650 → +THB6,970,844 (Marginal ROI: 1.36x)
+- ACTIVATION: +THB12,963,048 → +THB20,121,168 (Marginal ROI: 1.55x)
+- FACEBOOK: +THB7,147,552 → +THB6,574,364 (Marginal ROI: 0.92x)
+- TV_SPOT: +THB11,540,248 → +THB4,836,091 (Marginal ROI: 0.42x)
+Portfolio 100% Increase: +THB44,796,533 → +THB50,872,754 (Portfolio Marginal ROI: 1.14x)
 
 Marginal Returns Analysis:
 
@@ -798,8 +800,8 @@ Efficiency Threshold Analysis:
 
 Scale and Growth Opportunity Analysis:
 - Most Efficient Channel: TV_SPONSOR (5.00x ROI)
-- Largest Spend Channel: ACTIVATION ($12,963,048)
-- Highest Revenue Channel: ACTIVATION ($49,697,312)
+- Largest Spend Channel: ACTIVATION (THB12,963,048)
+- Highest Revenue Channel: ACTIVATION (THB49,697,312)
 
 Spend Scale Differences:
 - ACTIVATION spends 38.0x more than TV_SPONSOR

@@ -19,7 +19,7 @@ class MMMSummaryReportProcessor:
             'methodology': r'Methodology:',
             'spend_roi_analysis': r'Marketing Channel Spend and ROI Analysis:',
             'performance_overview': r'Performance Overview:',
-            'channel_performance_roi': r'Channel Performance by ROI:',
+            'channel_performance_roi': r'Channel Performance by ROI (Within Media Channel Only):',
             'channel_efficiency': r'Channel Efficiency Analysis:',
             'roi_performance': r'ROI Performance:',
             'budget_allocation_insights': r'Budget Allocation Insights:',
