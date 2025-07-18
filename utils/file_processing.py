@@ -21,17 +21,17 @@ def process_csv_with_agent(uploaded_file, user_prompt):
         
         try:
             llm = ChatOllama(
-                 model="qwen2.5-coder:3b-instruct",  # You can change this to your preferred model
-                 temperature=0,
-                 base_url="http://localhost:11434",  # Default Ollama URL
-                 # timeout=300,  # 5 minutes timeout for complex analysis
-             )
+                  model="qwen2.5-coder:3b-instruct",  # You can change this to your preferred model
+                  temperature=0,
+                  base_url="http://localhost:11434",  # Default Ollama URL
+                  # timeout=300,  # 5 minutes timeout for complex analysis
+              )
             # llm = ChatGroq(
-            #     model="llama-3.3-70b-versatile",  # You can change this to your preferred model
-            #     temperature=0,
-            #     #base_url="http://localhost:11434",  # Default Ollama URL
-            #     #timeout=300,  # 5 minutes timeout for complex analysis
-            # )
+            #      model="llama-3.3-70b-versatile",  # You can change this to your preferred model
+            #      temperature=0,
+            #      #base_url="http://localhost:11434",  # Default Ollama URL
+            #      #timeout=300,  # 5 minutes timeout for complex analysis
+            #  )
 
             agent = create_csv_agent(
                 llm,
@@ -44,6 +44,7 @@ def process_csv_with_agent(uploaded_file, user_prompt):
             # Always use the user prompt for analysis
             analysis_prompt = f"""
             The date format is in Year-Month-Date unless specified
+            All spendings and revenue is in Thai Baht (THB)
 
             Based on the user's question: "{user_prompt}"
 
@@ -57,6 +58,11 @@ def process_csv_with_agent(uploaded_file, user_prompt):
             Provide specific insights, statistics, and findings relevant to the question.
             Include any relevant data patterns, trends, or anomalies you discover.
             If you need to work with dates, use pd.to_datetime() but don't convert to int64 for correlation
+
+            After preprocessing, use the contents of the CSV file ({uploaded_file.name}) to extract and report all relevant facts, statistics, and comparisons required to answer the user’s question.
+            If the user’s question asks for a comparison (explicitly or implicitly) between the CSV and another source (e.g., MMM report), extract the required metric(s) from both and present a direct, factual comparison.
+            If the question is not directly about the CSV, but the answer can be supported or enriched with CSV data, report the relevant numbers and insights from the CSV as supporting evidence.
+            Never stop at data format or preprocessing details—always continue to deliver business insights, trends, or comparisons as appropriate.
             
             if encounter acronyms, don't assume the meaning, refer to it as the given acronym
 

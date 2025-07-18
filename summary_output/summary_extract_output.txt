@@ -33,11 +33,6 @@ your revenue drivers, but breaks down your marketing revenue by the baseline
 and all channels.
 Marketing Channel Spend and ROI Analysis:
 
-Performance Overview:
-- Marketing channels account for 100.0% of attributed revenue
-- Total marketing spend allocation: 100.0%
-- Average ROI across all channels: 4.0x
-
 Channel Performance by ROI (Within Media Channel Only):
 - KOL_BOOST: 5.0x ROI, 0.9% revenue share, 0.6% spend share
 - TIKTOK: 5.0x ROI, 0.5% revenue share, 0.3% spend share
@@ -368,7 +363,6 @@ at $0.20. For every KPI unit, you spent $0.20.
 ROI vs Effectiveness Analysis:
 
 Performance Overview:
-- Average ROI across channels: 4.0x
 - Average effectiveness: 4.0057 incremental outcome per impression
 - Total media spend analyzed: THB45,197,221
 
@@ -720,7 +714,7 @@ Methodology Note: Note: CPIK (cost per incremental KPI) point
 estimate is determined by the posterior median, whereas ROI point estimate is
 determined by the posterior mean.Marketing Response Curves Performance Analysis:
 
-Current Channel Performance:
+Current Channel Performance: (TOP 7)
 1. TV_SPONSOR:
    - Current Spend: THB341,463 (0.8% of total)
    - Current Revenue: THB1,706,650 (1.2% of total)

@@ -18,7 +18,6 @@ class MMMSummaryReportProcessor:
             'key_insights': r'Key Insights:',
             'methodology': r'Methodology:',
             'spend_roi_analysis': r'Marketing Channel Spend and ROI Analysis:',
-            'performance_overview': r'Performance Overview:',
             'channel_performance_roi': r'Channel Performance by ROI (Within Media Channel Only):',
             'channel_efficiency': r'Channel Efficiency Analysis:',
             'roi_performance': r'ROI Performance:',
@@ -87,7 +86,7 @@ class MMMSummaryReportProcessor:
             (r'Channel Volatility Analysis:', 'volatility_analysis'),
             (r'Spend Allocation:', 'spend_allocation'),
             (r'Combined ROI and CPIK Insights:', 'combined_insights'),
-            (r'Current Channel Performance:', 'current_performance'),
+            (r'Current Channel Performance: (TOP 7)', 'current_performance'),
             (r'Spend Increase Scenario Analysis:', 'scenario_analysis'),
             (r'Portfolio Summary:', 'portfolio_summary')
         ]

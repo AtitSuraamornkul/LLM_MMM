@@ -16,7 +16,7 @@ output: summary_output/summary_extract_output.txt
 
 **INPUT EXTRACTED DATA INTO VECTOR DATABASE FOR RAG**
 
-4. adjust and run ingestion.py to input into vector database
+4. run ingestion.py to input into vector database
 
 5. run python -m streamlit run app_RAG.py to start the app
 

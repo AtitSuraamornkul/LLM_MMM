@@ -255,7 +255,10 @@ RESPONSE PRIORITY ORDER:
 4. Relevant context from insights report
 5. Any limitations or data gaps
 
+DO NOT MAKE UP DATA OR INFORMATION, ONLY TAKE DATA FROM THE PROVIDED CONTEXT FOR RESPONSES
 Always remain helpful, accurate, and focused on translating MMM results into clear business value and actionable next steps.
+ALWAYS RECHECK YOUR ANSWERS, MAKE SURE THERE ARE NO REPEATING INFORMATION OR ANOMALY, CHECK WITH THE RECIEVED CONTEXT
+ONLY INCLUDE INFORMATION RELATED TO THE USER QUESTION 
 """
 
     # Send message to LLM
@@ -268,45 +271,46 @@ Always remain helpful, accurate, and focused on translating MMM results into cle
     if total_tokens > MAX_TOKENS:
         st.error(f"Prompt too long ({total_tokens} tokens, limit is {MAX_TOKENS}). Try reducing context or chat history.")
     else:
-        try:
-            # Prepare Ollama request
-            ollama_payload = {
-                "model": OLLAMA_MODEL,
-                "messages": messages,
-                "stream": False
-            }
-            
-            # Make request to Ollama
-            response = requests.post(
-                f"{OLLAMA_BASE_URL}/api/chat",
-                json=ollama_payload,
-                timeout=120  # 2 minute timeout
-            )
-            
-            if response.status_code == 200:
-                response_data = response.json()
-                assistant_response = response_data['message']['content']
-                st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+        with st.spinner("Generating Response"):
+            try:
+                # Prepare Ollama request
+                ollama_payload = {
+                    "model": OLLAMA_MODEL,
+                    "messages": messages,
+                    "stream": False
+                }
                 
-                # Update token usage tracking (estimate since Ollama doesn't provide exact counts)
-                estimated_tokens = check_token.count_message_tokens(messages) + check_token.num_tokens_from_string(assistant_response)
-                st.session_state.total_tokens_used += estimated_tokens
-                st.session_state.request_count += 1
-            else:
-                st.error(f"Ollama request failed with status {response.status_code}: {response.text}")
-                assistant_response = None
+                # Make request to Ollama
+                response = requests.post(
+                    f"{OLLAMA_BASE_URL}/api/chat",
+                    json=ollama_payload,
+                    timeout=120  # 2 minute timeout
+                )
+                
+                if response.status_code == 200:
+                    response_data = response.json()
+                    assistant_response = response_data['message']['content']
+                    st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+                    
+                    # Update token usage tracking (estimate since Ollama doesn't provide exact counts)
+                    estimated_tokens = check_token.count_message_tokens(messages) + check_token.num_tokens_from_string(assistant_response)
+                    st.session_state.total_tokens_used += estimated_tokens
+                    st.session_state.request_count += 1
+                else:
+                    st.error(f"Ollama request failed with status {response.status_code}: {response.text}")
+                    assistant_response = None
 
-            # Display the LLM's response
-            with st.chat_message("assistant", avatar=CHATBOT_AVATAR):
-                st.markdown(assistant_response)
-        
-        # Optional: Show retrieved context in an expander for transparency
-            with st.expander("📚 Retrieved Context (Click to view sources)"):
-                st.text(enhanced_context)
-                
+                # Display the LLM's response
+                with st.chat_message("assistant", avatar=CHATBOT_AVATAR):
+                    st.markdown(assistant_response)
             
-        except Exception as e:
-            st.error(f"Error getting response: {str(e)}")
+            # Optional: Show retrieved context in an expander for transparency
+                with st.expander("📚 Retrieved Context (Click to view sources)"):
+                    st.text(enhanced_context)
+                    
+                
+            except Exception as e:
+                st.error(f"Error getting response: {str(e)}")
 
 # Sidebar with RAG settings, file upload, and token usage
 with st.sidebar:

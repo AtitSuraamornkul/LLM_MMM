@@ -181,19 +181,10 @@ def get_spend_outcome_insights(soup):
     # Sort channels by ROI
     sorted_channels = sorted(channel_analysis.items(), key=lambda x: x[1]['roi'], reverse=True)
     
-    # Calculate totals
-    total_revenue_pct = sum(ch['revenue_pct'] for ch in channel_analysis.values())
-    total_spend_pct = sum(ch['spend_pct'] for ch in channel_analysis.values())
-    avg_roi = sum(ch['roi'] for ch in channel_analysis.values()) / len(channel_analysis)
     
     # Format results for RAG
     rag_content = f"""
 Marketing Channel Spend and ROI Analysis:
-
-Performance Overview:
-- Marketing channels account for {total_revenue_pct:.1f}% of attributed revenue
-- Total marketing spend allocation: {total_spend_pct:.1f}%
-- Average ROI across all channels: {avg_roi:.1f}x
 
 Channel Performance by ROI (Within Media Channel Only):
 """.strip()
@@ -889,7 +880,6 @@ def analyze_roi_effectiveness(chart_data, chart_description):
 ROI vs Effectiveness Analysis:
 
 Performance Overview:
-- Average ROI across channels: {avg_roi:.1f}x
 - Average effectiveness: {avg_effectiveness:.4f} incremental outcome per impression
 - Total media spend analyzed: THB{total_spend:,.0f}
 
@@ -1446,7 +1436,7 @@ def extract_response_curves_data_for_rag(soup):
         content = "Marketing Response Curves Performance Analysis:\n\n"
         
         # Current Performance Summary
-        content += "Current Channel Performance:\n"
+        content += "Current Channel Performance: (TOP 7)\n"
         sorted_channels = sorted(channel_metrics.items(), key=lambda x: x[1]['current_roi'], reverse=True)
         
         for i, (channel, metrics) in enumerate(sorted_channels, 1):
