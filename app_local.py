@@ -23,120 +23,31 @@ import utils.cleanup as cleanup
 import utils.check_llama as check_llama
 
 import utils.cache_function as cache_function
+from utils.get_system_prompt import get_system_prompt
+
+from utils.get_graph import extract_vega_dataset_from_html
+from utils.get_context import get_enhanced_context
+
 
 load_dotenv()
 
-OLLAMA_BASE_URL = "https://ollama-llama3-1--8b-776241027088.asia-southeast1.run.app"  # Default Ollama URL
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
 OLLAMA_MODEL = "llama3.1:latest" 
 
 CHATBOT_AVATAR = "assets/chatbot_avatar_128x128_fixed.png"
 USER_AVATAR = "assets/A3D07482-09C2-48E7-884F-EF6BABBEBFA6.PNG"
 
-def extract_vega_dataset_from_html(html_path, chart_id):
-    """
-    Extracts the first dataset from the Vega-Lite spec for a given chart_id in an HTML file.
-    Returns a pandas DataFrame.
-    """
-    try:
-        with open(html_path, 'r', encoding='utf-8') as f:
-            html = f.read()
-        
-        # Find the Vega-Lite spec for the given chart_id
-        pattern = re.compile(
-            r'chart-embed id="' + re.escape(chart_id) + r'".*?JSON\.parse\("({.*?})"\);',
-            re.DOTALL
-        )
-        
-        match = pattern.search(html)
-        if not match:
-            st.warning(f"Could not find Vega-Lite spec for chart id '{chart_id}'")
-            return None
-            
-        vega_json_str = match.group(1).encode('utf-8').decode('unicode_escape')
-        vega_spec = json.loads(vega_json_str)
-        
-        # Get the dataset (first item in the 'datasets' dict)
-        if 'datasets' not in vega_spec:
-            st.warning(f"No datasets found in Vega spec for chart id '{chart_id}'")
-            return None
-            
-        data = list(vega_spec['datasets'].values())[0]
-        return pd.DataFrame(data)
-    
-    except Exception as e:
-        st.error(f"Error extracting data for chart '{chart_id}': {str(e)}")
-        return None
-
-
 MAX_TOKENS = 10000
-RESERVED_FOR_ANSWER = 2000  # Reserve for LLM's answer and prompt
-
-def get_rag_context(query, retriever):
-    """Retrieve relevant context using RAG, trimmed to fit token limit."""
-    try:
-        results = retriever.invoke(query)
-        if not results:
-            return "No relevant context found in the knowledge base."
-        
-        context_parts = []
-        token_count = 0
-        for i, doc in enumerate(results, 1):
-            part = f"Document {i}:\n{doc.page_content}"
-            if doc.metadata:
-                part += f"\nSource: {doc.metadata}\n"
-            part_tokens = check_token.num_tokens_from_string(part)
-            if token_count + part_tokens > (MAX_TOKENS - RESERVED_FOR_ANSWER):
-                break
-            context_parts.append(part)
-            token_count += part_tokens
-        
-        return "\n".join(context_parts)
-    except Exception as e:
-        st.error(f"Error retrieving context: {str(e)}")
-        return "Error retrieving relevant context."
-    
-def get_enhanced_context(query, retriever):
-    """Get context from RAG, static files, and CSV analysis"""
-    # Get RAG context first (priority)
-    rag_context = get_rag_context(query, retriever)
-    
-    # Get static uploaded context (non-CSV files only)
-    static_context = getattr(st.session_state, 'uploaded_context', '')
-    
-    # Filter out CSV placeholder messages from static context
-    if static_context:
-        # Remove CSV placeholder lines
-        static_lines = []
-        for line in static_context.split('\n'):
-            if not ("CSV file" in line and "ready for analysis" in line):
-                static_lines.append(line)
-        static_context = '\n'.join(static_lines).strip()
-    
-    # Get dynamic CSV analysis for current query
-    csv_analysis = analyze_csv_files_dynamically(query)
-    
-    # Combine all contexts
-    combined_parts = [f"KNOWLEDGE BASE CONTEXT:\n{rag_context}"]
-    
-    if static_context:
-        combined_parts.append(f"UPLOADED FILES CONTEXT:\n{static_context}")
-    
-    if csv_analysis:
-        combined_parts.append(f"DYNAMIC CSV ANALYSIS:\n{csv_analysis}")
-    
-    return "\n\n".join(combined_parts)
-
+RESERVED_FOR_ANSWER = 2000 
 
 retriever = cache_function.initialize_rag()
 
 insights_report = cache_function.generate_insights()
 
-
 st.set_page_config(
     page_title="MMM ChatBot",
     layout="centered"
 )
-
 
 
 cleanup.initialize_session_state()
@@ -149,15 +60,14 @@ if not st.session_state.welcome_shown:
     welcome_message = """
     **Welcome! Your MMM Analysis is Ready**
     
-    I'm your AI assistant specialized in Marketing Mix Modeling insights. I've already analyzed your data and I'm ready to help you make better marketing decisions.
+    I'm **CINDER!**, your AI assistant specialized in Marketing Mix Modeling insights. I've already analyzed your data and I'm ready to help you make better marketing decisions.
     
     **🎯 Popular Questions:**
 
     • "Which channels should I invest more in?"
-    • "What happens if I increase my budget by 25%?"
+    • "What is the overall impact of marketing spend?		"
     • "Show me my underperforming channels"
     • "What's my ROI by channel?"
-    • "Give me action items for next quarter"
     
     **📈 I can also help with:** 
 
@@ -199,44 +109,7 @@ if user_prompt:
         enhanced_context = get_enhanced_context(user_prompt, retriever)
 
 
-    # Enhanced system prompt with RAG context
-    system_prompt = f"""
-You are explaining ads to a 10-year-old kid. Make it super fun and easy!
-
-DATA:
-INFORMATION: {enhanced_context}
-REPORT: {insights_report}
-
-MUST DO:
-- Change '$' to 'THB'
-- Use ONLY words a 10-year-old knows (no big grown-up words!)
-- Be super short - maximum 3-4 lines per point
-- Use LOTS of emoji, especially faces 😊🎉✨👍👎✅❌⚠️💰📈
-- Use fun comparisons: "like magic!" "like getting free candy!" "like a broken toy"
-- Show clear good/bad with ✅❌ or 👍👎
-- Sound excited and happy!
-
-BANNED WORDS (Don't use these!):
-- optimization, performance, incremental, revenue, investment
-- analysis, suggests, prioritizing, diminishing, returns
-- significant, delta, allocation, strategy
-
-USE INSTEAD:
-- "made more money" not "increased revenue"
-- "works great" not "high performance" 
-- "waste money" not "diminishing returns"
-- "do this" not "we suggest"
-
-EXAMPLE FORMAT:
-"😊 **Great News!**
-💰 You made 5 million more THB! Like finding treasure! 🎉
-✅ Facebook ads work like magic! ✨
-❌ TV ads are broken - they waste money 👎
-🎯 **Do this:** Use more Facebook, less TV!"
-
-Keep it SHORT, FUN, and use words a kid would say to their friend!
-Only use the information given - don't make stuff up!
-"""
+    system_prompt = get_system_prompt(st.session_state.complexity_level, enhanced_context, insights_report)
 
     # Send message to LLM
     messages = [
@@ -291,6 +164,28 @@ Only use the information given - don't make stuff up!
 
 # Sidebar with RAG settings, file upload, and token usage
 with st.sidebar:
+    st.header("Response Complexity")
+    
+    # Complexity slider
+    complexity_level = st.select_slider(
+        "Choose response style:",
+        options=[1, 2, 3],
+        value=st.session_state.complexity_level,
+        help="Level 1: Simple explanations with emojis\nLevel 2: Business-focused insights\nLevel 3: Technical analysis with statistics"
+    )
+    
+    st.session_state.complexity_level = complexity_level #update when change
+
+    # Show description of current level
+    level_descriptions = {
+        1: "🎈 **Simple**: Simple words, lots of emojis, short explanations",
+        2: "💼 **Medium**: Business language, actionable insights, clear metrics", 
+        3: "🔬 **Advanced**: Advanced analysis, statistical details, comprehensive data"
+    }
+    
+    st.info(level_descriptions[complexity_level])
+
+
     st.header("File Upload")
     st.caption("Supports: PDF, Word, Text files")  # Updated caption
     
@@ -357,17 +252,18 @@ with st.sidebar:
             st.success("Files cleared!")
             st.rerun()
 
-    st.header("RAG Settings")
-    
-    # Allow users to adjust retrieval parameters
-    k_docs = st.slider("Number of documents to retrieve", 1, 10, 5)
-    score_threshold = st.slider("Similarity threshold", 0.0, 1.0, 0.5, 0.1)
-    
-    if st.button("Update Retrieval Settings"):
-        # Update retriever with new settings
-        retriever = cache_function.initialize_rag()
-        retriever.search_kwargs = {"k": k_docs, "score_threshold": score_threshold}
-        st.success("Settings updated!")
+    with st.expander("RAG Retrieval Settings", expanded=False):
+        st.header("RAG Settings")
+        
+        # Allow users to adjust retrieval parameters
+        k_docs = st.slider("Number of documents to retrieve", 1, 10, 5)
+        score_threshold = st.slider("Similarity threshold", 0.0, 1.0, 0.5, 0.1)
+        
+        if st.button("Update Retrieval Settings"):
+            # Update retriever with new settings
+            retriever = cache_function.initialize_rag()
+            retriever.search_kwargs = {"k": k_docs, "score_threshold": score_threshold}
+            st.success("Settings updated!")
 
     with st.expander("Check Ollama Status", expanded=False):
         st.header("Ollama Status")

@@ -14,6 +14,9 @@ def initialize_session_state():
         "max_context_tokens": 8000,  # Limit context size
         "retriever": None  # For RAG retriever caching
     }
+    # In utils/cleanup.py, add this to initialize_session_state()
+    if 'complexity_level' not in st.session_state:
+        st.session_state.complexity_level = 2  # Default to manager-friendly
     
     for key, value in defaults.items():
         if key not in st.session_state:
