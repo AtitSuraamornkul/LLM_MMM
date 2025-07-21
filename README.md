@@ -14,9 +14,11 @@ input: output/summary_output.html
 output: summary_output/summary_extract_output.txt
 
 
-**INPUT EXTRACTED DATA INTO VECTOR DATABASE FOR RAG**
+**FORMAT EXTRACTED TXT DATA INTO SUITABLE FORMAT (USE LLM OR WRITE SCRIPT TO AUTOMATE)**
 
-4. run ingestion.py to input into vector database
+*INPUT EXTRACTED DATA INTO VECTOR DATABASE FOR RAG*
 
-5. run python -m streamlit run app_RAG.py to start the app
+4. run chroma_ingestion.py to input into vector database
+
+5. run python -m streamlit run app.py to start the app
 

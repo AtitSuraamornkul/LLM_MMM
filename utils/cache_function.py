@@ -9,27 +9,33 @@ from typing import Dict, Optional, Any
 import utils.llm as llm
 import utils.check_token as check_token
 
-# RAG/Vector store imports
-from pinecone import Pinecone
-from langchain_pinecone import PineconeVectorStore
+# RAG/Vector store imports - CHANGED
+import chromadb
+from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # Initialize RAG components
 @st.cache_resource
 def initialize_rag():
     """Initialize RAG components with caching for better performance"""
-    # Initialize Pinecone
-    pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
-    index_name = "m150-thb"
-    index = pc.Index(index_name)
+    # Initialize ChromaDB - CHANGED
+    persist_directory = "./chroma_db"
+    client = chromadb.PersistentClient(path=persist_directory)
+    collection_name = "new-m150-thb"
     
-    # Initialize embeddings and vector store
+    # Initialize embeddings and vector store - CHANGED
     embeddings = HuggingFaceEmbeddings(
-        model_name="BAAI/bge-base-en-v1.5"
+        model_name="BAAI/bge-large-en-v1.5"
     )
-    vector_store = PineconeVectorStore(index=index, embedding=embeddings)
     
-    # Create retriever
+    vector_store = Chroma(
+        client=client,
+        collection_name=collection_name,
+        embedding_function=embeddings,
+        persist_directory=persist_directory
+    )
+    
+    # Create retriever - SAME
     retriever = vector_store.as_retriever(
         search_type="similarity_score_threshold",
         search_kwargs={"k": 5, "score_threshold": 0.5},
