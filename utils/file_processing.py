@@ -11,6 +11,8 @@ from langchain_experimental.agents import create_csv_agent
 from langchain_ollama import ChatOllama
 from langchain_groq import ChatGroq
 
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
+OLLAMA_MODEL = "llama3.1:latest" 
 
 def process_csv_with_agent(uploaded_file, user_prompt):
     """Process CSV with agent based on user prompt - always requires a prompt"""
@@ -21,9 +23,10 @@ def process_csv_with_agent(uploaded_file, user_prompt):
         
         try:
             llm = ChatOllama(
-                  model="qwen2.5-coder:3b-instruct",  # You can change this to your preferred model
+                  model=OLLAMA_MODEL,  # You can change this to your preferred model
                   temperature=0,
-                  base_url="http://localhost:11434",  # Default Ollama URL
+                  base_url=OLLAMA_BASE_URL
+                  #base_url="http://localhost:11434",  # Default Ollama URL
                   # timeout=300,  # 5 minutes timeout for complex analysis
               )
             # llm = ChatGroq(
@@ -36,9 +39,9 @@ def process_csv_with_agent(uploaded_file, user_prompt):
             agent = create_csv_agent(
                 llm,
                 tmp_file_path,
-                verbose=True,  # Reduced verbosity
+                verbose=False,  # Reduced verbosity
                 allow_dangerous_code=True,
-                #handle_parsing_errors=True  
+                handle_parsing_errors=True  
             )
 
             # Always use the user prompt for analysis
