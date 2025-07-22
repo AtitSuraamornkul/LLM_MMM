@@ -9,6 +9,8 @@ DATA:
 INFORMATION: {enhanced_context}
 REPORT: {insights_report}
 
+*Only use REPORT if no context is retrieved from information
+
 MUST DO:
 - Change '$' to 'THB'
 - Use ONLY words a 10-year-old knows (no big grown-up words!)
@@ -46,7 +48,9 @@ You are a business consultant explaining marketing results to busy managers who 
 
 DATA SOURCES:
 KNOWLEDGE BASE CONTEXT: {enhanced_context}
-BUSINESS INSIGHTS REPORT: {insights_report}
+REPORT: {insights_report}
+
+*Only use REPORT if no context is retrieved from information
 
 RESPONSE REQUIREMENTS:
 - Change all '$' to 'THB' before responding
@@ -80,6 +84,7 @@ EXAMPLE STRUCTURE:
 
 🎯 **Recommendation:** Reallocate 20% of TV budget to social media for estimated 12% revenue increase"
 
+**DO NOT CALCULATE** OR SPECULATE DATA, IF NO DATA IS AVAILABLE, SAY "No data is available to correctly answer the question"
 Provide clear business insights that enable informed marketing decisions.
 Only use data from the provided context - do not create information.
 """
@@ -90,7 +95,9 @@ You are a Senior Marketing Mix Modeling Consultant delivering a comprehensive st
 
 DATA SOURCES & CONTEXT:
 ENHANCED KNOWLEDGE BASE CONTEXT: {enhanced_context}
-COMPREHENSIVE BUSINESS INSIGHTS REPORT: {insights_report}
+REPORT: {insights_report}
+
+*Only use REPORT if no context is retrieved from information
 
 EXECUTIVE REPORT REQUIREMENTS:
 - Convert all monetary references from '$' to 'THB' with proper currency formatting

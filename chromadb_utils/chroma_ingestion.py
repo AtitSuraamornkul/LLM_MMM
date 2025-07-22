@@ -36,7 +36,7 @@ vector_store = Chroma(
 
 documents = [
     Document(
-        page_content="Marketing Mix Model Optimization Results (Jul 4, 2022 - Jul 1, 2024): Budget optimization maintained $45M spend while improving ROI from 3.2 to 3.4 (+0.1 delta) and incremental revenue from $146M to $152M (+$6M delta). Channel-level spend constraints were -30% to +30% of historical spend. Budget allocation shifts: activation increased from 29% to 37%, tv_spot decreased from 26% to 18%, kol increased from 11% to 13%, youtube increased from 10% to 13%, facebook decreased from 16% to 12%, radio decreased from 7% to 6%, tv_sponsor maintained at 1%, kol_boost maintained at 1%, tiktok maintained at 0%.",
+        page_content="Marketing Mix Model Optimization Results (Jul 4, 2022 - Jul 1, 2024): Budget optimization maintained THB45M spend while improving ROI from 3.2 to 3.4 (+0.1 delta) and incremental revenue from THB146M to THB152M (+THB6M delta). Channel-level spend constraints were -30% to +30% of historical spend. Budget allocation shifts: activation increased from 29% to 37%, tv_spot decreased from 26% to 18%, kol increased from 11% to 13%, youtube increased from 10% to 13%, facebook decreased from 16% to 12%, radio decreased from 7% to 6%, tv_sponsor maintained at 1%, kol_boost maintained at 1%, tiktok maintained at 0%.",
         metadata={"source": "optimization_report", "category": "optimization_summary", "time_period": "2022-07-04_to_2024-07-01"}
     ),
     Document(
@@ -136,10 +136,19 @@ documents = [
         metadata={"source": "summary_report", "category": "growth_potential", "analysis_type": "portfolio_optimization"}
     ),
     Document(
-        page_content="Key Business Insights and Methodology Notes: Business context shows ACTIVATION and FACEBOOK drove most overall revenue. Baseline revenue accounts for 88.0% of total revenue while marketing channels drive 12.0%. Combined total revenue THB1,209,910,157 (Baseline THB1,064,185,216 + Marketing THB145,724,941). ROI insights: For every $1 spent on KOL_BOOST, $5.00 in revenue was generated. KOL_BOOST had highest effectiveness and drove lowest CPIK at THB0.20. TV_SPONSOR had highest marginal ROI at 2.98x. Methodology: ROI calculated by dividing revenue attributed to channel by marketing costs. Effectiveness measures incremental outcome per impression. Response curves show cumulative incremental revenue from total media spend constructed based on historical flighting patterns. CPIK point estimate determined by posterior median, ROI by posterior mean.",
+        page_content="Key Business Insights and Methodology Notes: Business context shows ACTIVATION and FACEBOOK drove most overall revenue. Baseline revenue accounts for 88.0% of total revenue while marketing channels drive 12.0%. Combined total revenue THB1,209,910,157 (Baseline THB1,064,185,216 + Marketing THB145,724,941). ROI insights: For every THB1 spent on KOL_BOOST, THB5.00 in revenue was generated. KOL_BOOST had highest effectiveness and drove lowest CPIK at THB0.20. TV_SPONSOR had highest marginal ROI at 2.98x. Methodology: ROI calculated by dividing revenue attributed to channel by marketing costs. Effectiveness measures incremental outcome per impression. Response curves show cumulative incremental revenue from total media spend constructed based on historical flighting patterns. CPIK point estimate determined by posterior median, ROI by posterior mean.",
         metadata={"source": "combined", "category": "business_insights", "analysis_type": "methodology_summary"}
     )
 ]
+
+# 1. Get all IDs
+all_ids = vector_store.get()['ids']
+
+# 2. Delete by IDs (if any exist)
+if all_ids:
+    vector_store.delete(ids=all_ids)
+
+print("deleted")
 
 
 # Generate unique IDs

@@ -3,16 +3,12 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 import requests
 import streamlit as st
-import time
-import re
 from dotenv import load_dotenv
 import utils.llm as llm
 import utils.check_token as check_token
-import tiktoken
 
 import pandas as pd
 import altair as alt
-import json
 
 from datetime import datetime
 
@@ -118,11 +114,11 @@ if not st.session_state.welcome_shown:
     Just ask me anything about your marketing performance or click below for quick insights and dashboard view! 👇
     """
     
-    st.session_state.chat_history.append({"role": "assistant", "content": welcome_message})
+    st.session_state.display_history.append({"role": "assistant", "content": welcome_message})
 
 
 # DISPLAY HISTORY
-for message in st.session_state.chat_history:
+for message in st.session_state.display_history:
     if message["role"] == "assistant":
         with st.chat_message(message["role"], avatar=CHATBOT_AVATAR):
             st.markdown(message["content"])
@@ -134,21 +130,22 @@ for message in st.session_state.chat_history:
 user_prompt = st.chat_input("Ask me about your MMM optimization results...")
 
 if user_prompt:
-
     cleanup.cleanup_chat_history()
 
     st.session_state.current_user_prompt = user_prompt
 
     # Add user message to chat
     st.chat_message("user", avatar=USER_AVATAR).markdown(user_prompt)
+
     st.session_state.chat_history.append({"role": "user", "content": user_prompt})
+    st.session_state.display_history.append({"role": "user", "content": user_prompt})
 
     # Get RAG context
     with st.spinner("Retrieving relevant information..."):
         enhanced_context = get_enhanced_context(user_prompt, retriever)
 
 
-    system_prompt = get_system_prompt(st.session_state.complexity_level, enhanced_context, insights_report)
+    system_prompt = get_system_prompt(st.session_state.complexity_level, enhanced_context, insights_report) 
 
     # Send message to LLM
     messages = [
@@ -180,6 +177,7 @@ if user_prompt:
                     response_data = response.json()
                     assistant_response = response_data['message']['content']
                     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+                    st.session_state.display_history.append({"role": "assistant", "content": assistant_response})
                     
                     # Update token usage tracking (estimate since Ollama doesn't provide exact counts)
                     estimated_tokens = check_token.count_message_tokens(messages) + check_token.num_tokens_from_string(assistant_response)
@@ -201,6 +199,10 @@ if user_prompt:
             except Exception as e:
                 st.error(f"Error getting response: {str(e)}")
 
+st.subheader("Quick Actions")
+if st.button("Click For Budget Optimization Summary Report"):
+    st.markdown(insights_report)
+
 # Sidebar with RAG settings, file upload, and token usage
 with st.sidebar:
     st.header("Response Complexity")
@@ -214,6 +216,8 @@ with st.sidebar:
     )
     
     st.session_state.complexity_level = complexity_level #update when change
+
+    cleanup.clear_on_complexity_change() 
 
     # Show description of current level
     level_descriptions = {
@@ -587,9 +591,6 @@ with st.expander("🔧 User Tools & Analytics", expanded=False):
                             # Add note
                             st.caption("Note: Return on investment is calculated by dividing the revenue attributed to a channel by marketing costs.")
 
-    st.subheader("Quick Actions")
-    if st.button("Click For Budget Optimization Summary Report"):
-        st.markdown(insights_report)
 
     if st.button("Click For Optimization Dashboard"):
         try:

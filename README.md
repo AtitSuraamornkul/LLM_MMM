@@ -16,7 +16,7 @@ output: summary_output/summary_extract_output.txt
 
 **FORMAT EXTRACTED TXT DATA INTO SUITABLE FORMAT (USE LLM OR WRITE SCRIPT TO AUTOMATE)**
 
-*INPUT EXTRACTED DATA INTO VECTOR DATABASE FOR RAG*
+INPUT EXTRACTED DATA INTO VECTOR DATABASE FOR RAG:
 
 4. run chroma_ingestion.py to input into vector database
 
