@@ -7,6 +7,11 @@ from langchain_groq import ChatGroq
 
 load_dotenv()
 
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
+#OLLAMA_MODEL = "llama3.1:latest" 
+OLLAMA_MODEL = "mistral-nemo:latest"
+
+
 def generate_llm_insights(optimization_results):
     system_prompt = """
 MMM Budget Optimization Insights
@@ -23,12 +28,27 @@ When given structured MMM optimization results (including budgets, ROI, revenue,
 
 **Keep each section brief and focused. Do not include background explanations or technical details unless absolutely necessary.**
 
+DO NOT USE PERCENTAGES
+Numbers MUST be taken DIRECTLY from the given context ONLY, cite where the number is taken from.
+DO NOT calculate or make up any numbers
+
+ROI RULE:
+- Report ROI only as a multiple (e.g., "3.4x"), never as a percentage.
+- Use ONLY the exact ROI values provided, DO NOT calculate the ROI value
+
 Use these headings:
 - Summary (max 4 sentences)
 - What Changed (bulleted, 1-2 per channel)
 - Key Takeaways (bulleted, max 5)
 - Recommendations (bulleted, max 5)
 - Things to Consider (bulleted, max 5), Assume external factors are considered in the MMM model
+
+STRICT DATA USAGE RULES:
+Use only the exact numbers, percentages, and ROI values as stated in the provided context.
+Specify the type of share (e.g., total revenue, marketing-attributed revenue) and always cite the source section for each number.
+Never calculate new values, percentages, or totals.
+Never use monthly averages, monthly peaks, or any derived value unless it is explicitly provided and labeled as such in the context.
+Always ensure that each number is matched to the correct channel as labeled in the context.
 
 **Replace ALL '$' (Dollar) references with 'THB' (Thai Baht)** (CRITICAL)
 
@@ -38,25 +58,23 @@ Format large numbers clearly: Write "THB 2,000,000" instead of "THB 2.0".
 
 Use bullet points and short paragraphs. Avoid technical jargon.
 Format this as a final business report. Do not include any conversational elements, follow-up questions, or offers for additional analysis. Conclude with your final recommendations only.
-
 """
 
     try:
-
         llm = ChatOllama(
-            model="gemma3:4b",  # You can change this to your preferred model
-            temperature=1,
-            base_url="http://localhost:11434",
-            num_predict=2000,  # Equivalent to max_tokens
+            model=OLLAMA_MODEL,  
+            temperature=0.1,
+            base_url=OLLAMA_BASE_URL,
+            num_predict=2000,  
         )
 
 
         # Initialize Ollama LLM
         # llm = ChatGroq(
-        #     model="llama3-70b-8192",  # You can change this to your preferred model
+        #     model="llama3-70b-8192", 
+        #    api_key=os.getenv("GROQ_API_KEY")
         #     temperature=1,
-        #     #base_url="http://localhost:11434",
-        #     #num_predict=2000,  # Equivalent to max_tokens
+        #     #num_predict=2000,  
         # )
 
         # Create the messages
@@ -93,30 +111,6 @@ def check_ollama_connection():
         return False, str(e)
 
 if __name__ == "__main__":
-    # Check Ollama connection first
-    is_connected, models_or_error = check_ollama_connection()
-    
-    if not is_connected:
-        print(f"❌ Ollama connection failed: {models_or_error}")
-        print("Make sure Ollama is running: 'ollama serve'")
-        print("And that you have a model installed: 'ollama pull llama3.1:8b'")
-        exit(1)
-    
-    print(f"✅ Ollama connected. Available models: {models_or_error}")
-    
-    # Check if preferred model is available
-    preferred_model = "gemma3:4b"
-    if preferred_model not in models_or_error:
-        print(f"⚠️  Preferred model '{preferred_model}' not found.")
-        print(f"Available models: {models_or_error}")
-        print(f"Install with: 'ollama pull {preferred_model}'")
-        
-        # Use first available model as fallback
-        if models_or_error:
-            fallback_model = models_or_error[0]
-            print(f"Using fallback model: {fallback_model}")
-            # You'd need to update the model in the function
-    
     # Load and process the optimization results
     try:
         with open('llm_input/llm_input.txt', 'r') as file:
@@ -124,11 +118,9 @@ if __name__ == "__main__":
 
         optimization_results = content
 
-        print("🔄 Generating insights with Ollama...")
+        print("Generating insights with Ollama...")
         insights_report = generate_llm_insights(optimization_results)
-        
-        print("✅ Insights generated successfully!")
-        print(insights_report)
+        print("Insights generated successfully!")
 
         # Save to file
         os.makedirs('llm_output', exist_ok=True)

@@ -14,7 +14,7 @@ input: output/summary_output.html
 output: summary_output/summary_extract_output.txt
 
 
-**FORMAT EXTRACTED TXT DATA INTO SUITABLE FORMAT (USE LLM OR WRITE SCRIPT TO AUTOMATE)**
+**FORMAT EXTRACTED TXT DATA INTO SUITABLE FORMAT (USE LLM OR WRITE SCRIPT TO AUTOMATE, see doc format in chroma_ingestion.py)**
 
 INPUT EXTRACTED DATA INTO VECTOR DATABASE FOR RAG:
 

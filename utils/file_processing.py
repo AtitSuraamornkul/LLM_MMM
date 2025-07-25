@@ -3,6 +3,7 @@ import docx
 import io
 from datetime import datetime
 import pandas as pd
+from dotenv import load_dotenv
 import tempfile
 import os
 
@@ -10,11 +11,37 @@ import streamlit as st
 from langchain_experimental.agents import create_csv_agent
 from langchain_ollama import ChatOllama
 from langchain_groq import ChatGroq
+import utils.cache_function as cache_function
+from langchain_experimental.agents import create_pandas_dataframe_agent
 
-OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
-OLLAMA_MODEL = "llama3.1:latest" 
 
-def process_csv_with_agent(uploaded_file, user_prompt):
+load_dotenv()
+
+#OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
+OLLAMA_BASE_URL = "http://localhost:11434"
+OLLAMA_MODEL = "qwen2.5-coder:3b-instruct" 
+
+insights_report = cache_function.generate_insights()
+
+
+def process_csv_with_df_agent(uploaded_file, user_prompt):
+    df = pd.read_csv(uploaded_file)
+    llm = ChatOllama(
+        model=OLLAMA_MODEL,
+        temperature=0,
+        base_url=OLLAMA_BASE_URL
+    )
+    agent = create_pandas_dataframe_agent(llm, 
+                                          df, 
+                                          verbose=True,
+                                          allow_dangerous_code=True)
+    prompt = f"User question: {user_prompt}\nAnalyze the CSV and answer using only facts from the data."
+    result = agent.invoke({"input": prompt})
+    return result.get("output", str(result))
+
+
+
+def process_csv_with_csv_agent(uploaded_file, user_prompt):
     """Process CSV with agent based on user prompt - always requires a prompt"""
     try:
         with tempfile.NamedTemporaryFile(mode='w+b', suffix='.csv', delete=False) as tmp_file:
@@ -26,7 +53,6 @@ def process_csv_with_agent(uploaded_file, user_prompt):
                   model=OLLAMA_MODEL,  # You can change this to your preferred model
                   temperature=0,
                   base_url=OLLAMA_BASE_URL
-                  #base_url="http://localhost:11434",  # Default Ollama URL
                   # timeout=300,  # 5 minutes timeout for complex analysis
               )
             # llm = ChatGroq(
@@ -39,24 +65,26 @@ def process_csv_with_agent(uploaded_file, user_prompt):
             agent = create_csv_agent(
                 llm,
                 tmp_file_path,
-                verbose=False,  # Reduced verbosity
+                verbose=True,  # Reduced verbosity
                 allow_dangerous_code=True,
                 handle_parsing_errors=True  
             )
 
             # Always use the user prompt for analysis
             analysis_prompt = f"""
+            The CSV file is located at: {tmp_file_path}
+            When reading the CSV in Python, use this path:
+            df = pd.read_csv('{tmp_file_path}')
+
             The date format is in Year-Month-Date unless specified
             All spendings and revenue is in Thai Baht (THB)
 
             Based on the user's question: "{user_prompt}"
 
-            PREPROCESSING STEPS:
-                1. First, examine the dataframe structure with df.info() and df.head()
-                2. Identify numeric columns only for correlation analysis
-                3. For date columns, keep them as datetime objects, do NOT convert to int64
-                4. Use df.select_dtypes(include=[np.number]) to get only numeric columns for correlation
-
+            - The file is already uploaded as temporary file, no need to find directory
+            - start with identify column names
+            - For date columns, keep them as datetime objects, do NOT convert to int64
+        
             Analyze the CSV file ({uploaded_file.name}) to answer this question.
             Provide specific insights, statistics, and findings relevant to the question.
             Include any relevant data patterns, trends, or anomalies you discover.
@@ -151,7 +179,7 @@ def extract_file_content(uploaded_file, user_prompt=None):
         
         elif uploaded_file.type == "text/csv":
             if user_prompt:
-                return process_csv_with_agent(uploaded_file, user_prompt)
+                return process_csv_with_csv_agent(uploaded_file, user_prompt)
             else:
                 return f"CSV file {uploaded_file.name} ready for analysis. Please ask a question to analyze this data."
         
@@ -176,7 +204,7 @@ def analyze_csv_files_dynamically(user_prompt):
             csv_file.seek(0)
             
             # Analyze with current prompt
-            analysis = process_csv_with_agent(csv_file, user_prompt)
+            analysis = process_csv_with_csv_agent(csv_file, user_prompt)
             csv_analyses.append(analysis)
             
         except Exception as e:

@@ -1,6 +1,7 @@
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
+from langchain_ollama import ChatOllama
 import requests
 import streamlit as st
 from dotenv import load_dotenv
@@ -22,23 +23,27 @@ import utils.cache_function as cache_function
 from utils.get_system_prompt import get_system_prompt
 
 from utils.get_graph import extract_vega_dataset_from_html
-from utils.get_context import get_enhanced_context
+from utils.get_context import get_enhanced_context, show_startup_config
 
 
 load_dotenv()
 
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
-OLLAMA_MODEL = "llama3.1:latest" 
+#OLLAMA_MODEL = "llama3.1:latest" 
+OLLAMA_MODEL = "mistral-nemo:latest"
+#OLLAMA_MODEL = "gemma3:4b"
 
 if not OLLAMA_BASE_URL:
     st.error("OLLAMA_BASE_URL environment variable not set")
     st.stop()
 
+llm = cache_function.get_llm(OLLAMA_MODEL, OLLAMA_BASE_URL, 0.1) #setup llm from cache function
+
 CHATBOT_AVATAR = "assets/chatbot_avatar_128x128_fixed.png"
 USER_AVATAR = "assets/A3D07482-09C2-48E7-884F-EF6BABBEBFA6.PNG"
 
-MAX_TOKENS = 10000
-RESERVED_FOR_ANSWER = 2000 
+MAX_TOKENS = 100000
+RESERVED_FOR_ANSWER = 4000
 
 retriever = cache_function.initialize_rag()
 
@@ -91,6 +96,8 @@ st.markdown("""
 
 if not st.session_state.welcome_shown:
     st.session_state.welcome_shown = True
+
+    show_startup_config()
     
     welcome_message = """
     **Welcome! Your MMM Analysis is Ready**
@@ -103,13 +110,6 @@ if not st.session_state.welcome_shown:
     • "What is the overall impact of marketing spend?		"
     • "Show me my underperforming channels"
     • "What's my ROI by channel?"
-    
-    **📈 I can also help with:** 
-
-    • Budget reallocation strategies  
-    • Channel performance analysis  
-    • Scenario planning & forecasting  
-    • Implementation roadmaps  
     
     Just ask me anything about your marketing performance or click below for quick insights and dashboard view! 👇
     """
@@ -134,20 +134,15 @@ if user_prompt:
 
     st.session_state.current_user_prompt = user_prompt
 
-    # Add user message to chat
     st.chat_message("user", avatar=USER_AVATAR).markdown(user_prompt)
-
     st.session_state.chat_history.append({"role": "user", "content": user_prompt})
     st.session_state.display_history.append({"role": "user", "content": user_prompt})
 
-    # Get RAG context
     with st.spinner("Retrieving relevant information..."):
         enhanced_context = get_enhanced_context(user_prompt, retriever)
 
-
     system_prompt = get_system_prompt(st.session_state.complexity_level, enhanced_context, insights_report) 
 
-    # Send message to LLM
     messages = [
         {"role": "system", "content": system_prompt},
         *st.session_state.chat_history
@@ -159,43 +154,23 @@ if user_prompt:
     else:
         with st.spinner("Generating Response"):
             try:
-                # Prepare Ollama request
-                ollama_payload = {
-                    "model": OLLAMA_MODEL,
-                    "messages": messages,
-                    "stream": False
-                }
-                
-                # Make request to Ollama
-                response = requests.post(
-                    f"{OLLAMA_BASE_URL}/api/chat",
-                    json=ollama_payload,
-                    timeout=120  # 2 minute timeout
-                )
-                
-                if response.status_code == 200:
-                    response_data = response.json()
-                    assistant_response = response_data['message']['content']
-                    st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
-                    st.session_state.display_history.append({"role": "assistant", "content": assistant_response})
-                    
-                    # Update token usage tracking (estimate since Ollama doesn't provide exact counts)
-                    estimated_tokens = check_token.count_message_tokens(messages) + check_token.num_tokens_from_string(assistant_response)
-                    st.session_state.total_tokens_used += estimated_tokens
-                    st.session_state.request_count += 1
-                else:
-                    st.error(f"Ollama request failed with status {response.status_code}: {response.text}")
-                    assistant_response = None
+                # --- LangChain LLM call ---
+                response = llm.invoke(messages)
+                assistant_response = response.content
 
-                # Display the LLM's response
+                st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+                st.session_state.display_history.append({"role": "assistant", "content": assistant_response})
+
+                estimated_tokens = check_token.count_message_tokens(messages) + check_token.num_tokens_from_string(assistant_response)
+                st.session_state.total_tokens_used += estimated_tokens
+                st.session_state.request_count += 1
+
                 with st.chat_message("assistant", avatar=CHATBOT_AVATAR):
                     st.markdown(assistant_response)
-            
-            # Optional: Show retrieved context in an expander for transparency
+
                 with st.expander("📚 Retrieved Context (Click to view sources)"):
                     st.text(enhanced_context)
-                    
-                
+
             except Exception as e:
                 st.error(f"Error getting response: {str(e)}")
 
@@ -295,26 +270,15 @@ with st.sidebar:
             st.success("Files cleared!")
             st.rerun()
 
-    with st.expander("RAG Retrieval Settings", expanded=False):
-        st.header("RAG Settings")
-        
-        # Allow users to adjust retrieval parameters
-        k_docs = st.slider("Number of documents to retrieve", 1, 10, 5)
-        score_threshold = st.slider("Similarity threshold", 0.0, 1.0, 0.5, 0.1)
-        
-        if st.button("Update Retrieval Settings"):
-            # Update retriever with new settings
-            retriever = cache_function.initialize_rag()
-            retriever.search_kwargs = {"k": k_docs, "score_threshold": score_threshold}
-            st.success("Settings updated!")
-
     with st.expander("Check Ollama Status", expanded=False):
         st.header("Ollama Status")
     
         # Check Ollama status
         is_running, models = check_llama.check_ollama_status()
         
-        if is_running:
+        if is_running and models:
+            for model in models:
+                st.write(model)
             st.success("✅ Ollama is running")
             st.write(f"Available models: {len(models)}")
        

@@ -13,6 +13,15 @@ import utils.check_token as check_token
 import chromadb
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_ollama import ChatOllama
+
+@st.cache_resource
+def get_llm(model, base_url, temperature):
+    return ChatOllama(model=model, 
+                      base_url=base_url, 
+                      temperature=temperature
+                      )
+
 
 # Initialize RAG components
 @st.cache_resource
@@ -21,7 +30,7 @@ def initialize_rag():
     # Initialize ChromaDB - CHANGED
     persist_directory = "./chroma_db"
     client = chromadb.PersistentClient(path=persist_directory)
-    collection_name = "new-m150-thb"
+    collection_name = "m150-thb"
     
     # Initialize embeddings and vector store - CHANGED
     embeddings = HuggingFaceEmbeddings(
@@ -38,7 +47,7 @@ def initialize_rag():
     # Create retriever - SAME
     retriever = vector_store.as_retriever(
         search_type="similarity_score_threshold",
-        search_kwargs={"k": 5, "score_threshold": 0.5},
+        search_kwargs={"k": 15, "score_threshold": 0.0},
     )
     
     return retriever

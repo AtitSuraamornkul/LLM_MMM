@@ -8,7 +8,6 @@ load_dotenv()
 
 # Get environment variables
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
-OLLAMA_MODEL = "llama3.1:latest"  
 
 def check_ollama_status():
     try:

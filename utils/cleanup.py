@@ -30,8 +30,8 @@ def cleanup_chat_history():
     
     if len(st.session_state.chat_history) > MAX_MESSAGES:
         old_count = len(st.session_state.chat_history)
-        st.session_state.chat_history = st.session_state.chat_history[-MAX_MESSAGES:]
-        st.info(f"🧹 Cleaned up chat history: {old_count} → {len(st.session_state.chat_history)} messages")
+        st.session_state.chat_history = []
+        st.info(f"🧹 Cleaned up chat history")
 
 
 def clear_on_complexity_change():

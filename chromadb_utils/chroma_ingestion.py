@@ -19,7 +19,7 @@ client = chromadb.PersistentClient(path=persist_directory)
 # client = chromadb.Client()
 
 # Collection name (equivalent to Pinecone index)
-collection_name = "new-m150-thb"
+collection_name = "m150-thb"
 
 # Initialize embeddings model
 embeddings = HuggingFaceEmbeddings(
@@ -141,6 +141,8 @@ documents = [
     )
 ]
 
+
+
 # 1. Get all IDs
 all_ids = vector_store.get()['ids']
 
@@ -158,3 +160,6 @@ uuids = [str(uuid.uuid4()) for _ in documents]
 vector_store.add_documents(documents=documents, ids=uuids)
 
 print(f"Successfully added {len(documents)} documents to ChromaDB collection '{collection_name}'")
+
+all_data = vector_store.get()
+print(f"📊 Total documents in database: {len(all_data['ids'])}")
