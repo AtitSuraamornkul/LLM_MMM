@@ -58,6 +58,8 @@ st.set_page_config(
 
 cleanup.initialize_session_state()
 
+show_startup_config()
+
 st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -96,8 +98,6 @@ st.markdown("""
 
 if not st.session_state.welcome_shown:
     st.session_state.welcome_shown = True
-
-    show_startup_config()
     
     welcome_message = """
     **Welcome! Your MMM Analysis is Ready**
@@ -113,8 +113,9 @@ if not st.session_state.welcome_shown:
     
     Just ask me anything about your marketing performance or click below for quick insights and dashboard view! 👇
     """
-    
+
     st.session_state.display_history.append({"role": "assistant", "content": welcome_message})
+
 
 
 # DISPLAY HISTORY
@@ -287,7 +288,7 @@ with st.sidebar:
             st.write("Start Ollama: `ollama serve`")
 
 
-    with st.expander("📊 Token Usage", expanded=False):
+    with st.expander("Token Usage", expanded=False):
         # Token Usage Section
         st.header("Token Usage")
         

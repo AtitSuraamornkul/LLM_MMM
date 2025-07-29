@@ -1545,14 +1545,19 @@ def extract_response_curves_data_for_rag(soup):
         return []
     
 
-result = ""
 
-result = get_channel_contribution(soup) + "\n" + get_spend_outcome_insights(soup) + "\n" + get_channel_time_insights_with_anomalies(soup)['formatted_output'] + "\n" + get_roi_insights(soup) + "\n"+ get_roi_effectiveness_insights(soup) + "\n" + get_roi_marginal_insights(soup) + "\n" + get_roi_cpik_confidence_insights(soup) + extract_response_curves_data_for_rag(soup)
+def run_summary_extractor():
+    with open('output/new_summary_output.html', 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f, 'html.parser')
 
-# Save the result to a text file
-with open("summary_output/summary_extract_output.txt", "w") as f:
-    f.write(result)
+    result = get_channel_contribution(soup) + "\n" + get_spend_outcome_insights(soup) + "\n" + get_channel_time_insights_with_anomalies(soup)['formatted_output'] + "\n" + get_roi_insights(soup) + "\n"+ get_roi_effectiveness_insights(soup) + "\n" + get_roi_marginal_insights(soup) + "\n" + get_roi_cpik_confidence_insights(soup) + extract_response_curves_data_for_rag(soup)
 
-print("Result saved to output.txt")
+    with open("summary_output/summary_extract_output.txt", "w") as f:
+        f.write(result)
 
+    print("Result saved to output.txt")
+    return result
+
+if __name__ == "__main__":
+    run_summary_extractor()
 

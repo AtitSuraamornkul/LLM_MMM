@@ -3,18 +3,14 @@
 input: MMM dataset
 output: output/summary_output.html   |   output/optimization_output.html
 
-2. run the optimization extractor (optim_extract.py) -> 
+2. run the extractor (html_extractor/all_extractor.py) -> 
 
-input: output/optimization_output.html
-output: llm_input/llm_input.txt
-
-3. run the summary extractor (summary_extract.py) ->
-
-input: output/summary_output.html
-output: summary_output/summary_extract_output.txt
+input:  output/optimization_output.html
+        output/summary_output.html
+output: all_extracted_output.txt
 
 
-**FORMAT EXTRACTED TXT DATA INTO SUITABLE FORMAT (USE LLM OR WRITE SCRIPT TO AUTOMATE, see doc format in chroma_ingestion.py)**
+**FORMAT EXTRACTed all_extracted_output TXT DATA INTO SUITABLE FORMAT (USE LLM OR WRITE SCRIPT TO AUTOMATE, see doc format in chroma_ingestion.py)**
 
 INPUT EXTRACTED DATA INTO VECTOR DATABASE FOR RAG:
 

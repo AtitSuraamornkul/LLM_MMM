@@ -311,15 +311,24 @@ def extract_insights_from_html(soup):
     return "\n\n".join(summaries)
 
 
-llm_input = ""
-llm_input += time_extractor(soup) + "\n" + extract_scenario_summary(soup) + "\n" + allocation_extractor(soup) + "\n" + insights_extractor(soup) + "\n" + spend_delta_chart_extractor(soup) + "\n" + spend_allocation_chart_extractor(soup) + "\n" + outcome_delta_extractor(soup) + "\n" + extract_insights_from_html(soup)
 
-print(llm_input)
+def run_llm_extractor():
+    with open('output/new_optimization_output.html', 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f, 'html.parser')
 
-with open('llm_input/llm_input.txt', 'w') as f:
-    f.write(llm_input)
+    llm_input = ""
+    llm_input += time_extractor(soup) + "\n" + extract_scenario_summary(soup) + "\n" + allocation_extractor(soup) + "\n" + insights_extractor(soup) + "\n" + spend_delta_chart_extractor(soup) + "\n" + spend_allocation_chart_extractor(soup) + "\n" + outcome_delta_extractor(soup) + "\n" + extract_insights_from_html(soup)
 
-print("LLM input saved to llm_input.txt")
+    with open('llm_input/llm_input.txt', 'w') as f:
+        f.write(llm_input)
+
+    print("LLM input saved to llm_input.txt")
+    return llm_input
+
+
+if __name__ == "__main__":
+    run_llm_extractor()
+
 
 
 
