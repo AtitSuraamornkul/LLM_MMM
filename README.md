@@ -1,7 +1,8 @@
 1. run the mmm analysis (hitachi_mmm.ipynb) -> 
 
 input: MMM dataset
-output: output/summary_output.html   |   output/optimization_output.html
+output: output/summary_output.html      
+        output/optimization_output.html
 
 2. run the extractor (html_extractor/all_extractor.py) -> 
 
