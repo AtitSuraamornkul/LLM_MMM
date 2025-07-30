@@ -3,10 +3,8 @@ from dotenv import load_dotenv
 from langchain_ollama import ChatOllama
 import requests
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Get environment variables
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
 
 def check_ollama_status():

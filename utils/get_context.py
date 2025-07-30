@@ -93,9 +93,9 @@ def extract_years_from_dates(start_date, end_date):
     years = set()
     
     date_formats = [
-        '%b %d, %Y',    # Jul 4, 2022
-        '%Y-%m-%d',     # 2022-07-04
-        '%m/%d/%Y',     # 07/04/2022
+        '%b %d, %Y', 
+        '%Y-%m-%d',    
+        '%m/%d/%Y',    
     ]
     
     for date_str in [start_date, end_date]:
