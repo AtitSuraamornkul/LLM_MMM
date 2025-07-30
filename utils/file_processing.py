@@ -20,20 +20,28 @@ load_dotenv()
 #OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL")
 OLLAMA_BASE_URL = "http://localhost:11434"
 OLLAMA_MODEL = "qwen2.5-coder:3b-instruct" 
+#GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 insights_report = cache_function.generate_insights()
 
 
 def process_csv_with_df_agent(uploaded_file, user_prompt):
     df = pd.read_csv(uploaded_file)
+    # llm = ChatGroq(
+    #     model="llama-3.3-70b-versatile",
+    #     temperature=0,
+    #     api_key=GROQ_API_KEY
+    # )
+
     llm = ChatOllama(
-        model=OLLAMA_MODEL,
-        temperature=0,
-        base_url=OLLAMA_BASE_URL
-    )
+            model=OLLAMA_MODEL,  # You can change this to your preferred model
+            temperature=0,
+            base_url=OLLAMA_BASE_URL
+            # timeout=300,  # 5 minutes timeout for complex analysis
+        )
     agent = create_pandas_dataframe_agent(llm, 
                                           df, 
-                                          verbose=True,
+                                          verbose=False,
                                           allow_dangerous_code=True)
     prompt = f"User question: {user_prompt}\nAnalyze the CSV and answer using only facts from the data."
     result = agent.invoke({"input": prompt})
@@ -44,72 +52,84 @@ def process_csv_with_df_agent(uploaded_file, user_prompt):
 def process_csv_with_csv_agent(uploaded_file, user_prompt):
     """Process CSV with agent based on user prompt - always requires a prompt"""
     try:
-        with tempfile.NamedTemporaryFile(mode='w+b', suffix='.csv', delete=False) as tmp_file:
-            tmp_file.write(uploaded_file.getvalue())
-            tmp_file_path = tmp_file.name
+        df = pd.read_csv(uploaded_file)
         
-        try:
-            llm = ChatOllama(
-                  model=OLLAMA_MODEL,  # You can change this to your preferred model
-                  temperature=0,
-                  base_url=OLLAMA_BASE_URL
-                  # timeout=300,  # 5 minutes timeout for complex analysis
-              )
-            # llm = ChatGroq(
-            #      model="llama-3.3-70b-versatile",  # You can change this to your preferred model
-            #      temperature=0,
-            #      #base_url="http://localhost:11434",  # Default Ollama URL
-            #      #timeout=300,  # 5 minutes timeout for complex analysis
-            #  )
+        llm = ChatOllama(
+              model=OLLAMA_MODEL,  # You can change this to your preferred model
+              temperature=0,
+              base_url=OLLAMA_BASE_URL
+              # timeout=300,  # 5 minutes timeout for complex analysis
+          )
+        # llm = ChatGroq(
+        #      model="llama-3.3-70b-versatile",  # You can change this to your preferred model
+        #      temperature=0,
+        #      api_key=GROQ_API_KEY
+        #      #base_url="http://localhost:11434",  # Default Ollama URL
+        #      #timeout=300,  # 5 minutes timeout for complex analysis
+        #  )
 
-            agent = create_csv_agent(
-                llm,
-                tmp_file_path,
-                verbose=True,  # Reduced verbosity
-                allow_dangerous_code=True,
-                handle_parsing_errors=True  
-            )
+        agent = create_pandas_dataframe_agent(
+            llm,
+            df,
+            verbose=False,  # Reduced verbosity
+            allow_dangerous_code=True,
+            handle_parsing_errors=True  
+        )
 
-            # Always use the user prompt for analysis
-            analysis_prompt = f"""
-            The CSV file is located at: {tmp_file_path}
-            When reading the CSV in Python, use this path:
-            df = pd.read_csv('{tmp_file_path}')
+        # Always use the user prompt for analysis
+        # analysis_prompt = f"""
+        # The CSV file is located at: {tmp_file_path}
+        # When reading the CSV in Python, use this path:
+        # df = pd.read_csv('{tmp_file_path}')
 
-            The date format is in Year-Month-Date unless specified
-            All spendings and revenue is in Thai Baht (THB)
+        # The date format is in Year-Month-Date unless specified
+        # All spendings and revenue is in Thai Baht (THB)
 
-            Based on the user's question: "{user_prompt}"
+        # Based on the user's question: "{user_prompt}"
 
-            - The file is already uploaded as temporary file, no need to find directory
-            - start with identify column names
-            - For date columns, keep them as datetime objects, do NOT convert to int64
+        # - The file is already uploaded as temporary file, no need to find directory
+        # - start with identify column names
+        # - For date columns, keep them as datetime objects, do NOT convert to int64
+    
+        # Analyze the CSV file ({uploaded_file.name}) to answer this question.
+        # Provide specific insights, statistics, and findings relevant to the question.
+        # Include any relevant data patterns, trends, or anomalies you discover.
+        # If you need to work with dates, use pd.to_datetime() but don't convert to int64 for correlation
+
+        # After preprocessing, use the contents of the CSV file ({uploaded_file.name}) to extract and report all relevant facts, statistics, and comparisons required to answer the user's question.
+        # If the user's question asks for a comparison (explicitly or implicitly) between the CSV and another source (e.g., MMM report), extract the required metric(s) from both and present a direct, factual comparison.
+        # If the question is not directly about the CSV, but the answer can be supported or enriched with CSV data, report the relevant numbers and insights from the CSV as supporting evidence.
+        # Never stop at data format or preprocessing details—always continue to deliver business insights, trends, or comparisons as appropriate.
         
-            Analyze the CSV file ({uploaded_file.name}) to answer this question.
-            Provide specific insights, statistics, and findings relevant to the question.
-            Include any relevant data patterns, trends, or anomalies you discover.
-            If you need to work with dates, use pd.to_datetime() but don't convert to int64 for correlation
+        # if encounter acronyms, don't assume the meaning, refer to it as the given acronym
 
-            After preprocessing, use the contents of the CSV file ({uploaded_file.name}) to extract and report all relevant facts, statistics, and comparisons required to answer the user’s question.
-            If the user’s question asks for a comparison (explicitly or implicitly) between the CSV and another source (e.g., MMM report), extract the required metric(s) from both and present a direct, factual comparison.
-            If the question is not directly about the CSV, but the answer can be supported or enriched with CSV data, report the relevant numbers and insights from the CSV as supporting evidence.
-            Never stop at data format or preprocessing details—always continue to deliver business insights, trends, or comparisons as appropriate.
-            
-            if encounter acronyms, don't assume the meaning, refer to it as the given acronym
+        # DO NOT provide any estimates or predictions only facts
+        # IGNORE index limit and index column
+        # """
 
-            DO NOT provide any estimates or predictions only facts
-            IGNORE index limit and index column
+        analysis_prompt = f"""
+            You have a CSV file with sales data. The user asks: "{user_prompt}"
+
+            Steps to follow:
+            1. Check the columns: df.columns.tolist()
+            2. Check data types: df.dtypes
+            3. For correlation analysis:
+            - Find competitor columns (look for columns with 'competitor' in the name)
+            - Calculate correlation with total_sales using: df['competitor_column'].corr(df['total_sales'])
+            - Show the correlation values
+
+            Keep it simple and show your work step by step.
             """
-            
-            result = agent.invoke({"input": analysis_prompt})
-            
-            # Extract output properly
-            if isinstance(result, dict):
-                output = result.get("output", str(result))
-            else:
-                output = str(result)
+        
+        result = agent.invoke({"input": analysis_prompt})
+        
+        # Extract output properly
+        if isinstance(result, dict):
+            output = result.get("output", str(result))
+        else:
+            output = str(result)
 
-            formatted_result = f"""
+        formatted_result = f"""
 === CSV ANALYSIS: {uploaded_file.name} ===
 Question: {user_prompt}
 
@@ -117,14 +137,9 @@ Question: {user_prompt}
 
 === END CSV ANALYSIS ===
 """
-                
-            return formatted_result
-
-        finally:
-            # Clean up temporary file
-            if os.path.exists(tmp_file_path):
-                os.unlink(tmp_file_path)
-                
+            
+        return formatted_result
+            
     except Exception as e:
         return f"Error analyzing CSV {uploaded_file.name}: {str(e)}"
 
