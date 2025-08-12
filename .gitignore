@@ -8,3 +8,5 @@
 # Alternative patterns (if needed)
 *.env
 .env.*
+
+dataset/

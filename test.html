@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan - Liquid Glass Effect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .liquid-text {
+            font-size: 8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(255, 255, 255, 0.7) 25%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0.7) 75%,
+                rgba(255, 255, 255, 0.9) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            animation: liquidFlow 4s ease-in-out infinite;
+        }
+
+        .liquid-text::before {
+            content: 'Plan';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 20px 40px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            animation: glassShimmer 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        .liquid-text::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 70%
+            );
+            animation: liquidWave 2s linear infinite;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .glass-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle at 30% 30%, 
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0.1) 40%,
+                transparent 70%
+            );
+            border-radius: 30px;
+            animation: glassFloat 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: bubbleFloat 4s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes liquidFlow {
+            0%, 100% {
+                transform: translateY(0px) rotateX(0deg);
+                filter: hue-rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotateX(5deg);
+                filter: hue-rotate(90deg);
+            }
+            50% {
+                transform: translateY(0px) rotateX(0deg);
+                filter: hue-rotate(180deg);
+            }
+            75% {
+                transform: translateY(10px) rotateX(-5deg);
+                filter: hue-rotate(270deg);
+            }
+        }
+
+        @keyframes glassShimmer {
+            0%, 100% {
+                box-shadow: 
+                    0 8px 32px rgba(0, 0, 0, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 
+                    0 12px 40px rgba(0, 0, 0, 0.15),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+                    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        @keyframes liquidWave {
+            0% {
+                transform: rotate(0deg) scale(0.8);
+                opacity: 0.6;
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+                opacity: 0.3;
+            }
+            100% {
+                transform: rotate(360deg) scale(0.8);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes glassFloat {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            }
+            33% {
+                transform: translate(-48%, -52%) rotate(1deg) scale(1.05);
+            }
+            66% {
+                transform: translate(-52%, -48%) rotate(-1deg) scale(0.95);
+            }
+        }
+
+        @keyframes bubbleFloat {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+                opacity: 0.4;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .liquid-text {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="liquid-text">Plan</div>
+        <div class="glass-overlay"></div>
+    </div>
+
+    <script>
+        // Create floating bubbles
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            
+            const size = Math.random() * 60 + 20;
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            const duration = Math.random() * 3 + 2;
+            
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = x + 'px';
+            bubble.style.top = y + 'px';
+            bubble.style.animationDuration = duration + 's';
+            bubble.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.body.appendChild(bubble);
+            
+            // Remove bubble after animation
+            setTimeout(() => {
+                if (bubble.parentNode) {
+                    bubble.parentNode.removeChild(bubble);
+                }
+            }, (duration + 2) * 1000);
+        }
+
+        // Create bubbles periodically
+        setInterval(createBubble, 1500);
+
+        // Mouse interaction for enhanced liquid effect
+        document.addEventListener('mousemove', (e) => {
+            const text = document.querySelector('.liquid-text');
+            const rect = text.getBoundingClientRect();
+            const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+            const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+            
+            text.style.transform = `
+                perspective(1000px) 
+                rotateY(${x * 10}deg) 
+                rotateX(${-y * 10}deg)
+                translateZ(20px)
+            `;
+        });
+
+        // Reset transform when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            const text = document.querySelector('.liquid-text');
+            text.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
+        });
+
+        // Dynamic background color change
+        let hue = 0;
+        setInterval(() => {
+            hue = (hue + 1) % 360;
+            document.body.style.background = `linear-gradient(135deg, 
+                hsl(${hue}, 70%, 70%) 0%, 
+                hsl(${(hue + 60) % 360}, 70%, 60%) 100%)`;
+        }, 100);
+
+        // Typewriter effect for the text (optional)
+        function typewriterEffect() {
+            const text = document.querySelector('.liquid-text');
+            const originalText = 'Plan';
+            let currentText = '';
+            let i = 0;
+            
+            const interval = setInterval(() => {
+                if (i < originalText.length) {
+                    currentText += originalText[i];
+                    text.textContent = currentText;
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 200);
+        }
+
+        // Uncomment the line below to enable typewriter effect
+        // typewriterEffect();
+    </script>
+</body>
+</html>
